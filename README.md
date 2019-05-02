@@ -2,6 +2,8 @@
 
 _this is not a cFS library; it is used by the process application_
 
+_this is also the home of the interface definitions (see `flat_inc`, `wrap` and `interface`)_
+
 This library provides the process application to the core cFS services (with exception of SB).
 
 The process application should link the core of cFS as a library.

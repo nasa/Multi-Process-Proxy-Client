@@ -1,0 +1,24 @@
+// IDL for possible returned data
+
+namespace cFS_Return;
+
+table Empty {
+
+}
+
+// TODO: May not be needed
+table UnInt {
+    unsignedInteger:uint32;
+}
+
+union PointerReturn {
+    Empty,
+    UnInt,
+}
+
+table ReturnData {
+    retval:int32;
+    output:PointerReturn;
+}
+
+root_type ReturnData;

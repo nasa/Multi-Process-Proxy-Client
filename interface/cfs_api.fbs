@@ -1,0 +1,71 @@
+namespace cFS_API;
+
+////////////////////////////////////////////////////
+// ES Functions
+table RunLoop {
+    ExitStatus:uint32;
+}
+
+// ES Performance Log API
+table PerfLogAdd {
+    Marker:uint32;
+    EntryExit:uint32;
+}
+
+////////////////////////////////////////////////////
+// EVS Functions
+table SendEvent {
+    EventID:uint16;
+    EventType:uint16;
+    Spec:string;
+}
+
+table SendEventWithAppID {
+    EventID:uint16;
+    EventType:uint16;
+    AppID:uint32;
+    Spec:string;
+}
+
+////////////////////////////////////////////////////
+// FS Functions
+
+////////////////////////////////////////////////////
+// SB Functions are likely all handled by SBN-Client
+
+////////////////////////////////////////////////////
+// TIME Functions
+
+////////////////////////////////////////////////////
+// TBL Functions
+
+////////////////////////////////////////////////////
+union Function {
+    // ES Functions
+    RunLoop,
+    PerfLogAdd,
+
+    // EVS Functions
+    // CFE_EVS_Register
+    // CFE_EVS_Unregister
+    SendEvent,
+    SendEventWithAppID
+    // CFE_EVS_SendTimedEvent
+    // CFE_EVS_ResetFilter
+    // CFE_EVS_ResetAllFilters
+
+    // FS Functions
+
+    // SB Functions are likely all handled by SBN-Client
+
+    // TIME Functions
+
+    // TBL Functions
+}
+
+// Unions may not be the root_type (since it is actually two fields)
+table RemoteCall {
+    input:Function;
+}
+
+root_type RemoteCall;
