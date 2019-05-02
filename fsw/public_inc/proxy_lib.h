@@ -1,5 +1,7 @@
-#ifndef _core_lib_h_
-#define _core_lib_h_
+#ifndef _proxy_lib_h_
+#define _proxy_lib_h_
+
+// TODO: Is this file needed?
 
 /************************************************************************
 ** Includes
@@ -13,9 +15,8 @@
 /*************************************************************************
 ** Exported Functions
 *************************************************************************/
-void cl_CFE_SB_InitMsg(void *MsgPtr, CFE_SB_MsgId_t MsgId, uint16 Length, boolean Clear);
 
-#endif /* _core_lib_h_ */
+#endif /* _proxy_lib_h_ */
 
 /************************/
 /*  End of File Comment */
