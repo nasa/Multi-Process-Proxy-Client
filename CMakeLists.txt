@@ -3,10 +3,11 @@ project(CFS_PROXY_LIB C)
 
 include_directories(fsw/public_inc)
 include_directories(fsw/flat_inc)
-aux_source_directory(fsw/src APP_SRC_FILES)
+include_directories(${nng_lib_MISSION_DIR}/include)
+include_directories(${flat_lib_MISSION_DIR}/include)
 
-# Create the app module
-#add_cfe_app(core_lib ${APP_SRC_FILES})
+aux_source_directory(fsw/src APP_SRC_FILES)
+aux_source_directory(fsw/wrap APP_SRC_FILES)
 
 set(APP_NAME proxy_lib)
 
