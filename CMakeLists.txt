@@ -16,6 +16,7 @@ add_library(${APP_NAME} "SHARED" ${APP_SRC_FILES})
 # Override the default behavior of attaching a "lib" prefix
 set_target_properties(${APP_NAME} PROPERTIES PREFIX "")
 # TARGET_LINK_LIBRARIES(${APP_NAME} core-${TGTNAME})
+TARGET_LINK_LIBRARIES(${APP_NAME} flat_lib nng_lib)
 
 # Create the install targets for this shared/modular app
 foreach(TGT ${APP_INSTALL_LIST})

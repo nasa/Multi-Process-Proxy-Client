@@ -64,7 +64,6 @@ int32 __wrap_CFE_ES_RunLoop(uint32 *ExitStatus)
 //#define CFE_ES_PerfLogExit(id) (CFE_ES_PerfLogAdd(id, 1))
 void __wrap_CFE_ES_PerfLogAdd(uint32 Marker, uint32 EntryExit)
 {
-    printf("Wrapping PerfLog\n");
     flatcc_builder_t *B = &builder;
 
     int rv;
