@@ -2,10 +2,8 @@
 /*************************************************************************
 ** Includes
 *************************************************************************/
-#include "proxy_lib.h"
-#include "proxy_lib_version.h"
-//#include "cfe_sb_extern_typedefs.h"
-//#include "cfe_sb.h"
+#include "proxy_client.h"
+#include "proxy_client_version.h"
 #include <unistd.h>
 
 #include <nng/nng.h>
@@ -37,12 +35,11 @@ nng_socket sock;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*                                                                 */
-/* Proxy Library Initialization Routine                            */
-/* cFE requires that a library have an initialization routine      */
+/* Proxy Client Initialization Routine                             */
 /*                                                                 */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 // TODO: Remove? Not needed?
-int32 PROXY_LibInit(void)
+int32 PROXY_ClientInit(void)
 {
     int rv;
 
@@ -66,11 +63,11 @@ int32 PROXY_LibInit(void)
         printf("nng_setopt_ms: %d\n", rv);
     }
 
-    //CFE_ES_WriteToSysLog("PROXY Lib Initialized.  Version %d.%d.%d.%d\n",
-    //              PROXY_LIB_MAJOR_VERSION,
-    //              PROXY_LIB_MINOR_VERSION,
-    //              PROXY_LIB_REVISION,
-    //              PROXY_LIB_MISSION_REV);
+    //CFE_ES_WriteToSysLog("PROXY Client Initialized.  Version %d.%d.%d.%d\n",
+    //              PROXY_CLIENT_MAJOR_VERSION,
+    //              PROXY_CLIENT_MINOR_VERSION,
+    //              PROXY_CLIENT_REVISION,
+    //              PROXY_CLIENT_MISSION_REV);
     return OS_SUCCESS;
 }
 

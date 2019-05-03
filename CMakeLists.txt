@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6.4)
-project(CFS_PROXY_LIB C)
+project(CFS_PROXY_CLIENT C)
 
 include_directories(fsw/public_inc)
 include_directories(fsw/flat_inc)
@@ -9,7 +9,7 @@ include_directories(${flat_lib_MISSION_DIR}/include)
 aux_source_directory(fsw/src APP_SRC_FILES)
 aux_source_directory(fsw/wrap APP_SRC_FILES)
 
-set(APP_NAME proxy_lib)
+set(APP_NAME proxy_client)
 
 add_library(${APP_NAME} "SHARED" ${APP_SRC_FILES})
 

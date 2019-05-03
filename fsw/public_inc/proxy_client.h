@@ -1,7 +1,5 @@
-#ifndef _proxy_lib_h_
-#define _proxy_lib_h_
-
-// TODO: Is this file needed?
+#ifndef _proxy_client_h_
+#define _proxy_client_h_
 
 /************************************************************************
 ** Includes
@@ -15,9 +13,9 @@
 /*************************************************************************
 ** Exported Functions
 *************************************************************************/
-int32 PROXY_LibInit(void);
+int32 PROXY_ClientInit(void);
 
-#endif /* _proxy_lib_h_ */
+#endif /* _proxy_client_h_ */
 
 /************************/
 /*  End of File Comment */
