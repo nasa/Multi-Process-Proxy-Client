@@ -1,10 +1,10 @@
-# proxy_lib
+# proxy_client
 
 _this is not a cFS library; it is used by the process application_
 
 _this is also the home of the interface definitions (see `flat_inc`, `wrap` and `interface`)_
 
-This library provides the process application to the core cFS services (with exception of SB).
+This library is the "Proxy Client" and provides the process application access to the core cFS services (with exception of SB).
 
 The process application should link the core of cFS as a library.
 This allows function calls that are safe to call from the context of another process (such as SB_InitMsg) to be directly called.
