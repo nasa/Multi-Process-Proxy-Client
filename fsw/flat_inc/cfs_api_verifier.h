@@ -11,6 +11,8 @@
 
 static int cFS_API_RunLoop_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_PerfLogAdd_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_RegisterApp_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_ExitApp_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_SendEvent_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_SendEventWithAppID_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_RemoteCall_verify_table(flatcc_table_verifier_descriptor_t *td);
@@ -20,8 +22,10 @@ static int cFS_API_Function_union_verifier(flatcc_union_verifier_descriptor_t *u
     switch (ud->type) {
     case 1: return flatcc_verify_union_table(ud, cFS_API_RunLoop_verify_table); /* RunLoop */
     case 2: return flatcc_verify_union_table(ud, cFS_API_PerfLogAdd_verify_table); /* PerfLogAdd */
-    case 3: return flatcc_verify_union_table(ud, cFS_API_SendEvent_verify_table); /* SendEvent */
-    case 4: return flatcc_verify_union_table(ud, cFS_API_SendEventWithAppID_verify_table); /* SendEventWithAppID */
+    case 3: return flatcc_verify_union_table(ud, cFS_API_RegisterApp_verify_table); /* RegisterApp */
+    case 4: return flatcc_verify_union_table(ud, cFS_API_ExitApp_verify_table); /* ExitApp */
+    case 5: return flatcc_verify_union_table(ud, cFS_API_SendEvent_verify_table); /* SendEvent */
+    case 6: return flatcc_verify_union_table(ud, cFS_API_SendEventWithAppID_verify_table); /* SendEventWithAppID */
     default: return flatcc_verify_ok;
     }
 }
@@ -79,6 +83,58 @@ static inline int cFS_API_PerfLogAdd_verify_as_root_with_identifier(const void *
 static inline int cFS_API_PerfLogAdd_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
 {
     return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_PerfLogAdd_verify_table);
+}
+
+static int cFS_API_RegisterApp_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_RegisterApp_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_RegisterApp_identifier, &cFS_API_RegisterApp_verify_table);
+}
+
+static inline int cFS_API_RegisterApp_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_RegisterApp_type_identifier, &cFS_API_RegisterApp_verify_table);
+}
+
+static inline int cFS_API_RegisterApp_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_RegisterApp_verify_table);
+}
+
+static inline int cFS_API_RegisterApp_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_RegisterApp_verify_table);
+}
+
+static int cFS_API_ExitApp_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* ExitStatus */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_ExitApp_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_ExitApp_identifier, &cFS_API_ExitApp_verify_table);
+}
+
+static inline int cFS_API_ExitApp_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_ExitApp_type_identifier, &cFS_API_ExitApp_verify_table);
+}
+
+static inline int cFS_API_ExitApp_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_ExitApp_verify_table);
+}
+
+static inline int cFS_API_ExitApp_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_ExitApp_verify_table);
 }
 
 static int cFS_API_SendEvent_verify_table(flatcc_table_verifier_descriptor_t *td)

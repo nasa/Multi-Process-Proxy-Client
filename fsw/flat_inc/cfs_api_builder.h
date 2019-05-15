@@ -31,6 +31,16 @@ typedef flatbuffers_ref_t cFS_API_PerfLogAdd_ref_t;
 static cFS_API_PerfLogAdd_ref_t cFS_API_PerfLogAdd_clone(flatbuffers_builder_t *B, cFS_API_PerfLogAdd_table_t t);
 __flatbuffers_build_table(flatbuffers_, cFS_API_PerfLogAdd, 2)
 
+static const flatbuffers_voffset_t __cFS_API_RegisterApp_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_RegisterApp_ref_t;
+static cFS_API_RegisterApp_ref_t cFS_API_RegisterApp_clone(flatbuffers_builder_t *B, cFS_API_RegisterApp_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_RegisterApp, 0)
+
+static const flatbuffers_voffset_t __cFS_API_ExitApp_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_ExitApp_ref_t;
+static cFS_API_ExitApp_ref_t cFS_API_ExitApp_clone(flatbuffers_builder_t *B, cFS_API_ExitApp_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_ExitApp, 1)
+
 static const flatbuffers_voffset_t __cFS_API_SendEvent_required[] = { 0 };
 typedef flatbuffers_ref_t cFS_API_SendEvent_ref_t;
 static cFS_API_SendEvent_ref_t cFS_API_SendEvent_clone(flatbuffers_builder_t *B, cFS_API_SendEvent_table_t t);
@@ -56,6 +66,16 @@ __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_RunLoop, cFS_API_RunLoop_
 static inline cFS_API_PerfLogAdd_ref_t cFS_API_PerfLogAdd_create(flatbuffers_builder_t *B __cFS_API_PerfLogAdd_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_PerfLogAdd, cFS_API_PerfLogAdd_identifier, cFS_API_PerfLogAdd_type_identifier)
 
+#define __cFS_API_RegisterApp_formal_args 
+#define __cFS_API_RegisterApp_call_args 
+static inline cFS_API_RegisterApp_ref_t cFS_API_RegisterApp_create(flatbuffers_builder_t *B __cFS_API_RegisterApp_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_RegisterApp, cFS_API_RegisterApp_identifier, cFS_API_RegisterApp_type_identifier)
+
+#define __cFS_API_ExitApp_formal_args , uint32_t v0
+#define __cFS_API_ExitApp_call_args , v0
+static inline cFS_API_ExitApp_ref_t cFS_API_ExitApp_create(flatbuffers_builder_t *B __cFS_API_ExitApp_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_ExitApp, cFS_API_ExitApp_identifier, cFS_API_ExitApp_type_identifier)
+
 #define __cFS_API_SendEvent_formal_args , uint16_t v0, uint16_t v1, flatbuffers_string_ref_t v2
 #define __cFS_API_SendEvent_call_args , v0, v1, v2
 static inline cFS_API_SendEvent_ref_t cFS_API_SendEvent_create(flatbuffers_builder_t *B __cFS_API_SendEvent_formal_args);
@@ -77,6 +97,10 @@ static inline cFS_API_Function_union_ref_t cFS_API_Function_as_RunLoop(cFS_API_R
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_RunLoop; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_PerfLogAdd(cFS_API_PerfLogAdd_ref_t ref)
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_PerfLogAdd; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_RegisterApp(cFS_API_RegisterApp_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_RegisterApp; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_ExitApp(cFS_API_ExitApp_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_ExitApp; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_SendEvent(cFS_API_SendEvent_ref_t ref)
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_SendEvent; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_SendEventWithAppID(cFS_API_SendEventWithAppID_ref_t ref)
@@ -88,8 +112,10 @@ static cFS_API_Function_union_ref_t cFS_API_Function_clone(flatbuffers_builder_t
     switch (u.type) {
     case 1: return cFS_API_Function_as_RunLoop(cFS_API_RunLoop_clone(B, (cFS_API_RunLoop_table_t)u.value));
     case 2: return cFS_API_Function_as_PerfLogAdd(cFS_API_PerfLogAdd_clone(B, (cFS_API_PerfLogAdd_table_t)u.value));
-    case 3: return cFS_API_Function_as_SendEvent(cFS_API_SendEvent_clone(B, (cFS_API_SendEvent_table_t)u.value));
-    case 4: return cFS_API_Function_as_SendEventWithAppID(cFS_API_SendEventWithAppID_clone(B, (cFS_API_SendEventWithAppID_table_t)u.value));
+    case 3: return cFS_API_Function_as_RegisterApp(cFS_API_RegisterApp_clone(B, (cFS_API_RegisterApp_table_t)u.value));
+    case 4: return cFS_API_Function_as_ExitApp(cFS_API_ExitApp_clone(B, (cFS_API_ExitApp_table_t)u.value));
+    case 5: return cFS_API_Function_as_SendEvent(cFS_API_SendEvent_clone(B, (cFS_API_SendEvent_table_t)u.value));
+    case 6: return cFS_API_Function_as_SendEventWithAppID(cFS_API_SendEventWithAppID_clone(B, (cFS_API_SendEventWithAppID_table_t)u.value));
     default: return cFS_API_Function_as_NONE();
     }
 }
@@ -137,6 +163,45 @@ static cFS_API_PerfLogAdd_ref_t cFS_API_PerfLogAdd_clone(flatbuffers_builder_t *
         return 0;
     }
     __flatbuffers_memoize_end(B, t, cFS_API_PerfLogAdd_end(B));
+}
+
+
+static inline cFS_API_RegisterApp_ref_t cFS_API_RegisterApp_create(flatbuffers_builder_t *B __cFS_API_RegisterApp_formal_args)
+{
+    if (cFS_API_RegisterApp_start(B)) {
+        return 0;
+    }
+    return cFS_API_RegisterApp_end(B);
+}
+
+static cFS_API_RegisterApp_ref_t cFS_API_RegisterApp_clone(flatbuffers_builder_t *B, cFS_API_RegisterApp_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_RegisterApp_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_RegisterApp_end(B));
+}
+
+__flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_ExitApp_ExitStatus, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_ExitApp)
+
+static inline cFS_API_ExitApp_ref_t cFS_API_ExitApp_create(flatbuffers_builder_t *B __cFS_API_ExitApp_formal_args)
+{
+    if (cFS_API_ExitApp_start(B)
+        || cFS_API_ExitApp_ExitStatus_add(B, v0)) {
+        return 0;
+    }
+    return cFS_API_ExitApp_end(B);
+}
+
+static cFS_API_ExitApp_ref_t cFS_API_ExitApp_clone(flatbuffers_builder_t *B, cFS_API_ExitApp_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_ExitApp_start(B)
+        || cFS_API_ExitApp_ExitStatus_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_ExitApp_end(B));
 }
 
 __flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_SendEvent_EventID, flatbuffers_uint16, uint16_t, 2, 2, UINT16_C(0), cFS_API_SendEvent)
@@ -199,6 +264,8 @@ static cFS_API_SendEventWithAppID_ref_t cFS_API_SendEventWithAppID_clone(flatbuf
 __flatbuffers_build_union_field(1, flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, cFS_API_RemoteCall)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, RunLoop, cFS_API_RunLoop)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, PerfLogAdd, cFS_API_PerfLogAdd)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, RegisterApp, cFS_API_RegisterApp)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, ExitApp, cFS_API_ExitApp)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, SendEvent, cFS_API_SendEvent)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, SendEventWithAppID, cFS_API_SendEventWithAppID)
 

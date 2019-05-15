@@ -99,3 +99,103 @@ void __wrap_CFE_ES_PerfLogAdd(uint32 Marker, uint32 EntryExit)
      */
     flatcc_builder_reset(B);
 }
+
+int32 __wrap_CFE_ES_RegisterApp(void)
+{
+    return CFE_SUCCESS;
+
+    // For now, not implementing so that the proxy may call RegisterApp instead
+    // TODO: Remove this dead code once sure that the proxy must call RegisterApp
+    /*
+    flatcc_builder_t *B = &builder;
+
+    int rv;
+    void *buffer;
+    size_t size;
+
+    // Construct a buffer specific to schema.
+    ns(RegisterApp_ref_t) registerApp = ns(RegisterApp_create(B));
+    ns(Function_union_ref_t) function = ns(Function_as_RegisterApp(registerApp));
+    ns(RemoteCall_create_as_root(B, function));
+
+    // Retrieve buffer - see also `flatcc_builder_get_direct_buffer`.
+    // buffer = flatcc_builder_finalize_buffer(B, &size);
+    buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
+
+    // printf("%s: SENDING ES RegisterApp\n", name);
+    rv = nng_send(sock, buffer, size, 0);
+    if (rv == 0)
+    {
+        // printf("nng_send: %d\n", rv);
+    }
+    else
+    {
+        printf("Oh No! nng_send: %d\n", rv);
+    }
+
+    // free(buffer);
+    flatcc_builder_aligned_free(buffer);
+
+    // Receive the return value
+    void *ret_buffer;
+    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
+    {
+        // printf("Actual return value receive!\n");
+        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
+        rv = nsr(ReturnData_retval(returnData));
+        nng_free(ret_buffer, size);
+    }
+    else
+    {
+        printf("Oh no. %d\n", rv);
+        printf("Error: %s\n", nng_strerror(rv));
+        rv = -1;
+    }
+
+    // Reset, but keep allocated stack etc.,
+    // or optionally reduce memory using `flatcc_builder_custom_reset`.
+    flatcc_builder_reset(B);
+
+    return rv;
+    */
+}
+
+void __wrap_CFE_ES_ExitApp(uint32 ExitStatus)
+{
+    flatcc_builder_t *B = &builder;
+
+    int rv;
+
+    void *buffer;
+    size_t size;
+
+    /* Construct a buffer specific to schema. */
+    ns(ExitApp_ref_t) exitApp = ns(ExitApp_create(B, ExitStatus));
+    ns(Function_union_ref_t) function = ns(Function_as_ExitApp(exitApp));
+    ns(RemoteCall_create_as_root(B, function));
+
+    /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
+    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
+    buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
+
+    rv = nng_send(sock, buffer, size, 0);
+    if (rv == 0)
+    {
+        // printf("nng_send: %d\n", rv);
+    }
+    else
+    {
+        printf("Oh No! nng_send: %d\n", rv);
+    }
+
+    /* free(buffer); */
+    flatcc_builder_aligned_free(buffer);
+
+    /*
+     * Reset, but keep allocated stack etc.,
+     * or optionally reduce memory using `flatcc_builder_custom_reset`.
+     */
+    flatcc_builder_reset(B);
+
+    exit(0);
+}

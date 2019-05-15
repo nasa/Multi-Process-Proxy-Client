@@ -3,13 +3,22 @@ namespace cFS_API;
 ////////////////////////////////////////////////////
 // ES Functions
 table RunLoop {
-    ExitStatus:uint32;
+    ExitStatus:uint32; // A pointer
 }
 
 // ES Performance Log API
 table PerfLogAdd {
     Marker:uint32;
     EntryExit:uint32;
+}
+
+// ES
+table RegisterApp { // return int32
+    // No arguments
+}
+
+table ExitApp { // void return
+    ExitStatus:uint32; // Not a pointer
 }
 
 ////////////////////////////////////////////////////
@@ -44,6 +53,8 @@ union Function {
     // ES Functions
     RunLoop,
     PerfLogAdd,
+    RegisterApp,
+    ExitApp,
 
     // EVS Functions
     // CFE_EVS_Register

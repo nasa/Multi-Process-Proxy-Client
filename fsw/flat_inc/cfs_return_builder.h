@@ -36,8 +36,8 @@ typedef flatbuffers_ref_t cFS_Return_ReturnData_ref_t;
 static cFS_Return_ReturnData_ref_t cFS_Return_ReturnData_clone(flatbuffers_builder_t *B, cFS_Return_ReturnData_table_t t);
 __flatbuffers_build_table(flatbuffers_, cFS_Return_ReturnData, 3)
 
-#define __cFS_Return_Empty_formal_args
-#define __cFS_Return_Empty_call_args
+#define __cFS_Return_Empty_formal_args 
+#define __cFS_Return_Empty_call_args 
 static inline cFS_Return_Empty_ref_t cFS_Return_Empty_create(flatbuffers_builder_t *B __cFS_Return_Empty_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_Return_Empty, cFS_Return_Empty_identifier, cFS_Return_Empty_type_identifier)
 
