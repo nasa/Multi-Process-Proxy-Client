@@ -43,6 +43,14 @@ typedef const struct cFS_API_SendEventWithAppID_table *cFS_API_SendEventWithAppI
 typedef struct cFS_API_SendEventWithAppID_table *cFS_API_SendEventWithAppID_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_SendEventWithAppID_vec_t;
 typedef flatbuffers_uoffset_t *cFS_API_SendEventWithAppID_mutable_vec_t;
+typedef const struct cFS_API_Filter_table *cFS_API_Filter_table_t;
+typedef struct cFS_API_Filter_table *cFS_API_Filter_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_Filter_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_Filter_mutable_vec_t;
+typedef const struct cFS_API_Register_table *cFS_API_Register_table_t;
+typedef struct cFS_API_Register_table *cFS_API_Register_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_Register_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_Register_mutable_vec_t;
 typedef const struct cFS_API_RemoteCall_table *cFS_API_RemoteCall_table_t;
 typedef struct cFS_API_RemoteCall_table *cFS_API_RemoteCall_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_RemoteCall_vec_t;
@@ -77,6 +85,16 @@ typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
 #endif
 #define cFS_API_SendEventWithAppID_type_hash ((flatbuffers_thash_t)0x8f625ab4)
 #define cFS_API_SendEventWithAppID_type_identifier "\xb4\x5a\x62\x8f"
+#ifndef cFS_API_Filter_identifier
+#define cFS_API_Filter_identifier flatbuffers_identifier
+#endif
+#define cFS_API_Filter_type_hash ((flatbuffers_thash_t)0xb040d3b6)
+#define cFS_API_Filter_type_identifier "\xb6\xd3\x40\xb0"
+#ifndef cFS_API_Register_identifier
+#define cFS_API_Register_identifier flatbuffers_identifier
+#endif
+#define cFS_API_Register_type_hash ((flatbuffers_thash_t)0xc6d7205d)
+#define cFS_API_Register_type_identifier "\x5d\x20\xd7\xc6"
 #ifndef cFS_API_RemoteCall_identifier
 #define cFS_API_RemoteCall_identifier flatbuffers_identifier
 #endif
@@ -151,6 +169,29 @@ __flatbuffers_define_scalar_field(0, cFS_API_SendEventWithAppID, EventID, flatbu
 __flatbuffers_define_scalar_field(1, cFS_API_SendEventWithAppID, EventType, flatbuffers_uint16, uint16_t, UINT16_C(0))
 __flatbuffers_define_scalar_field(2, cFS_API_SendEventWithAppID, AppID, flatbuffers_uint32, uint32_t, UINT32_C(0))
 __flatbuffers_define_string_field(3, cFS_API_SendEventWithAppID, Spec, 0)
+
+struct cFS_API_Filter_table { uint8_t unused__; };
+
+static inline size_t cFS_API_Filter_vec_len(cFS_API_Filter_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_Filter_table_t cFS_API_Filter_vec_at(cFS_API_Filter_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_Filter_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_Filter)
+
+__flatbuffers_define_scalar_field(0, cFS_API_Filter, EventID, flatbuffers_uint16, uint16_t, UINT16_C(0))
+__flatbuffers_define_scalar_field(1, cFS_API_Filter, Mask, flatbuffers_uint16, uint16_t, UINT16_C(0))
+
+struct cFS_API_Register_table { uint8_t unused__; };
+
+static inline size_t cFS_API_Register_vec_len(cFS_API_Register_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_Register_table_t cFS_API_Register_vec_at(cFS_API_Register_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_Register_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_Register)
+
+__flatbuffers_define_vector_field(0, cFS_API_Register, Filters, cFS_API_Filter_vec_t, 0)
+__flatbuffers_define_scalar_field(1, cFS_API_Register, NumFilteredEvents, flatbuffers_uint16, uint16_t, UINT16_C(0))
+__flatbuffers_define_scalar_field(2, cFS_API_Register, FilterScheme, flatbuffers_uint16, uint16_t, UINT16_C(0))
 /** /////////////////////////////////////////////////
  * /////////////////////////////////////////////////
  * /////////////////////////////////////////////////
@@ -164,8 +205,9 @@ __flatbuffers_define_union(flatbuffers_, cFS_API_Function)
 #define cFS_API_Function_PerfLogAdd ((cFS_API_Function_union_type_t)UINT8_C(2))
 #define cFS_API_Function_RegisterApp ((cFS_API_Function_union_type_t)UINT8_C(3))
 #define cFS_API_Function_ExitApp ((cFS_API_Function_union_type_t)UINT8_C(4))
-#define cFS_API_Function_SendEvent ((cFS_API_Function_union_type_t)UINT8_C(5))
-#define cFS_API_Function_SendEventWithAppID ((cFS_API_Function_union_type_t)UINT8_C(6))
+#define cFS_API_Function_Register ((cFS_API_Function_union_type_t)UINT8_C(5))
+#define cFS_API_Function_SendEvent ((cFS_API_Function_union_type_t)UINT8_C(6))
+#define cFS_API_Function_SendEventWithAppID ((cFS_API_Function_union_type_t)UINT8_C(7))
 
 static inline const char *cFS_API_Function_type_name(cFS_API_Function_union_type_t type)
 {
@@ -175,6 +217,7 @@ static inline const char *cFS_API_Function_type_name(cFS_API_Function_union_type
     case cFS_API_Function_PerfLogAdd: return "PerfLogAdd";
     case cFS_API_Function_RegisterApp: return "RegisterApp";
     case cFS_API_Function_ExitApp: return "ExitApp";
+    case cFS_API_Function_Register: return "Register";
     case cFS_API_Function_SendEvent: return "SendEvent";
     case cFS_API_Function_SendEventWithAppID: return "SendEventWithAppID";
     default: return "";
@@ -189,6 +232,7 @@ static inline int cFS_API_Function_is_known_type(cFS_API_Function_union_type_t t
     case cFS_API_Function_PerfLogAdd: return 1;
     case cFS_API_Function_RegisterApp: return 1;
     case cFS_API_Function_ExitApp: return 1;
+    case cFS_API_Function_Register: return 1;
     case cFS_API_Function_SendEvent: return 1;
     case cFS_API_Function_SendEventWithAppID: return 1;
     default: return 0;

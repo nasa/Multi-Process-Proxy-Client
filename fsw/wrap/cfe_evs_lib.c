@@ -132,3 +132,70 @@ int32 __wrap_CFE_EVS_SendEventWithAppID(uint16 EventID, uint16 EventType, uint32
 
     return rv;
 }
+
+int32 __wrap_CFE_EVS_Register(void *Filters, uint16 NumFilteredEvents, uint16 FilterScheme)
+{
+    printf("Wrapping CFE_EVS_Register. Good luck\n");
+
+    flatcc_builder_t *B = &builder;
+
+    int rv;
+    int index = 0;
+
+    void *buffer;
+    size_t size;
+
+    CFE_EVS_BinFilter_t *EventFilters = (CFE_EVS_BinFilter_t *) Filters;
+
+    ns(Filter_vec_start(B));
+    for (index = 0; index < NumFilteredEvents; index++)
+    {
+        ns(Filter_ref_t) filter = ns(Filter_create(B, EventFilters[index].EventID, EventFilters[index].Mask));
+        ns(Filter_vec_push(B, filter));
+    }
+    ns(Filter_vec_ref_t) filters = ns(Filter_vec_end(B));
+
+    /* Construct a buffer specific to schema. */
+    ns(Register_ref_t) registerEvents = ns(Register_create(B, filters, NumFilteredEvents, FilterScheme));
+    ns(Function_union_ref_t) function = ns(Function_as_Register(registerEvents));
+    ns(RemoteCall_create_as_root(B, function));
+
+    /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
+    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
+    buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
+
+    // printf("%s: SENDING EVS MSG\n", name);
+    rv = nng_send(sock, buffer, size, 0);
+    if (rv == 0)
+    {
+        // printf("nng_send: %d\n", rv);
+    }
+    else
+    {
+        printf("Oh No! nng_send: %d\n", rv);
+    }
+
+    /* free(buffer); */
+    flatcc_builder_aligned_free(buffer);
+
+    // Recieve the return value
+    void *ret_buffer;
+    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
+    {
+        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
+        rv = nsr(ReturnData_retval(returnData));
+        nng_free(ret_buffer, size);
+    }
+    else
+    {
+        rv = -1;
+    }
+
+    /*
+     * Reset, but keep allocated stack etc.,
+     * or optionally reduce memory using `flatcc_builder_custom_reset`.
+     */
+    flatcc_builder_reset(B);
+
+    return rv;
+}

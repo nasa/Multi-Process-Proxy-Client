@@ -36,6 +36,17 @@ table SendEventWithAppID {
     Spec:string;
 }
 
+table Filter {
+    EventID:uint16;
+    Mask:uint16;
+}
+
+table Register {
+    Filters:[Filter];
+    NumFilteredEvents:uint16;
+    FilterScheme:uint16;
+}
+
 ////////////////////////////////////////////////////
 // FS Functions
 
@@ -57,7 +68,7 @@ union Function {
     ExitApp,
 
     // EVS Functions
-    // CFE_EVS_Register
+    Register,
     // CFE_EVS_Unregister
     SendEvent,
     SendEventWithAppID
