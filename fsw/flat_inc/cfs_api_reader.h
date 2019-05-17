@@ -19,6 +19,10 @@
 #endif
 
 
+typedef const struct cFS_API_cFETime_table *cFS_API_cFETime_table_t;
+typedef struct cFS_API_cFETime_table *cFS_API_cFETime_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_cFETime_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_cFETime_mutable_vec_t;
 typedef const struct cFS_API_RunLoop_table *cFS_API_RunLoop_table_t;
 typedef struct cFS_API_RunLoop_table *cFS_API_RunLoop_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_RunLoop_vec_t;
@@ -43,6 +47,10 @@ typedef const struct cFS_API_SendEventWithAppID_table *cFS_API_SendEventWithAppI
 typedef struct cFS_API_SendEventWithAppID_table *cFS_API_SendEventWithAppID_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_SendEventWithAppID_vec_t;
 typedef flatbuffers_uoffset_t *cFS_API_SendEventWithAppID_mutable_vec_t;
+typedef const struct cFS_API_SendTimedEvent_table *cFS_API_SendTimedEvent_table_t;
+typedef struct cFS_API_SendTimedEvent_table *cFS_API_SendTimedEvent_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_SendTimedEvent_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_SendTimedEvent_mutable_vec_t;
 typedef const struct cFS_API_Filter_table *cFS_API_Filter_table_t;
 typedef struct cFS_API_Filter_table *cFS_API_Filter_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_Filter_vec_t;
@@ -51,10 +59,27 @@ typedef const struct cFS_API_Register_table *cFS_API_Register_table_t;
 typedef struct cFS_API_Register_table *cFS_API_Register_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_Register_vec_t;
 typedef flatbuffers_uoffset_t *cFS_API_Register_mutable_vec_t;
+typedef const struct cFS_API_Unregister_table *cFS_API_Unregister_table_t;
+typedef struct cFS_API_Unregister_table *cFS_API_Unregister_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_Unregister_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_Unregister_mutable_vec_t;
+typedef const struct cFS_API_ResetFilter_table *cFS_API_ResetFilter_table_t;
+typedef struct cFS_API_ResetFilter_table *cFS_API_ResetFilter_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_ResetFilter_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_ResetFilter_mutable_vec_t;
+typedef const struct cFS_API_ResetAllFilters_table *cFS_API_ResetAllFilters_table_t;
+typedef struct cFS_API_ResetAllFilters_table *cFS_API_ResetAllFilters_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_ResetAllFilters_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_ResetAllFilters_mutable_vec_t;
 typedef const struct cFS_API_RemoteCall_table *cFS_API_RemoteCall_table_t;
 typedef struct cFS_API_RemoteCall_table *cFS_API_RemoteCall_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_RemoteCall_vec_t;
 typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
+#ifndef cFS_API_cFETime_identifier
+#define cFS_API_cFETime_identifier flatbuffers_identifier
+#endif
+#define cFS_API_cFETime_type_hash ((flatbuffers_thash_t)0x7ccd98e5)
+#define cFS_API_cFETime_type_identifier "\xe5\x98\xcd\x7c"
 #ifndef cFS_API_RunLoop_identifier
 #define cFS_API_RunLoop_identifier flatbuffers_identifier
 #endif
@@ -85,6 +110,11 @@ typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
 #endif
 #define cFS_API_SendEventWithAppID_type_hash ((flatbuffers_thash_t)0x8f625ab4)
 #define cFS_API_SendEventWithAppID_type_identifier "\xb4\x5a\x62\x8f"
+#ifndef cFS_API_SendTimedEvent_identifier
+#define cFS_API_SendTimedEvent_identifier flatbuffers_identifier
+#endif
+#define cFS_API_SendTimedEvent_type_hash ((flatbuffers_thash_t)0xd275ed77)
+#define cFS_API_SendTimedEvent_type_identifier "\x77\xed\x75\xd2"
 #ifndef cFS_API_Filter_identifier
 #define cFS_API_Filter_identifier flatbuffers_identifier
 #endif
@@ -95,6 +125,21 @@ typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
 #endif
 #define cFS_API_Register_type_hash ((flatbuffers_thash_t)0xc6d7205d)
 #define cFS_API_Register_type_identifier "\x5d\x20\xd7\xc6"
+#ifndef cFS_API_Unregister_identifier
+#define cFS_API_Unregister_identifier flatbuffers_identifier
+#endif
+#define cFS_API_Unregister_type_hash ((flatbuffers_thash_t)0xe90b008a)
+#define cFS_API_Unregister_type_identifier "\x8a\x00\x0b\xe9"
+#ifndef cFS_API_ResetFilter_identifier
+#define cFS_API_ResetFilter_identifier flatbuffers_identifier
+#endif
+#define cFS_API_ResetFilter_type_hash ((flatbuffers_thash_t)0x1ebbcbd)
+#define cFS_API_ResetFilter_type_identifier "\xbd\xbc\xeb\x01"
+#ifndef cFS_API_ResetAllFilters_identifier
+#define cFS_API_ResetAllFilters_identifier flatbuffers_identifier
+#endif
+#define cFS_API_ResetAllFilters_type_hash ((flatbuffers_thash_t)0xbb752829)
+#define cFS_API_ResetAllFilters_type_identifier "\x29\x28\x75\xbb"
 #ifndef cFS_API_RemoteCall_identifier
 #define cFS_API_RemoteCall_identifier flatbuffers_identifier
 #endif
@@ -102,6 +147,18 @@ typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
 #define cFS_API_RemoteCall_type_identifier "\xb6\x70\x9b\x24"
 
 
+
+/** ///////////////////////////////////////////////// */
+struct cFS_API_cFETime_table { uint8_t unused__; };
+
+static inline size_t cFS_API_cFETime_vec_len(cFS_API_cFETime_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_cFETime_table_t cFS_API_cFETime_vec_at(cFS_API_cFETime_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_cFETime_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_cFETime)
+
+__flatbuffers_define_scalar_field(0, cFS_API_cFETime, Seconds, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(1, cFS_API_cFETime, Subseconds, flatbuffers_uint32, uint32_t, UINT32_C(0))
 
 /** ///////////////////////////////////////////////// */
 struct cFS_API_RunLoop_table { uint8_t unused__; };
@@ -170,6 +227,19 @@ __flatbuffers_define_scalar_field(1, cFS_API_SendEventWithAppID, EventType, flat
 __flatbuffers_define_scalar_field(2, cFS_API_SendEventWithAppID, AppID, flatbuffers_uint32, uint32_t, UINT32_C(0))
 __flatbuffers_define_string_field(3, cFS_API_SendEventWithAppID, Spec, 0)
 
+struct cFS_API_SendTimedEvent_table { uint8_t unused__; };
+
+static inline size_t cFS_API_SendTimedEvent_vec_len(cFS_API_SendTimedEvent_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_SendTimedEvent_table_t cFS_API_SendTimedEvent_vec_at(cFS_API_SendTimedEvent_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_SendTimedEvent_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_SendTimedEvent)
+
+__flatbuffers_define_table_field(0, cFS_API_SendTimedEvent, Time, cFS_API_cFETime_table_t, 0)
+__flatbuffers_define_scalar_field(1, cFS_API_SendTimedEvent, EventID, flatbuffers_uint16, uint16_t, UINT16_C(0))
+__flatbuffers_define_scalar_field(2, cFS_API_SendTimedEvent, EventType, flatbuffers_uint16, uint16_t, UINT16_C(0))
+__flatbuffers_define_string_field(3, cFS_API_SendTimedEvent, Spec, 0)
+
 struct cFS_API_Filter_table { uint8_t unused__; };
 
 static inline size_t cFS_API_Filter_vec_len(cFS_API_Filter_vec_t vec)
@@ -192,6 +262,34 @@ __flatbuffers_table_as_root(cFS_API_Register)
 __flatbuffers_define_vector_field(0, cFS_API_Register, Filters, cFS_API_Filter_vec_t, 0)
 __flatbuffers_define_scalar_field(1, cFS_API_Register, NumFilteredEvents, flatbuffers_uint16, uint16_t, UINT16_C(0))
 __flatbuffers_define_scalar_field(2, cFS_API_Register, FilterScheme, flatbuffers_uint16, uint16_t, UINT16_C(0))
+
+struct cFS_API_Unregister_table { uint8_t unused__; };
+
+static inline size_t cFS_API_Unregister_vec_len(cFS_API_Unregister_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_Unregister_table_t cFS_API_Unregister_vec_at(cFS_API_Unregister_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_Unregister_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_Unregister)
+
+
+struct cFS_API_ResetFilter_table { uint8_t unused__; };
+
+static inline size_t cFS_API_ResetFilter_vec_len(cFS_API_ResetFilter_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_ResetFilter_table_t cFS_API_ResetFilter_vec_at(cFS_API_ResetFilter_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_ResetFilter_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_ResetFilter)
+
+__flatbuffers_define_scalar_field(0, cFS_API_ResetFilter, EventID, flatbuffers_int16, int16_t, INT16_C(0))
+
+struct cFS_API_ResetAllFilters_table { uint8_t unused__; };
+
+static inline size_t cFS_API_ResetAllFilters_vec_len(cFS_API_ResetAllFilters_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_ResetAllFilters_table_t cFS_API_ResetAllFilters_vec_at(cFS_API_ResetAllFilters_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_ResetAllFilters_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_ResetAllFilters)
+
 /** /////////////////////////////////////////////////
  * /////////////////////////////////////////////////
  * /////////////////////////////////////////////////
@@ -206,8 +304,12 @@ __flatbuffers_define_union(flatbuffers_, cFS_API_Function)
 #define cFS_API_Function_RegisterApp ((cFS_API_Function_union_type_t)UINT8_C(3))
 #define cFS_API_Function_ExitApp ((cFS_API_Function_union_type_t)UINT8_C(4))
 #define cFS_API_Function_Register ((cFS_API_Function_union_type_t)UINT8_C(5))
-#define cFS_API_Function_SendEvent ((cFS_API_Function_union_type_t)UINT8_C(6))
-#define cFS_API_Function_SendEventWithAppID ((cFS_API_Function_union_type_t)UINT8_C(7))
+#define cFS_API_Function_Unregister ((cFS_API_Function_union_type_t)UINT8_C(6))
+#define cFS_API_Function_SendEvent ((cFS_API_Function_union_type_t)UINT8_C(7))
+#define cFS_API_Function_SendEventWithAppID ((cFS_API_Function_union_type_t)UINT8_C(8))
+#define cFS_API_Function_SendTimedEvent ((cFS_API_Function_union_type_t)UINT8_C(9))
+#define cFS_API_Function_ResetFilter ((cFS_API_Function_union_type_t)UINT8_C(10))
+#define cFS_API_Function_ResetAllFilters ((cFS_API_Function_union_type_t)UINT8_C(11))
 
 static inline const char *cFS_API_Function_type_name(cFS_API_Function_union_type_t type)
 {
@@ -218,8 +320,12 @@ static inline const char *cFS_API_Function_type_name(cFS_API_Function_union_type
     case cFS_API_Function_RegisterApp: return "RegisterApp";
     case cFS_API_Function_ExitApp: return "ExitApp";
     case cFS_API_Function_Register: return "Register";
+    case cFS_API_Function_Unregister: return "Unregister";
     case cFS_API_Function_SendEvent: return "SendEvent";
     case cFS_API_Function_SendEventWithAppID: return "SendEventWithAppID";
+    case cFS_API_Function_SendTimedEvent: return "SendTimedEvent";
+    case cFS_API_Function_ResetFilter: return "ResetFilter";
+    case cFS_API_Function_ResetAllFilters: return "ResetAllFilters";
     default: return "";
     }
 }
@@ -233,8 +339,12 @@ static inline int cFS_API_Function_is_known_type(cFS_API_Function_union_type_t t
     case cFS_API_Function_RegisterApp: return 1;
     case cFS_API_Function_ExitApp: return 1;
     case cFS_API_Function_Register: return 1;
+    case cFS_API_Function_Unregister: return 1;
     case cFS_API_Function_SendEvent: return 1;
     case cFS_API_Function_SendEventWithAppID: return 1;
+    case cFS_API_Function_SendTimedEvent: return 1;
+    case cFS_API_Function_ResetFilter: return 1;
+    case cFS_API_Function_ResetAllFilters: return 1;
     default: return 0;
     }
 }

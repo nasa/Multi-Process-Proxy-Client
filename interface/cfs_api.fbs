@@ -1,6 +1,13 @@
 namespace cFS_API;
 
 ////////////////////////////////////////////////////
+// Common
+table cFETime {
+    Seconds:uint32;
+    Subseconds:uint32;
+}
+
+////////////////////////////////////////////////////
 // ES Functions
 table RunLoop {
     ExitStatus:uint32; // A pointer
@@ -36,6 +43,13 @@ table SendEventWithAppID {
     Spec:string;
 }
 
+table SendTimedEvent { // return int32
+    Time:cFETime;
+    EventID:uint16;
+    EventType:uint16;
+    Spec:string;
+}
+
 table Filter {
     EventID:uint16;
     Mask:uint16;
@@ -45,6 +59,18 @@ table Register {
     Filters:[Filter];
     NumFilteredEvents:uint16;
     FilterScheme:uint16;
+}
+
+table Unregister { // return int32
+    // no arguments
+}
+
+table ResetFilter { // return int32
+    EventID:int16;
+}
+
+table ResetAllFilters { // return int32
+    // no arguments
 }
 
 ////////////////////////////////////////////////////
@@ -69,12 +95,12 @@ union Function {
 
     // EVS Functions
     Register,
-    // CFE_EVS_Unregister
+    Unregister,
     SendEvent,
-    SendEventWithAppID
-    // CFE_EVS_SendTimedEvent
-    // CFE_EVS_ResetFilter
-    // CFE_EVS_ResetAllFilters
+    SendEventWithAppID,
+    SendTimedEvent,
+    ResetFilter,
+    ResetAllFilters
 
     // FS Functions
 

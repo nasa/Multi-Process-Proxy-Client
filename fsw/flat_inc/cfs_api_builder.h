@@ -21,6 +21,11 @@ typedef flatbuffers_union_ref_t cFS_API_Function_union_ref_t;
 typedef flatbuffers_union_vec_ref_t cFS_API_Function_union_vec_ref_t;
 static cFS_API_Function_union_ref_t cFS_API_Function_clone(flatbuffers_builder_t *B, cFS_API_Function_union_t t);
 
+static const flatbuffers_voffset_t __cFS_API_cFETime_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_cFETime_ref_t;
+static cFS_API_cFETime_ref_t cFS_API_cFETime_clone(flatbuffers_builder_t *B, cFS_API_cFETime_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_cFETime, 2)
+
 static const flatbuffers_voffset_t __cFS_API_RunLoop_required[] = { 0 };
 typedef flatbuffers_ref_t cFS_API_RunLoop_ref_t;
 static cFS_API_RunLoop_ref_t cFS_API_RunLoop_clone(flatbuffers_builder_t *B, cFS_API_RunLoop_table_t t);
@@ -51,6 +56,11 @@ typedef flatbuffers_ref_t cFS_API_SendEventWithAppID_ref_t;
 static cFS_API_SendEventWithAppID_ref_t cFS_API_SendEventWithAppID_clone(flatbuffers_builder_t *B, cFS_API_SendEventWithAppID_table_t t);
 __flatbuffers_build_table(flatbuffers_, cFS_API_SendEventWithAppID, 4)
 
+static const flatbuffers_voffset_t __cFS_API_SendTimedEvent_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_SendTimedEvent_ref_t;
+static cFS_API_SendTimedEvent_ref_t cFS_API_SendTimedEvent_clone(flatbuffers_builder_t *B, cFS_API_SendTimedEvent_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_SendTimedEvent, 4)
+
 static const flatbuffers_voffset_t __cFS_API_Filter_required[] = { 0 };
 typedef flatbuffers_ref_t cFS_API_Filter_ref_t;
 static cFS_API_Filter_ref_t cFS_API_Filter_clone(flatbuffers_builder_t *B, cFS_API_Filter_table_t t);
@@ -61,10 +71,30 @@ typedef flatbuffers_ref_t cFS_API_Register_ref_t;
 static cFS_API_Register_ref_t cFS_API_Register_clone(flatbuffers_builder_t *B, cFS_API_Register_table_t t);
 __flatbuffers_build_table(flatbuffers_, cFS_API_Register, 3)
 
+static const flatbuffers_voffset_t __cFS_API_Unregister_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_Unregister_ref_t;
+static cFS_API_Unregister_ref_t cFS_API_Unregister_clone(flatbuffers_builder_t *B, cFS_API_Unregister_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_Unregister, 0)
+
+static const flatbuffers_voffset_t __cFS_API_ResetFilter_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_ResetFilter_ref_t;
+static cFS_API_ResetFilter_ref_t cFS_API_ResetFilter_clone(flatbuffers_builder_t *B, cFS_API_ResetFilter_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_ResetFilter, 1)
+
+static const flatbuffers_voffset_t __cFS_API_ResetAllFilters_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_ResetAllFilters_ref_t;
+static cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_clone(flatbuffers_builder_t *B, cFS_API_ResetAllFilters_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_ResetAllFilters, 0)
+
 static const flatbuffers_voffset_t __cFS_API_RemoteCall_required[] = { 0 };
 typedef flatbuffers_ref_t cFS_API_RemoteCall_ref_t;
 static cFS_API_RemoteCall_ref_t cFS_API_RemoteCall_clone(flatbuffers_builder_t *B, cFS_API_RemoteCall_table_t t);
 __flatbuffers_build_table(flatbuffers_, cFS_API_RemoteCall, 2)
+
+#define __cFS_API_cFETime_formal_args , uint32_t v0, uint32_t v1
+#define __cFS_API_cFETime_call_args , v0, v1
+static inline cFS_API_cFETime_ref_t cFS_API_cFETime_create(flatbuffers_builder_t *B __cFS_API_cFETime_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_cFETime, cFS_API_cFETime_identifier, cFS_API_cFETime_type_identifier)
 
 #define __cFS_API_RunLoop_formal_args , uint32_t v0
 #define __cFS_API_RunLoop_call_args , v0
@@ -96,6 +126,11 @@ __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_SendEvent, cFS_API_SendEv
 static inline cFS_API_SendEventWithAppID_ref_t cFS_API_SendEventWithAppID_create(flatbuffers_builder_t *B __cFS_API_SendEventWithAppID_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_SendEventWithAppID, cFS_API_SendEventWithAppID_identifier, cFS_API_SendEventWithAppID_type_identifier)
 
+#define __cFS_API_SendTimedEvent_formal_args , cFS_API_cFETime_ref_t v0, uint16_t v1, uint16_t v2, flatbuffers_string_ref_t v3
+#define __cFS_API_SendTimedEvent_call_args , v0, v1, v2, v3
+static inline cFS_API_SendTimedEvent_ref_t cFS_API_SendTimedEvent_create(flatbuffers_builder_t *B __cFS_API_SendTimedEvent_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_SendTimedEvent, cFS_API_SendTimedEvent_identifier, cFS_API_SendTimedEvent_type_identifier)
+
 #define __cFS_API_Filter_formal_args , uint16_t v0, uint16_t v1
 #define __cFS_API_Filter_call_args , v0, v1
 static inline cFS_API_Filter_ref_t cFS_API_Filter_create(flatbuffers_builder_t *B __cFS_API_Filter_formal_args);
@@ -105,6 +140,21 @@ __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_Filter, cFS_API_Filter_id
 #define __cFS_API_Register_call_args , v0, v1, v2
 static inline cFS_API_Register_ref_t cFS_API_Register_create(flatbuffers_builder_t *B __cFS_API_Register_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_Register, cFS_API_Register_identifier, cFS_API_Register_type_identifier)
+
+#define __cFS_API_Unregister_formal_args 
+#define __cFS_API_Unregister_call_args 
+static inline cFS_API_Unregister_ref_t cFS_API_Unregister_create(flatbuffers_builder_t *B __cFS_API_Unregister_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_Unregister, cFS_API_Unregister_identifier, cFS_API_Unregister_type_identifier)
+
+#define __cFS_API_ResetFilter_formal_args , int16_t v0
+#define __cFS_API_ResetFilter_call_args , v0
+static inline cFS_API_ResetFilter_ref_t cFS_API_ResetFilter_create(flatbuffers_builder_t *B __cFS_API_ResetFilter_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_ResetFilter, cFS_API_ResetFilter_identifier, cFS_API_ResetFilter_type_identifier)
+
+#define __cFS_API_ResetAllFilters_formal_args 
+#define __cFS_API_ResetAllFilters_call_args 
+static inline cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_create(flatbuffers_builder_t *B __cFS_API_ResetAllFilters_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_ResetAllFilters, cFS_API_ResetAllFilters_identifier, cFS_API_ResetAllFilters_type_identifier)
 
 #define __cFS_API_RemoteCall_formal_args , cFS_API_Function_union_ref_t v1
 #define __cFS_API_RemoteCall_call_args , v1
@@ -123,10 +173,18 @@ static inline cFS_API_Function_union_ref_t cFS_API_Function_as_ExitApp(cFS_API_E
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_ExitApp; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_Register(cFS_API_Register_ref_t ref)
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_Register; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_Unregister(cFS_API_Unregister_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_Unregister; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_SendEvent(cFS_API_SendEvent_ref_t ref)
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_SendEvent; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_SendEventWithAppID(cFS_API_SendEventWithAppID_ref_t ref)
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_SendEventWithAppID; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_SendTimedEvent(cFS_API_SendTimedEvent_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_SendTimedEvent; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_ResetFilter(cFS_API_ResetFilter_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_ResetFilter; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_ResetAllFilters(cFS_API_ResetAllFilters_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_ResetAllFilters; uref.value = ref; return uref; }
 __flatbuffers_build_union_vector(flatbuffers_, cFS_API_Function)
 
 static cFS_API_Function_union_ref_t cFS_API_Function_clone(flatbuffers_builder_t *B, cFS_API_Function_union_t u)
@@ -137,10 +195,38 @@ static cFS_API_Function_union_ref_t cFS_API_Function_clone(flatbuffers_builder_t
     case 3: return cFS_API_Function_as_RegisterApp(cFS_API_RegisterApp_clone(B, (cFS_API_RegisterApp_table_t)u.value));
     case 4: return cFS_API_Function_as_ExitApp(cFS_API_ExitApp_clone(B, (cFS_API_ExitApp_table_t)u.value));
     case 5: return cFS_API_Function_as_Register(cFS_API_Register_clone(B, (cFS_API_Register_table_t)u.value));
-    case 6: return cFS_API_Function_as_SendEvent(cFS_API_SendEvent_clone(B, (cFS_API_SendEvent_table_t)u.value));
-    case 7: return cFS_API_Function_as_SendEventWithAppID(cFS_API_SendEventWithAppID_clone(B, (cFS_API_SendEventWithAppID_table_t)u.value));
+    case 6: return cFS_API_Function_as_Unregister(cFS_API_Unregister_clone(B, (cFS_API_Unregister_table_t)u.value));
+    case 7: return cFS_API_Function_as_SendEvent(cFS_API_SendEvent_clone(B, (cFS_API_SendEvent_table_t)u.value));
+    case 8: return cFS_API_Function_as_SendEventWithAppID(cFS_API_SendEventWithAppID_clone(B, (cFS_API_SendEventWithAppID_table_t)u.value));
+    case 9: return cFS_API_Function_as_SendTimedEvent(cFS_API_SendTimedEvent_clone(B, (cFS_API_SendTimedEvent_table_t)u.value));
+    case 10: return cFS_API_Function_as_ResetFilter(cFS_API_ResetFilter_clone(B, (cFS_API_ResetFilter_table_t)u.value));
+    case 11: return cFS_API_Function_as_ResetAllFilters(cFS_API_ResetAllFilters_clone(B, (cFS_API_ResetAllFilters_table_t)u.value));
     default: return cFS_API_Function_as_NONE();
     }
+}
+
+__flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_cFETime_Seconds, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_cFETime)
+__flatbuffers_build_scalar_field(1, flatbuffers_, cFS_API_cFETime_Subseconds, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_cFETime)
+
+static inline cFS_API_cFETime_ref_t cFS_API_cFETime_create(flatbuffers_builder_t *B __cFS_API_cFETime_formal_args)
+{
+    if (cFS_API_cFETime_start(B)
+        || cFS_API_cFETime_Seconds_add(B, v0)
+        || cFS_API_cFETime_Subseconds_add(B, v1)) {
+        return 0;
+    }
+    return cFS_API_cFETime_end(B);
+}
+
+static cFS_API_cFETime_ref_t cFS_API_cFETime_clone(flatbuffers_builder_t *B, cFS_API_cFETime_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_cFETime_start(B)
+        || cFS_API_cFETime_Seconds_pick(B, t)
+        || cFS_API_cFETime_Subseconds_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_cFETime_end(B));
 }
 
 __flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_RunLoop_ExitStatus, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_RunLoop)
@@ -284,6 +370,36 @@ static cFS_API_SendEventWithAppID_ref_t cFS_API_SendEventWithAppID_clone(flatbuf
     __flatbuffers_memoize_end(B, t, cFS_API_SendEventWithAppID_end(B));
 }
 
+__flatbuffers_build_table_field(0, flatbuffers_, cFS_API_SendTimedEvent_Time, cFS_API_cFETime, cFS_API_SendTimedEvent)
+__flatbuffers_build_scalar_field(1, flatbuffers_, cFS_API_SendTimedEvent_EventID, flatbuffers_uint16, uint16_t, 2, 2, UINT16_C(0), cFS_API_SendTimedEvent)
+__flatbuffers_build_scalar_field(2, flatbuffers_, cFS_API_SendTimedEvent_EventType, flatbuffers_uint16, uint16_t, 2, 2, UINT16_C(0), cFS_API_SendTimedEvent)
+__flatbuffers_build_string_field(3, flatbuffers_, cFS_API_SendTimedEvent_Spec, cFS_API_SendTimedEvent)
+
+static inline cFS_API_SendTimedEvent_ref_t cFS_API_SendTimedEvent_create(flatbuffers_builder_t *B __cFS_API_SendTimedEvent_formal_args)
+{
+    if (cFS_API_SendTimedEvent_start(B)
+        || cFS_API_SendTimedEvent_Time_add(B, v0)
+        || cFS_API_SendTimedEvent_Spec_add(B, v3)
+        || cFS_API_SendTimedEvent_EventID_add(B, v1)
+        || cFS_API_SendTimedEvent_EventType_add(B, v2)) {
+        return 0;
+    }
+    return cFS_API_SendTimedEvent_end(B);
+}
+
+static cFS_API_SendTimedEvent_ref_t cFS_API_SendTimedEvent_clone(flatbuffers_builder_t *B, cFS_API_SendTimedEvent_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_SendTimedEvent_start(B)
+        || cFS_API_SendTimedEvent_Time_pick(B, t)
+        || cFS_API_SendTimedEvent_Spec_pick(B, t)
+        || cFS_API_SendTimedEvent_EventID_pick(B, t)
+        || cFS_API_SendTimedEvent_EventType_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_SendTimedEvent_end(B));
+}
+
 __flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_Filter_EventID, flatbuffers_uint16, uint16_t, 2, 2, UINT16_C(0), cFS_API_Filter)
 __flatbuffers_build_scalar_field(1, flatbuffers_, cFS_API_Filter_Mask, flatbuffers_uint16, uint16_t, 2, 2, UINT16_C(0), cFS_API_Filter)
 
@@ -335,14 +451,75 @@ static cFS_API_Register_ref_t cFS_API_Register_clone(flatbuffers_builder_t *B, c
     __flatbuffers_memoize_end(B, t, cFS_API_Register_end(B));
 }
 
+
+static inline cFS_API_Unregister_ref_t cFS_API_Unregister_create(flatbuffers_builder_t *B __cFS_API_Unregister_formal_args)
+{
+    if (cFS_API_Unregister_start(B)) {
+        return 0;
+    }
+    return cFS_API_Unregister_end(B);
+}
+
+static cFS_API_Unregister_ref_t cFS_API_Unregister_clone(flatbuffers_builder_t *B, cFS_API_Unregister_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_Unregister_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_Unregister_end(B));
+}
+
+__flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_ResetFilter_EventID, flatbuffers_int16, int16_t, 2, 2, INT16_C(0), cFS_API_ResetFilter)
+
+static inline cFS_API_ResetFilter_ref_t cFS_API_ResetFilter_create(flatbuffers_builder_t *B __cFS_API_ResetFilter_formal_args)
+{
+    if (cFS_API_ResetFilter_start(B)
+        || cFS_API_ResetFilter_EventID_add(B, v0)) {
+        return 0;
+    }
+    return cFS_API_ResetFilter_end(B);
+}
+
+static cFS_API_ResetFilter_ref_t cFS_API_ResetFilter_clone(flatbuffers_builder_t *B, cFS_API_ResetFilter_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_ResetFilter_start(B)
+        || cFS_API_ResetFilter_EventID_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_ResetFilter_end(B));
+}
+
+
+static inline cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_create(flatbuffers_builder_t *B __cFS_API_ResetAllFilters_formal_args)
+{
+    if (cFS_API_ResetAllFilters_start(B)) {
+        return 0;
+    }
+    return cFS_API_ResetAllFilters_end(B);
+}
+
+static cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_clone(flatbuffers_builder_t *B, cFS_API_ResetAllFilters_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_ResetAllFilters_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_ResetAllFilters_end(B));
+}
+
 __flatbuffers_build_union_field(1, flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, cFS_API_RemoteCall)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, RunLoop, cFS_API_RunLoop)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, PerfLogAdd, cFS_API_PerfLogAdd)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, RegisterApp, cFS_API_RegisterApp)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, ExitApp, cFS_API_ExitApp)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, Register, cFS_API_Register)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, Unregister, cFS_API_Unregister)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, SendEvent, cFS_API_SendEvent)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, SendEventWithAppID, cFS_API_SendEventWithAppID)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, SendTimedEvent, cFS_API_SendTimedEvent)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, ResetFilter, cFS_API_ResetFilter)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, ResetAllFilters, cFS_API_ResetAllFilters)
 
 static inline cFS_API_RemoteCall_ref_t cFS_API_RemoteCall_create(flatbuffers_builder_t *B __cFS_API_RemoteCall_formal_args)
 {
