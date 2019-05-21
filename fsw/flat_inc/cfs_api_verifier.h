@@ -7,6 +7,9 @@
 #include "cfs_api_reader.h"
 #endif
 #include "flatcc/flatcc_verifier.h"
+#ifndef COMMON_VERIFIER_H
+#include "common_verifier.h"
+#endif
 #include "flatcc/flatcc_prologue.h"
 
 static int cFS_API_cFETime_verify_table(flatcc_table_verifier_descriptor_t *td);

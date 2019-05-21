@@ -1,0 +1,6 @@
+////////////////////////////////////////////////////
+// Common
+table cFETime {
+    Seconds:uint32;
+    Subseconds:uint32;
+}

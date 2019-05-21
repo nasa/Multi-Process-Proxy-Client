@@ -9,6 +9,9 @@
 #ifndef FLATBUFFERS_COMMON_BUILDER_H
 #include "flatbuffers_common_builder.h"
 #endif
+#ifndef COMMON_BUILDER_H
+#include "common_builder.h"
+#endif
 #include "flatcc/flatcc_prologue.h"
 #ifndef flatbuffers_identifier
 #define flatbuffers_identifier 0

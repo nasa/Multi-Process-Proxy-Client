@@ -7,17 +7,33 @@
 #include "cfs_return_reader.h"
 #endif
 #include "flatcc/flatcc_verifier.h"
+#ifndef COMMON_VERIFIER_H
+#include "common_verifier.h"
+#endif
 #include "flatcc/flatcc_prologue.h"
 
 static int cFS_Return_Empty_verify_table(flatcc_table_verifier_descriptor_t *td);
-static int cFS_Return_UnInt_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_Return_Integer32_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_Return_Integer16_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_Return_UnInteger32_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_Return_ReturnData_verify_table(flatcc_table_verifier_descriptor_t *td);
 
 static int cFS_Return_PointerReturn_union_verifier(flatcc_union_verifier_descriptor_t *ud)
 {
     switch (ud->type) {
     case 1: return flatcc_verify_union_table(ud, cFS_Return_Empty_verify_table); /* Empty */
-    case 2: return flatcc_verify_union_table(ud, cFS_Return_UnInt_verify_table); /* UnInt */
+    case 2: return flatcc_verify_union_table(ud, cFS_Return_UnInteger32_verify_table); /* UnInteger32 */
+    default: return flatcc_verify_ok;
+    }
+}
+
+static int cFS_Return_FuncReturn_union_verifier(flatcc_union_verifier_descriptor_t *ud)
+{
+    switch (ud->type) {
+    case 1: return flatcc_verify_union_table(ud, cFS_Return_Integer32_verify_table); /* Integer32 */
+    case 2: return flatcc_verify_union_table(ud, cFS_Return_Integer16_verify_table); /* Integer16 */
+    case 3: return flatcc_verify_union_table(ud, cFS_Return_UnInteger32_verify_table); /* UnInteger32 */
+    case 4: return flatcc_verify_union_table(ud, cFETime_verify_table); /* cFETime */
     default: return flatcc_verify_ok;
     }
 }
@@ -47,38 +63,92 @@ static inline int cFS_Return_Empty_verify_as_root_with_type_hash(const void *buf
     return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_Return_Empty_verify_table);
 }
 
-static int cFS_Return_UnInt_verify_table(flatcc_table_verifier_descriptor_t *td)
+static int cFS_Return_Integer32_verify_table(flatcc_table_verifier_descriptor_t *td)
 {
     int ret;
-    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* unsignedInteger */)) return ret;
+    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* integer32 */)) return ret;
     return flatcc_verify_ok;
 }
 
-static inline int cFS_Return_UnInt_verify_as_root(const void *buf, size_t bufsiz)
+static inline int cFS_Return_Integer32_verify_as_root(const void *buf, size_t bufsiz)
 {
-    return flatcc_verify_table_as_root(buf, bufsiz, cFS_Return_UnInt_identifier, &cFS_Return_UnInt_verify_table);
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_Return_Integer32_identifier, &cFS_Return_Integer32_verify_table);
 }
 
-static inline int cFS_Return_UnInt_verify_as_typed_root(const void *buf, size_t bufsiz)
+static inline int cFS_Return_Integer32_verify_as_typed_root(const void *buf, size_t bufsiz)
 {
-    return flatcc_verify_table_as_root(buf, bufsiz, cFS_Return_UnInt_type_identifier, &cFS_Return_UnInt_verify_table);
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_Return_Integer32_type_identifier, &cFS_Return_Integer32_verify_table);
 }
 
-static inline int cFS_Return_UnInt_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+static inline int cFS_Return_Integer32_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
 {
-    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_Return_UnInt_verify_table);
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_Return_Integer32_verify_table);
 }
 
-static inline int cFS_Return_UnInt_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+static inline int cFS_Return_Integer32_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
 {
-    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_Return_UnInt_verify_table);
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_Return_Integer32_verify_table);
+}
+
+static int cFS_Return_Integer16_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_field(td, 0, 2, 2) /* integer16 */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_Return_Integer16_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_Return_Integer16_identifier, &cFS_Return_Integer16_verify_table);
+}
+
+static inline int cFS_Return_Integer16_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_Return_Integer16_type_identifier, &cFS_Return_Integer16_verify_table);
+}
+
+static inline int cFS_Return_Integer16_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_Return_Integer16_verify_table);
+}
+
+static inline int cFS_Return_Integer16_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_Return_Integer16_verify_table);
+}
+
+static int cFS_Return_UnInteger32_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* unInteger32 */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_Return_UnInteger32_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_Return_UnInteger32_identifier, &cFS_Return_UnInteger32_verify_table);
+}
+
+static inline int cFS_Return_UnInteger32_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_Return_UnInteger32_type_identifier, &cFS_Return_UnInteger32_verify_table);
+}
+
+static inline int cFS_Return_UnInteger32_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_Return_UnInteger32_verify_table);
+}
+
+static inline int cFS_Return_UnInteger32_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_Return_UnInteger32_verify_table);
 }
 
 static int cFS_Return_ReturnData_verify_table(flatcc_table_verifier_descriptor_t *td)
 {
     int ret;
-    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* retval */)) return ret;
-    if ((ret = flatcc_verify_union_field(td, 2, 0, &cFS_Return_PointerReturn_union_verifier) /* output */)) return ret;
+    if ((ret = flatcc_verify_union_field(td, 1, 0, &cFS_Return_FuncReturn_union_verifier) /* retval */)) return ret;
+    if ((ret = flatcc_verify_union_field(td, 3, 0, &cFS_Return_PointerReturn_union_verifier) /* output */)) return ret;
     return flatcc_verify_ok;
 }
 

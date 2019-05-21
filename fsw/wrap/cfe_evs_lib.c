@@ -51,7 +51,9 @@ int32 __wrap_CFE_EVS_SendEvent(uint16 EventID, uint16 EventType, const char *Spe
     {
         // printf("Actual return value receive!\n");
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        rv = nsr(ReturnData_retval(returnData));
+        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
+        rv = nsr(Integer32_integer32(integer));
+
         nng_free(ret_buffer, size);
     }
     else
@@ -117,7 +119,9 @@ int32 __wrap_CFE_EVS_SendEventWithAppID(uint16 EventID, uint16 EventType, uint32
     if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
     {
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        rv = nsr(ReturnData_retval(returnData));
+        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
+        rv = nsr(Integer32_integer32(integer));
+
         nng_free(ret_buffer, size);
     }
     else
@@ -180,7 +184,9 @@ int32 __wrap_CFE_EVS_SendTimedEvent(CFE_TIME_SysTime_t Time, uint16 EventID, uin
     if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
     {
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        rv = nsr(ReturnData_retval(returnData));
+        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
+        rv = nsr(Integer32_integer32(integer));
+
         nng_free(ret_buffer, size);
     }
     else
@@ -245,7 +251,9 @@ int32 __wrap_CFE_EVS_Register(void *Filters, uint16 NumFilteredEvents, uint16 Fi
     if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
     {
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        rv = nsr(ReturnData_retval(returnData));
+        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
+        rv = nsr(Integer32_integer32(integer));
+
         nng_free(ret_buffer, size);
     }
     else
@@ -300,7 +308,9 @@ int32 __wrap_CFE_EVS_Unregister(void)
     if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
     {
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        rv = nsr(ReturnData_retval(returnData));
+        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
+        rv = nsr(Integer32_integer32(integer));
+
         nng_free(ret_buffer, size);
     }
     else
@@ -355,7 +365,9 @@ int32 __wrap_CFE_EVS_ResetFilter(uint16 EventID)
     if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
     {
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        rv = nsr(ReturnData_retval(returnData));
+        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
+        rv = nsr(Integer32_integer32(integer));
+
         nng_free(ret_buffer, size);
     }
     else
@@ -410,7 +422,9 @@ int32 __wrap_CFE_EVS_ResetAllFilters(void)
     if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
     {
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        rv = nsr(ReturnData_retval(returnData));
+        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
+        rv = nsr(Integer32_integer32(integer));
+
         nng_free(ret_buffer, size);
     }
     else

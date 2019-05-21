@@ -2,6 +2,7 @@
 #include "common.h"
 
 // TODO: Consider error handling. Events won't work without NNG
+// TODO: function for getting return
 
 int32 __wrap_CFE_ES_RunLoop(uint32 *ExitStatus)
 {
@@ -40,7 +41,9 @@ int32 __wrap_CFE_ES_RunLoop(uint32 *ExitStatus)
     {
         // printf("Actual return value receive!\n");
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        rv = nsr(ReturnData_retval(returnData));
+        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
+        rv = nsr(Integer32_integer32(integer));
+
         nng_free(ret_buffer, size);
     }
     else
@@ -141,6 +144,7 @@ int32 __wrap_CFE_ES_RegisterApp(void)
     if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
     {
         // printf("Actual return value receive!\n");
+        // This code needs to be updated if used (see __wrap_CFE_ES_RunLoop)
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
         rv = nsr(ReturnData_retval(returnData));
         nng_free(ret_buffer, size);
