@@ -1,5 +1,5 @@
 #include "cfe.h"
-#include "common.h"
+#include "common_wrap.h"
 
 // TODO: Consider error handling. Events won't work without NNG
 // TODO: Lots of duplicated code. Simplify if possible
@@ -46,22 +46,7 @@ int32 __wrap_CFE_EVS_SendEvent(uint16 EventID, uint16 EventType, const char *Spe
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
-    void *ret_buffer;
-    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
-    {
-        // printf("Actual return value receive!\n");
-        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
-        rv = nsr(Integer32_integer32(integer));
-
-        nng_free(ret_buffer, size);
-    }
-    else
-    {
-        printf("Oh no. %d\n", rv);
-        printf("Error: %s\n", nng_strerror(rv));
-        rv = -1;
-    }
+    rv = recieve_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -115,19 +100,7 @@ int32 __wrap_CFE_EVS_SendEventWithAppID(uint16 EventID, uint16 EventType, uint32
     flatcc_builder_aligned_free(buffer);
 
     // Recieve the return value
-    void *ret_buffer;
-    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
-    {
-        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
-        rv = nsr(Integer32_integer32(integer));
-
-        nng_free(ret_buffer, size);
-    }
-    else
-    {
-        rv = -1;
-    }
+    rv = recieve_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -180,19 +153,7 @@ int32 __wrap_CFE_EVS_SendTimedEvent(CFE_TIME_SysTime_t Time, uint16 EventID, uin
     flatcc_builder_aligned_free(buffer);
 
     // Recieve the return value
-    void *ret_buffer;
-    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
-    {
-        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
-        rv = nsr(Integer32_integer32(integer));
-
-        nng_free(ret_buffer, size);
-    }
-    else
-    {
-        rv = -1;
-    }
+    rv = recieve_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -247,19 +208,7 @@ int32 __wrap_CFE_EVS_Register(void *Filters, uint16 NumFilteredEvents, uint16 Fi
     flatcc_builder_aligned_free(buffer);
 
     // Recieve the return value
-    void *ret_buffer;
-    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
-    {
-        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
-        rv = nsr(Integer32_integer32(integer));
-
-        nng_free(ret_buffer, size);
-    }
-    else
-    {
-        rv = -1;
-    }
+    rv = recieve_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -304,19 +253,7 @@ int32 __wrap_CFE_EVS_Unregister(void)
     flatcc_builder_aligned_free(buffer);
 
     // Recieve the return value
-    void *ret_buffer;
-    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
-    {
-        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
-        rv = nsr(Integer32_integer32(integer));
-
-        nng_free(ret_buffer, size);
-    }
-    else
-    {
-        rv = -1;
-    }
+    rv = recieve_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -361,19 +298,7 @@ int32 __wrap_CFE_EVS_ResetFilter(uint16 EventID)
     flatcc_builder_aligned_free(buffer);
 
     // Recieve the return value
-    void *ret_buffer;
-    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
-    {
-        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
-        rv = nsr(Integer32_integer32(integer));
-
-        nng_free(ret_buffer, size);
-    }
-    else
-    {
-        rv = -1;
-    }
+    rv = recieve_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -418,19 +343,7 @@ int32 __wrap_CFE_EVS_ResetAllFilters(void)
     flatcc_builder_aligned_free(buffer);
 
     // Recieve the return value
-    void *ret_buffer;
-    if ((rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC)) == 0)
-    {
-        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        nsr(Integer32_table_t) integer = nsr(ReturnData_retval(returnData));
-        rv = nsr(Integer32_integer32(integer));
-
-        nng_free(ret_buffer, size);
-    }
-    else
-    {
-        rv = -1;
-    }
+    rv = recieve_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
