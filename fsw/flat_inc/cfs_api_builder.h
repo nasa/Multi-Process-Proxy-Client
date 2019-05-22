@@ -89,6 +89,61 @@ typedef flatbuffers_ref_t cFS_API_ResetAllFilters_ref_t;
 static cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_clone(flatbuffers_builder_t *B, cFS_API_ResetAllFilters_table_t t);
 __flatbuffers_build_table(flatbuffers_, cFS_API_ResetAllFilters, 0)
 
+static const flatbuffers_voffset_t __cFS_API_TIME_GetTime_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetTime_ref_t;
+static cFS_API_TIME_GetTime_ref_t cFS_API_TIME_GetTime_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetTime_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetTime, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetTAI_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetTAI_ref_t;
+static cFS_API_TIME_GetTAI_ref_t cFS_API_TIME_GetTAI_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetTAI_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetTAI, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetUTC_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetUTC_ref_t;
+static cFS_API_TIME_GetUTC_ref_t cFS_API_TIME_GetUTC_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetUTC_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetUTC, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_MET2SCTime_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_MET2SCTime_ref_t;
+static cFS_API_TIME_MET2SCTime_ref_t cFS_API_TIME_MET2SCTime_clone(flatbuffers_builder_t *B, cFS_API_TIME_MET2SCTime_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_MET2SCTime, 1)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetSTCF_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetSTCF_ref_t;
+static cFS_API_TIME_GetSTCF_ref_t cFS_API_TIME_GetSTCF_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetSTCF_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetSTCF, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetMET_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetMET_ref_t;
+static cFS_API_TIME_GetMET_ref_t cFS_API_TIME_GetMET_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetMET_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetMET, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetMETseconds_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetMETseconds_ref_t;
+static cFS_API_TIME_GetMETseconds_ref_t cFS_API_TIME_GetMETseconds_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetMETseconds_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetMETseconds, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetMETsubsecs_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetMETsubsecs_ref_t;
+static cFS_API_TIME_GetMETsubsecs_ref_t cFS_API_TIME_GetMETsubsecs_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetMETsubsecs_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetMETsubsecs, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetLeapSeconds_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetLeapSeconds_ref_t;
+static cFS_API_TIME_GetLeapSeconds_ref_t cFS_API_TIME_GetLeapSeconds_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetLeapSeconds_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetLeapSeconds, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetClockState_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetClockState_ref_t;
+static cFS_API_TIME_GetClockState_ref_t cFS_API_TIME_GetClockState_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetClockState_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetClockState, 0)
+
+static const flatbuffers_voffset_t __cFS_API_TIME_GetClockInfo_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_TIME_GetClockInfo_ref_t;
+static cFS_API_TIME_GetClockInfo_ref_t cFS_API_TIME_GetClockInfo_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetClockInfo_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_TIME_GetClockInfo, 0)
+
 static const flatbuffers_voffset_t __cFS_API_RemoteCall_required[] = { 0 };
 typedef flatbuffers_ref_t cFS_API_RemoteCall_ref_t;
 static cFS_API_RemoteCall_ref_t cFS_API_RemoteCall_clone(flatbuffers_builder_t *B, cFS_API_RemoteCall_table_t t);
@@ -159,6 +214,61 @@ __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_ResetFilter, cFS_API_Rese
 static inline cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_create(flatbuffers_builder_t *B __cFS_API_ResetAllFilters_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_ResetAllFilters, cFS_API_ResetAllFilters_identifier, cFS_API_ResetAllFilters_type_identifier)
 
+#define __cFS_API_TIME_GetTime_formal_args 
+#define __cFS_API_TIME_GetTime_call_args 
+static inline cFS_API_TIME_GetTime_ref_t cFS_API_TIME_GetTime_create(flatbuffers_builder_t *B __cFS_API_TIME_GetTime_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetTime, cFS_API_TIME_GetTime_identifier, cFS_API_TIME_GetTime_type_identifier)
+
+#define __cFS_API_TIME_GetTAI_formal_args 
+#define __cFS_API_TIME_GetTAI_call_args 
+static inline cFS_API_TIME_GetTAI_ref_t cFS_API_TIME_GetTAI_create(flatbuffers_builder_t *B __cFS_API_TIME_GetTAI_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetTAI, cFS_API_TIME_GetTAI_identifier, cFS_API_TIME_GetTAI_type_identifier)
+
+#define __cFS_API_TIME_GetUTC_formal_args 
+#define __cFS_API_TIME_GetUTC_call_args 
+static inline cFS_API_TIME_GetUTC_ref_t cFS_API_TIME_GetUTC_create(flatbuffers_builder_t *B __cFS_API_TIME_GetUTC_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetUTC, cFS_API_TIME_GetUTC_identifier, cFS_API_TIME_GetUTC_type_identifier)
+
+#define __cFS_API_TIME_MET2SCTime_formal_args , cFS_API_cFETime_ref_t v0
+#define __cFS_API_TIME_MET2SCTime_call_args , v0
+static inline cFS_API_TIME_MET2SCTime_ref_t cFS_API_TIME_MET2SCTime_create(flatbuffers_builder_t *B __cFS_API_TIME_MET2SCTime_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_MET2SCTime, cFS_API_TIME_MET2SCTime_identifier, cFS_API_TIME_MET2SCTime_type_identifier)
+
+#define __cFS_API_TIME_GetSTCF_formal_args 
+#define __cFS_API_TIME_GetSTCF_call_args 
+static inline cFS_API_TIME_GetSTCF_ref_t cFS_API_TIME_GetSTCF_create(flatbuffers_builder_t *B __cFS_API_TIME_GetSTCF_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetSTCF, cFS_API_TIME_GetSTCF_identifier, cFS_API_TIME_GetSTCF_type_identifier)
+
+#define __cFS_API_TIME_GetMET_formal_args 
+#define __cFS_API_TIME_GetMET_call_args 
+static inline cFS_API_TIME_GetMET_ref_t cFS_API_TIME_GetMET_create(flatbuffers_builder_t *B __cFS_API_TIME_GetMET_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetMET, cFS_API_TIME_GetMET_identifier, cFS_API_TIME_GetMET_type_identifier)
+
+#define __cFS_API_TIME_GetMETseconds_formal_args 
+#define __cFS_API_TIME_GetMETseconds_call_args 
+static inline cFS_API_TIME_GetMETseconds_ref_t cFS_API_TIME_GetMETseconds_create(flatbuffers_builder_t *B __cFS_API_TIME_GetMETseconds_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetMETseconds, cFS_API_TIME_GetMETseconds_identifier, cFS_API_TIME_GetMETseconds_type_identifier)
+
+#define __cFS_API_TIME_GetMETsubsecs_formal_args 
+#define __cFS_API_TIME_GetMETsubsecs_call_args 
+static inline cFS_API_TIME_GetMETsubsecs_ref_t cFS_API_TIME_GetMETsubsecs_create(flatbuffers_builder_t *B __cFS_API_TIME_GetMETsubsecs_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetMETsubsecs, cFS_API_TIME_GetMETsubsecs_identifier, cFS_API_TIME_GetMETsubsecs_type_identifier)
+
+#define __cFS_API_TIME_GetLeapSeconds_formal_args 
+#define __cFS_API_TIME_GetLeapSeconds_call_args 
+static inline cFS_API_TIME_GetLeapSeconds_ref_t cFS_API_TIME_GetLeapSeconds_create(flatbuffers_builder_t *B __cFS_API_TIME_GetLeapSeconds_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetLeapSeconds, cFS_API_TIME_GetLeapSeconds_identifier, cFS_API_TIME_GetLeapSeconds_type_identifier)
+
+#define __cFS_API_TIME_GetClockState_formal_args 
+#define __cFS_API_TIME_GetClockState_call_args 
+static inline cFS_API_TIME_GetClockState_ref_t cFS_API_TIME_GetClockState_create(flatbuffers_builder_t *B __cFS_API_TIME_GetClockState_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetClockState, cFS_API_TIME_GetClockState_identifier, cFS_API_TIME_GetClockState_type_identifier)
+
+#define __cFS_API_TIME_GetClockInfo_formal_args 
+#define __cFS_API_TIME_GetClockInfo_call_args 
+static inline cFS_API_TIME_GetClockInfo_ref_t cFS_API_TIME_GetClockInfo_create(flatbuffers_builder_t *B __cFS_API_TIME_GetClockInfo_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetClockInfo, cFS_API_TIME_GetClockInfo_identifier, cFS_API_TIME_GetClockInfo_type_identifier)
+
 #define __cFS_API_RemoteCall_formal_args , cFS_API_Function_union_ref_t v1
 #define __cFS_API_RemoteCall_call_args , v1
 static inline cFS_API_RemoteCall_ref_t cFS_API_RemoteCall_create(flatbuffers_builder_t *B __cFS_API_RemoteCall_formal_args);
@@ -188,6 +298,28 @@ static inline cFS_API_Function_union_ref_t cFS_API_Function_as_ResetFilter(cFS_A
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_ResetFilter; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_ResetAllFilters(cFS_API_ResetAllFilters_ref_t ref)
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_ResetAllFilters; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetTime(cFS_API_TIME_GetTime_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetTime; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetTAI(cFS_API_TIME_GetTAI_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetTAI; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetUTC(cFS_API_TIME_GetUTC_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetUTC; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_MET2SCTime(cFS_API_TIME_MET2SCTime_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_MET2SCTime; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetSTCF(cFS_API_TIME_GetSTCF_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetSTCF; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetMET(cFS_API_TIME_GetMET_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetMET; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetMETseconds(cFS_API_TIME_GetMETseconds_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetMETseconds; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetMETsubsecs(cFS_API_TIME_GetMETsubsecs_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetMETsubsecs; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetLeapSeconds(cFS_API_TIME_GetLeapSeconds_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetLeapSeconds; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetClockState(cFS_API_TIME_GetClockState_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetClockState; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetClockInfo(cFS_API_TIME_GetClockInfo_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetClockInfo; uref.value = ref; return uref; }
 __flatbuffers_build_union_vector(flatbuffers_, cFS_API_Function)
 
 static cFS_API_Function_union_ref_t cFS_API_Function_clone(flatbuffers_builder_t *B, cFS_API_Function_union_t u)
@@ -204,6 +336,17 @@ static cFS_API_Function_union_ref_t cFS_API_Function_clone(flatbuffers_builder_t
     case 9: return cFS_API_Function_as_SendTimedEvent(cFS_API_SendTimedEvent_clone(B, (cFS_API_SendTimedEvent_table_t)u.value));
     case 10: return cFS_API_Function_as_ResetFilter(cFS_API_ResetFilter_clone(B, (cFS_API_ResetFilter_table_t)u.value));
     case 11: return cFS_API_Function_as_ResetAllFilters(cFS_API_ResetAllFilters_clone(B, (cFS_API_ResetAllFilters_table_t)u.value));
+    case 12: return cFS_API_Function_as_TIME_GetTime(cFS_API_TIME_GetTime_clone(B, (cFS_API_TIME_GetTime_table_t)u.value));
+    case 13: return cFS_API_Function_as_TIME_GetTAI(cFS_API_TIME_GetTAI_clone(B, (cFS_API_TIME_GetTAI_table_t)u.value));
+    case 14: return cFS_API_Function_as_TIME_GetUTC(cFS_API_TIME_GetUTC_clone(B, (cFS_API_TIME_GetUTC_table_t)u.value));
+    case 15: return cFS_API_Function_as_TIME_MET2SCTime(cFS_API_TIME_MET2SCTime_clone(B, (cFS_API_TIME_MET2SCTime_table_t)u.value));
+    case 16: return cFS_API_Function_as_TIME_GetSTCF(cFS_API_TIME_GetSTCF_clone(B, (cFS_API_TIME_GetSTCF_table_t)u.value));
+    case 17: return cFS_API_Function_as_TIME_GetMET(cFS_API_TIME_GetMET_clone(B, (cFS_API_TIME_GetMET_table_t)u.value));
+    case 18: return cFS_API_Function_as_TIME_GetMETseconds(cFS_API_TIME_GetMETseconds_clone(B, (cFS_API_TIME_GetMETseconds_table_t)u.value));
+    case 19: return cFS_API_Function_as_TIME_GetMETsubsecs(cFS_API_TIME_GetMETsubsecs_clone(B, (cFS_API_TIME_GetMETsubsecs_table_t)u.value));
+    case 20: return cFS_API_Function_as_TIME_GetLeapSeconds(cFS_API_TIME_GetLeapSeconds_clone(B, (cFS_API_TIME_GetLeapSeconds_table_t)u.value));
+    case 21: return cFS_API_Function_as_TIME_GetClockState(cFS_API_TIME_GetClockState_clone(B, (cFS_API_TIME_GetClockState_table_t)u.value));
+    case 22: return cFS_API_Function_as_TIME_GetClockInfo(cFS_API_TIME_GetClockInfo_clone(B, (cFS_API_TIME_GetClockInfo_table_t)u.value));
     default: return cFS_API_Function_as_NONE();
     }
 }
@@ -511,6 +654,207 @@ static cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_clone(flatbuffers_b
     __flatbuffers_memoize_end(B, t, cFS_API_ResetAllFilters_end(B));
 }
 
+
+static inline cFS_API_TIME_GetTime_ref_t cFS_API_TIME_GetTime_create(flatbuffers_builder_t *B __cFS_API_TIME_GetTime_formal_args)
+{
+    if (cFS_API_TIME_GetTime_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetTime_end(B);
+}
+
+static cFS_API_TIME_GetTime_ref_t cFS_API_TIME_GetTime_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetTime_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetTime_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetTime_end(B));
+}
+
+
+static inline cFS_API_TIME_GetTAI_ref_t cFS_API_TIME_GetTAI_create(flatbuffers_builder_t *B __cFS_API_TIME_GetTAI_formal_args)
+{
+    if (cFS_API_TIME_GetTAI_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetTAI_end(B);
+}
+
+static cFS_API_TIME_GetTAI_ref_t cFS_API_TIME_GetTAI_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetTAI_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetTAI_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetTAI_end(B));
+}
+
+
+static inline cFS_API_TIME_GetUTC_ref_t cFS_API_TIME_GetUTC_create(flatbuffers_builder_t *B __cFS_API_TIME_GetUTC_formal_args)
+{
+    if (cFS_API_TIME_GetUTC_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetUTC_end(B);
+}
+
+static cFS_API_TIME_GetUTC_ref_t cFS_API_TIME_GetUTC_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetUTC_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetUTC_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetUTC_end(B));
+}
+
+__flatbuffers_build_table_field(0, flatbuffers_, cFS_API_TIME_MET2SCTime_METTime, cFS_API_cFETime, cFS_API_TIME_MET2SCTime)
+
+static inline cFS_API_TIME_MET2SCTime_ref_t cFS_API_TIME_MET2SCTime_create(flatbuffers_builder_t *B __cFS_API_TIME_MET2SCTime_formal_args)
+{
+    if (cFS_API_TIME_MET2SCTime_start(B)
+        || cFS_API_TIME_MET2SCTime_METTime_add(B, v0)) {
+        return 0;
+    }
+    return cFS_API_TIME_MET2SCTime_end(B);
+}
+
+static cFS_API_TIME_MET2SCTime_ref_t cFS_API_TIME_MET2SCTime_clone(flatbuffers_builder_t *B, cFS_API_TIME_MET2SCTime_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_MET2SCTime_start(B)
+        || cFS_API_TIME_MET2SCTime_METTime_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_MET2SCTime_end(B));
+}
+
+
+static inline cFS_API_TIME_GetSTCF_ref_t cFS_API_TIME_GetSTCF_create(flatbuffers_builder_t *B __cFS_API_TIME_GetSTCF_formal_args)
+{
+    if (cFS_API_TIME_GetSTCF_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetSTCF_end(B);
+}
+
+static cFS_API_TIME_GetSTCF_ref_t cFS_API_TIME_GetSTCF_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetSTCF_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetSTCF_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetSTCF_end(B));
+}
+
+
+static inline cFS_API_TIME_GetMET_ref_t cFS_API_TIME_GetMET_create(flatbuffers_builder_t *B __cFS_API_TIME_GetMET_formal_args)
+{
+    if (cFS_API_TIME_GetMET_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetMET_end(B);
+}
+
+static cFS_API_TIME_GetMET_ref_t cFS_API_TIME_GetMET_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetMET_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetMET_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetMET_end(B));
+}
+
+
+static inline cFS_API_TIME_GetMETseconds_ref_t cFS_API_TIME_GetMETseconds_create(flatbuffers_builder_t *B __cFS_API_TIME_GetMETseconds_formal_args)
+{
+    if (cFS_API_TIME_GetMETseconds_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetMETseconds_end(B);
+}
+
+static cFS_API_TIME_GetMETseconds_ref_t cFS_API_TIME_GetMETseconds_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetMETseconds_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetMETseconds_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetMETseconds_end(B));
+}
+
+
+static inline cFS_API_TIME_GetMETsubsecs_ref_t cFS_API_TIME_GetMETsubsecs_create(flatbuffers_builder_t *B __cFS_API_TIME_GetMETsubsecs_formal_args)
+{
+    if (cFS_API_TIME_GetMETsubsecs_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetMETsubsecs_end(B);
+}
+
+static cFS_API_TIME_GetMETsubsecs_ref_t cFS_API_TIME_GetMETsubsecs_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetMETsubsecs_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetMETsubsecs_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetMETsubsecs_end(B));
+}
+
+
+static inline cFS_API_TIME_GetLeapSeconds_ref_t cFS_API_TIME_GetLeapSeconds_create(flatbuffers_builder_t *B __cFS_API_TIME_GetLeapSeconds_formal_args)
+{
+    if (cFS_API_TIME_GetLeapSeconds_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetLeapSeconds_end(B);
+}
+
+static cFS_API_TIME_GetLeapSeconds_ref_t cFS_API_TIME_GetLeapSeconds_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetLeapSeconds_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetLeapSeconds_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetLeapSeconds_end(B));
+}
+
+
+static inline cFS_API_TIME_GetClockState_ref_t cFS_API_TIME_GetClockState_create(flatbuffers_builder_t *B __cFS_API_TIME_GetClockState_formal_args)
+{
+    if (cFS_API_TIME_GetClockState_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetClockState_end(B);
+}
+
+static cFS_API_TIME_GetClockState_ref_t cFS_API_TIME_GetClockState_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetClockState_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetClockState_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetClockState_end(B));
+}
+
+
+static inline cFS_API_TIME_GetClockInfo_ref_t cFS_API_TIME_GetClockInfo_create(flatbuffers_builder_t *B __cFS_API_TIME_GetClockInfo_formal_args)
+{
+    if (cFS_API_TIME_GetClockInfo_start(B)) {
+        return 0;
+    }
+    return cFS_API_TIME_GetClockInfo_end(B);
+}
+
+static cFS_API_TIME_GetClockInfo_ref_t cFS_API_TIME_GetClockInfo_clone(flatbuffers_builder_t *B, cFS_API_TIME_GetClockInfo_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_TIME_GetClockInfo_start(B)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetClockInfo_end(B));
+}
+
 __flatbuffers_build_union_field(1, flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, cFS_API_RemoteCall)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, RunLoop, cFS_API_RunLoop)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, PerfLogAdd, cFS_API_PerfLogAdd)
@@ -523,6 +867,17 @@ __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_inp
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, SendTimedEvent, cFS_API_SendTimedEvent)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, ResetFilter, cFS_API_ResetFilter)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, ResetAllFilters, cFS_API_ResetAllFilters)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetTime, cFS_API_TIME_GetTime)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetTAI, cFS_API_TIME_GetTAI)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetUTC, cFS_API_TIME_GetUTC)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_MET2SCTime, cFS_API_TIME_MET2SCTime)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetSTCF, cFS_API_TIME_GetSTCF)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetMET, cFS_API_TIME_GetMET)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetMETseconds, cFS_API_TIME_GetMETseconds)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetMETsubsecs, cFS_API_TIME_GetMETsubsecs)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetLeapSeconds, cFS_API_TIME_GetLeapSeconds)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetClockState, cFS_API_TIME_GetClockState)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetClockInfo, cFS_API_TIME_GetClockInfo)
 
 static inline cFS_API_RemoteCall_ref_t cFS_API_RemoteCall_create(flatbuffers_builder_t *B __cFS_API_RemoteCall_formal_args)
 {

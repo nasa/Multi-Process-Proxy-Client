@@ -74,6 +74,50 @@ typedef const struct cFS_API_ResetAllFilters_table *cFS_API_ResetAllFilters_tabl
 typedef struct cFS_API_ResetAllFilters_table *cFS_API_ResetAllFilters_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_ResetAllFilters_vec_t;
 typedef flatbuffers_uoffset_t *cFS_API_ResetAllFilters_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetTime_table *cFS_API_TIME_GetTime_table_t;
+typedef struct cFS_API_TIME_GetTime_table *cFS_API_TIME_GetTime_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetTime_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetTime_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetTAI_table *cFS_API_TIME_GetTAI_table_t;
+typedef struct cFS_API_TIME_GetTAI_table *cFS_API_TIME_GetTAI_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetTAI_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetTAI_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetUTC_table *cFS_API_TIME_GetUTC_table_t;
+typedef struct cFS_API_TIME_GetUTC_table *cFS_API_TIME_GetUTC_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetUTC_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetUTC_mutable_vec_t;
+typedef const struct cFS_API_TIME_MET2SCTime_table *cFS_API_TIME_MET2SCTime_table_t;
+typedef struct cFS_API_TIME_MET2SCTime_table *cFS_API_TIME_MET2SCTime_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_MET2SCTime_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_MET2SCTime_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetSTCF_table *cFS_API_TIME_GetSTCF_table_t;
+typedef struct cFS_API_TIME_GetSTCF_table *cFS_API_TIME_GetSTCF_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetSTCF_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetSTCF_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetMET_table *cFS_API_TIME_GetMET_table_t;
+typedef struct cFS_API_TIME_GetMET_table *cFS_API_TIME_GetMET_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetMET_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetMET_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetMETseconds_table *cFS_API_TIME_GetMETseconds_table_t;
+typedef struct cFS_API_TIME_GetMETseconds_table *cFS_API_TIME_GetMETseconds_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetMETseconds_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetMETseconds_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetMETsubsecs_table *cFS_API_TIME_GetMETsubsecs_table_t;
+typedef struct cFS_API_TIME_GetMETsubsecs_table *cFS_API_TIME_GetMETsubsecs_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetMETsubsecs_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetMETsubsecs_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetLeapSeconds_table *cFS_API_TIME_GetLeapSeconds_table_t;
+typedef struct cFS_API_TIME_GetLeapSeconds_table *cFS_API_TIME_GetLeapSeconds_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetLeapSeconds_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetLeapSeconds_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetClockState_table *cFS_API_TIME_GetClockState_table_t;
+typedef struct cFS_API_TIME_GetClockState_table *cFS_API_TIME_GetClockState_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetClockState_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetClockState_mutable_vec_t;
+typedef const struct cFS_API_TIME_GetClockInfo_table *cFS_API_TIME_GetClockInfo_table_t;
+typedef struct cFS_API_TIME_GetClockInfo_table *cFS_API_TIME_GetClockInfo_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetClockInfo_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_TIME_GetClockInfo_mutable_vec_t;
 typedef const struct cFS_API_RemoteCall_table *cFS_API_RemoteCall_table_t;
 typedef struct cFS_API_RemoteCall_table *cFS_API_RemoteCall_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_RemoteCall_vec_t;
@@ -143,6 +187,61 @@ typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
 #endif
 #define cFS_API_ResetAllFilters_type_hash ((flatbuffers_thash_t)0xbb752829)
 #define cFS_API_ResetAllFilters_type_identifier "\x29\x28\x75\xbb"
+#ifndef cFS_API_TIME_GetTime_identifier
+#define cFS_API_TIME_GetTime_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetTime_type_hash ((flatbuffers_thash_t)0x8c1826ab)
+#define cFS_API_TIME_GetTime_type_identifier "\xab\x26\x18\x8c"
+#ifndef cFS_API_TIME_GetTAI_identifier
+#define cFS_API_TIME_GetTAI_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetTAI_type_hash ((flatbuffers_thash_t)0xfdc7318)
+#define cFS_API_TIME_GetTAI_type_identifier "\x18\x73\xdc\x0f"
+#ifndef cFS_API_TIME_GetUTC_identifier
+#define cFS_API_TIME_GetUTC_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetUTC_type_hash ((flatbuffers_thash_t)0xe6de5928)
+#define cFS_API_TIME_GetUTC_type_identifier "\x28\x59\xde\xe6"
+#ifndef cFS_API_TIME_MET2SCTime_identifier
+#define cFS_API_TIME_MET2SCTime_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_MET2SCTime_type_hash ((flatbuffers_thash_t)0xc7cfda65)
+#define cFS_API_TIME_MET2SCTime_type_identifier "\x65\xda\xcf\xc7"
+#ifndef cFS_API_TIME_GetSTCF_identifier
+#define cFS_API_TIME_GetSTCF_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetSTCF_type_hash ((flatbuffers_thash_t)0x2ca2cd14)
+#define cFS_API_TIME_GetSTCF_type_identifier "\x14\xcd\xa2\x2c"
+#ifndef cFS_API_TIME_GetMET_identifier
+#define cFS_API_TIME_GetMET_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetMET_type_hash ((flatbuffers_thash_t)0x90d658dc)
+#define cFS_API_TIME_GetMET_type_identifier "\xdc\x58\xd6\x90"
+#ifndef cFS_API_TIME_GetMETseconds_identifier
+#define cFS_API_TIME_GetMETseconds_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetMETseconds_type_hash ((flatbuffers_thash_t)0x9b28a1e1)
+#define cFS_API_TIME_GetMETseconds_type_identifier "\xe1\xa1\x28\x9b"
+#ifndef cFS_API_TIME_GetMETsubsecs_identifier
+#define cFS_API_TIME_GetMETsubsecs_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetMETsubsecs_type_hash ((flatbuffers_thash_t)0x14a421e4)
+#define cFS_API_TIME_GetMETsubsecs_type_identifier "\xe4\x21\xa4\x14"
+#ifndef cFS_API_TIME_GetLeapSeconds_identifier
+#define cFS_API_TIME_GetLeapSeconds_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetLeapSeconds_type_hash ((flatbuffers_thash_t)0x229ee259)
+#define cFS_API_TIME_GetLeapSeconds_type_identifier "\x59\xe2\x9e\x22"
+#ifndef cFS_API_TIME_GetClockState_identifier
+#define cFS_API_TIME_GetClockState_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetClockState_type_hash ((flatbuffers_thash_t)0x792df559)
+#define cFS_API_TIME_GetClockState_type_identifier "\x59\xf5\x2d\x79"
+#ifndef cFS_API_TIME_GetClockInfo_identifier
+#define cFS_API_TIME_GetClockInfo_identifier flatbuffers_identifier
+#endif
+#define cFS_API_TIME_GetClockInfo_type_hash ((flatbuffers_thash_t)0x3b5bcd8)
+#define cFS_API_TIME_GetClockInfo_type_identifier "\xd8\xbc\xb5\x03"
 #ifndef cFS_API_RemoteCall_identifier
 #define cFS_API_RemoteCall_identifier flatbuffers_identifier
 #endif
@@ -293,10 +392,110 @@ static inline cFS_API_ResetAllFilters_table_t cFS_API_ResetAllFilters_vec_at(cFS
 __flatbuffers_offset_vec_at(cFS_API_ResetAllFilters_table_t, vec, i, 0)
 __flatbuffers_table_as_root(cFS_API_ResetAllFilters)
 
+
 /** /////////////////////////////////////////////////
  * /////////////////////////////////////////////////
- * /////////////////////////////////////////////////
- * /////////////////////////////////////////////////
+ * ///////////////////////////////////////////////// */
+struct cFS_API_TIME_GetTime_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetTime_vec_len(cFS_API_TIME_GetTime_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetTime_table_t cFS_API_TIME_GetTime_vec_at(cFS_API_TIME_GetTime_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetTime_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetTime)
+
+
+struct cFS_API_TIME_GetTAI_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetTAI_vec_len(cFS_API_TIME_GetTAI_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetTAI_table_t cFS_API_TIME_GetTAI_vec_at(cFS_API_TIME_GetTAI_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetTAI_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetTAI)
+
+
+struct cFS_API_TIME_GetUTC_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetUTC_vec_len(cFS_API_TIME_GetUTC_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetUTC_table_t cFS_API_TIME_GetUTC_vec_at(cFS_API_TIME_GetUTC_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetUTC_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetUTC)
+
+
+struct cFS_API_TIME_MET2SCTime_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_MET2SCTime_vec_len(cFS_API_TIME_MET2SCTime_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_MET2SCTime_table_t cFS_API_TIME_MET2SCTime_vec_at(cFS_API_TIME_MET2SCTime_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_MET2SCTime_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_MET2SCTime)
+
+__flatbuffers_define_table_field(0, cFS_API_TIME_MET2SCTime, METTime, cFS_API_cFETime_table_t, 0)
+
+struct cFS_API_TIME_GetSTCF_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetSTCF_vec_len(cFS_API_TIME_GetSTCF_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetSTCF_table_t cFS_API_TIME_GetSTCF_vec_at(cFS_API_TIME_GetSTCF_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetSTCF_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetSTCF)
+
+
+struct cFS_API_TIME_GetMET_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetMET_vec_len(cFS_API_TIME_GetMET_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetMET_table_t cFS_API_TIME_GetMET_vec_at(cFS_API_TIME_GetMET_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetMET_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetMET)
+
+
+struct cFS_API_TIME_GetMETseconds_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetMETseconds_vec_len(cFS_API_TIME_GetMETseconds_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetMETseconds_table_t cFS_API_TIME_GetMETseconds_vec_at(cFS_API_TIME_GetMETseconds_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetMETseconds_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetMETseconds)
+
+
+struct cFS_API_TIME_GetMETsubsecs_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetMETsubsecs_vec_len(cFS_API_TIME_GetMETsubsecs_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetMETsubsecs_table_t cFS_API_TIME_GetMETsubsecs_vec_at(cFS_API_TIME_GetMETsubsecs_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetMETsubsecs_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetMETsubsecs)
+
+
+struct cFS_API_TIME_GetLeapSeconds_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetLeapSeconds_vec_len(cFS_API_TIME_GetLeapSeconds_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetLeapSeconds_table_t cFS_API_TIME_GetLeapSeconds_vec_at(cFS_API_TIME_GetLeapSeconds_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetLeapSeconds_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetLeapSeconds)
+
+
+struct cFS_API_TIME_GetClockState_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetClockState_vec_len(cFS_API_TIME_GetClockState_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetClockState_table_t cFS_API_TIME_GetClockState_vec_at(cFS_API_TIME_GetClockState_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetClockState_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetClockState)
+
+
+struct cFS_API_TIME_GetClockInfo_table { uint8_t unused__; };
+
+static inline size_t cFS_API_TIME_GetClockInfo_vec_len(cFS_API_TIME_GetClockInfo_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_TIME_GetClockInfo_table_t cFS_API_TIME_GetClockInfo_vec_at(cFS_API_TIME_GetClockInfo_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_TIME_GetClockInfo_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_TIME_GetClockInfo)
+
+/** /////////////////////////////////////////////////
  * ///////////////////////////////////////////////// */
 typedef uint8_t cFS_API_Function_union_type_t;
 __flatbuffers_define_integer_type(cFS_API_Function, cFS_API_Function_union_type_t, 8)
@@ -313,6 +512,17 @@ __flatbuffers_define_union(flatbuffers_, cFS_API_Function)
 #define cFS_API_Function_SendTimedEvent ((cFS_API_Function_union_type_t)UINT8_C(9))
 #define cFS_API_Function_ResetFilter ((cFS_API_Function_union_type_t)UINT8_C(10))
 #define cFS_API_Function_ResetAllFilters ((cFS_API_Function_union_type_t)UINT8_C(11))
+#define cFS_API_Function_TIME_GetTime ((cFS_API_Function_union_type_t)UINT8_C(12))
+#define cFS_API_Function_TIME_GetTAI ((cFS_API_Function_union_type_t)UINT8_C(13))
+#define cFS_API_Function_TIME_GetUTC ((cFS_API_Function_union_type_t)UINT8_C(14))
+#define cFS_API_Function_TIME_MET2SCTime ((cFS_API_Function_union_type_t)UINT8_C(15))
+#define cFS_API_Function_TIME_GetSTCF ((cFS_API_Function_union_type_t)UINT8_C(16))
+#define cFS_API_Function_TIME_GetMET ((cFS_API_Function_union_type_t)UINT8_C(17))
+#define cFS_API_Function_TIME_GetMETseconds ((cFS_API_Function_union_type_t)UINT8_C(18))
+#define cFS_API_Function_TIME_GetMETsubsecs ((cFS_API_Function_union_type_t)UINT8_C(19))
+#define cFS_API_Function_TIME_GetLeapSeconds ((cFS_API_Function_union_type_t)UINT8_C(20))
+#define cFS_API_Function_TIME_GetClockState ((cFS_API_Function_union_type_t)UINT8_C(21))
+#define cFS_API_Function_TIME_GetClockInfo ((cFS_API_Function_union_type_t)UINT8_C(22))
 
 static inline const char *cFS_API_Function_type_name(cFS_API_Function_union_type_t type)
 {
@@ -329,6 +539,17 @@ static inline const char *cFS_API_Function_type_name(cFS_API_Function_union_type
     case cFS_API_Function_SendTimedEvent: return "SendTimedEvent";
     case cFS_API_Function_ResetFilter: return "ResetFilter";
     case cFS_API_Function_ResetAllFilters: return "ResetAllFilters";
+    case cFS_API_Function_TIME_GetTime: return "TIME_GetTime";
+    case cFS_API_Function_TIME_GetTAI: return "TIME_GetTAI";
+    case cFS_API_Function_TIME_GetUTC: return "TIME_GetUTC";
+    case cFS_API_Function_TIME_MET2SCTime: return "TIME_MET2SCTime";
+    case cFS_API_Function_TIME_GetSTCF: return "TIME_GetSTCF";
+    case cFS_API_Function_TIME_GetMET: return "TIME_GetMET";
+    case cFS_API_Function_TIME_GetMETseconds: return "TIME_GetMETseconds";
+    case cFS_API_Function_TIME_GetMETsubsecs: return "TIME_GetMETsubsecs";
+    case cFS_API_Function_TIME_GetLeapSeconds: return "TIME_GetLeapSeconds";
+    case cFS_API_Function_TIME_GetClockState: return "TIME_GetClockState";
+    case cFS_API_Function_TIME_GetClockInfo: return "TIME_GetClockInfo";
     default: return "";
     }
 }
@@ -348,6 +569,17 @@ static inline int cFS_API_Function_is_known_type(cFS_API_Function_union_type_t t
     case cFS_API_Function_SendTimedEvent: return 1;
     case cFS_API_Function_ResetFilter: return 1;
     case cFS_API_Function_ResetAllFilters: return 1;
+    case cFS_API_Function_TIME_GetTime: return 1;
+    case cFS_API_Function_TIME_GetTAI: return 1;
+    case cFS_API_Function_TIME_GetUTC: return 1;
+    case cFS_API_Function_TIME_MET2SCTime: return 1;
+    case cFS_API_Function_TIME_GetSTCF: return 1;
+    case cFS_API_Function_TIME_GetMET: return 1;
+    case cFS_API_Function_TIME_GetMETseconds: return 1;
+    case cFS_API_Function_TIME_GetMETsubsecs: return 1;
+    case cFS_API_Function_TIME_GetLeapSeconds: return 1;
+    case cFS_API_Function_TIME_GetClockState: return 1;
+    case cFS_API_Function_TIME_GetClockInfo: return 1;
     default: return 0;
     }
 }

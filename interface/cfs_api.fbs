@@ -83,6 +83,49 @@ table ResetAllFilters { // return int32
 
 ////////////////////////////////////////////////////
 // TIME Functions
+table TIME_GetTime { // return CFE_TIME_SysTime_t
+    // no arguments
+}
+
+table TIME_GetTAI { // return CFE_TIME_SysTime_t
+    // no arguments
+}
+
+table TIME_GetUTC { // return CFE_TIME_SysTime_t
+    // no arguments
+}
+
+table TIME_MET2SCTime { // return CFE_TIME_SysTime_t
+    METTime:cFETime;
+}
+
+table TIME_GetSTCF { // return CFE_TIME_SysTime_t
+    // no arguments
+}
+
+table TIME_GetMET { // return CFE_TIME_SysTime_t
+    // no arguments
+}
+
+table TIME_GetMETseconds { // return uint32
+    // no arguments
+}
+
+table TIME_GetMETsubsecs { // return uint32
+    // no arguments
+}
+
+table TIME_GetLeapSeconds { // return int16
+    // no arguments
+}
+
+table TIME_GetClockState { // return CFE_TIME_ClockState_Enum_t
+    // no arguments
+}
+
+table TIME_GetClockInfo { // return uint16
+    // no arguments
+}
 
 ////////////////////////////////////////////////////
 // TBL Functions
@@ -102,13 +145,24 @@ union Function {
     SendEventWithAppID,
     SendTimedEvent,
     ResetFilter,
-    ResetAllFilters
+    ResetAllFilters,
 
     // FS Functions
 
     // SB Functions are likely all handled by SBN-Client
 
     // TIME Functions
+    TIME_GetTime,
+    TIME_GetTAI,
+    TIME_GetUTC,
+    TIME_MET2SCTime,
+    TIME_GetSTCF,
+    TIME_GetMET,
+    TIME_GetMETseconds,
+    TIME_GetMETsubsecs,
+    TIME_GetLeapSeconds,
+    TIME_GetClockState,
+    TIME_GetClockInfo
 
     // TBL Functions
 }

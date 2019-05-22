@@ -25,6 +25,17 @@ static int cFS_API_Register_verify_table(flatcc_table_verifier_descriptor_t *td)
 static int cFS_API_Unregister_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_ResetFilter_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_ResetAllFilters_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetTime_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetTAI_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetUTC_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_MET2SCTime_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetSTCF_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetMET_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetMETseconds_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetMETsubsecs_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetLeapSeconds_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetClockState_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_TIME_GetClockInfo_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_RemoteCall_verify_table(flatcc_table_verifier_descriptor_t *td);
 
 static int cFS_API_Function_union_verifier(flatcc_union_verifier_descriptor_t *ud)
@@ -41,6 +52,17 @@ static int cFS_API_Function_union_verifier(flatcc_union_verifier_descriptor_t *u
     case 9: return flatcc_verify_union_table(ud, cFS_API_SendTimedEvent_verify_table); /* SendTimedEvent */
     case 10: return flatcc_verify_union_table(ud, cFS_API_ResetFilter_verify_table); /* ResetFilter */
     case 11: return flatcc_verify_union_table(ud, cFS_API_ResetAllFilters_verify_table); /* ResetAllFilters */
+    case 12: return flatcc_verify_union_table(ud, cFS_API_TIME_GetTime_verify_table); /* TIME_GetTime */
+    case 13: return flatcc_verify_union_table(ud, cFS_API_TIME_GetTAI_verify_table); /* TIME_GetTAI */
+    case 14: return flatcc_verify_union_table(ud, cFS_API_TIME_GetUTC_verify_table); /* TIME_GetUTC */
+    case 15: return flatcc_verify_union_table(ud, cFS_API_TIME_MET2SCTime_verify_table); /* TIME_MET2SCTime */
+    case 16: return flatcc_verify_union_table(ud, cFS_API_TIME_GetSTCF_verify_table); /* TIME_GetSTCF */
+    case 17: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMET_verify_table); /* TIME_GetMET */
+    case 18: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMETseconds_verify_table); /* TIME_GetMETseconds */
+    case 19: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMETsubsecs_verify_table); /* TIME_GetMETsubsecs */
+    case 20: return flatcc_verify_union_table(ud, cFS_API_TIME_GetLeapSeconds_verify_table); /* TIME_GetLeapSeconds */
+    case 21: return flatcc_verify_union_table(ud, cFS_API_TIME_GetClockState_verify_table); /* TIME_GetClockState */
+    case 22: return flatcc_verify_union_table(ud, cFS_API_TIME_GetClockInfo_verify_table); /* TIME_GetClockInfo */
     default: return flatcc_verify_ok;
     }
 }
@@ -401,6 +423,283 @@ static inline int cFS_API_ResetAllFilters_verify_as_root_with_identifier(const v
 static inline int cFS_API_ResetAllFilters_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
 {
     return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_ResetAllFilters_verify_table);
+}
+
+static int cFS_API_TIME_GetTime_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetTime_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetTime_identifier, &cFS_API_TIME_GetTime_verify_table);
+}
+
+static inline int cFS_API_TIME_GetTime_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetTime_type_identifier, &cFS_API_TIME_GetTime_verify_table);
+}
+
+static inline int cFS_API_TIME_GetTime_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetTime_verify_table);
+}
+
+static inline int cFS_API_TIME_GetTime_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetTime_verify_table);
+}
+
+static int cFS_API_TIME_GetTAI_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetTAI_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetTAI_identifier, &cFS_API_TIME_GetTAI_verify_table);
+}
+
+static inline int cFS_API_TIME_GetTAI_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetTAI_type_identifier, &cFS_API_TIME_GetTAI_verify_table);
+}
+
+static inline int cFS_API_TIME_GetTAI_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetTAI_verify_table);
+}
+
+static inline int cFS_API_TIME_GetTAI_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetTAI_verify_table);
+}
+
+static int cFS_API_TIME_GetUTC_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetUTC_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetUTC_identifier, &cFS_API_TIME_GetUTC_verify_table);
+}
+
+static inline int cFS_API_TIME_GetUTC_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetUTC_type_identifier, &cFS_API_TIME_GetUTC_verify_table);
+}
+
+static inline int cFS_API_TIME_GetUTC_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetUTC_verify_table);
+}
+
+static inline int cFS_API_TIME_GetUTC_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetUTC_verify_table);
+}
+
+static int cFS_API_TIME_MET2SCTime_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_table_field(td, 0, 0, &cFS_API_cFETime_verify_table) /* METTime */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_MET2SCTime_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_MET2SCTime_identifier, &cFS_API_TIME_MET2SCTime_verify_table);
+}
+
+static inline int cFS_API_TIME_MET2SCTime_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_MET2SCTime_type_identifier, &cFS_API_TIME_MET2SCTime_verify_table);
+}
+
+static inline int cFS_API_TIME_MET2SCTime_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_MET2SCTime_verify_table);
+}
+
+static inline int cFS_API_TIME_MET2SCTime_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_MET2SCTime_verify_table);
+}
+
+static int cFS_API_TIME_GetSTCF_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetSTCF_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetSTCF_identifier, &cFS_API_TIME_GetSTCF_verify_table);
+}
+
+static inline int cFS_API_TIME_GetSTCF_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetSTCF_type_identifier, &cFS_API_TIME_GetSTCF_verify_table);
+}
+
+static inline int cFS_API_TIME_GetSTCF_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetSTCF_verify_table);
+}
+
+static inline int cFS_API_TIME_GetSTCF_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetSTCF_verify_table);
+}
+
+static int cFS_API_TIME_GetMET_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetMET_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetMET_identifier, &cFS_API_TIME_GetMET_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMET_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetMET_type_identifier, &cFS_API_TIME_GetMET_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMET_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetMET_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMET_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetMET_verify_table);
+}
+
+static int cFS_API_TIME_GetMETseconds_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetMETseconds_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetMETseconds_identifier, &cFS_API_TIME_GetMETseconds_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMETseconds_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetMETseconds_type_identifier, &cFS_API_TIME_GetMETseconds_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMETseconds_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetMETseconds_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMETseconds_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetMETseconds_verify_table);
+}
+
+static int cFS_API_TIME_GetMETsubsecs_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetMETsubsecs_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetMETsubsecs_identifier, &cFS_API_TIME_GetMETsubsecs_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMETsubsecs_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetMETsubsecs_type_identifier, &cFS_API_TIME_GetMETsubsecs_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMETsubsecs_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetMETsubsecs_verify_table);
+}
+
+static inline int cFS_API_TIME_GetMETsubsecs_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetMETsubsecs_verify_table);
+}
+
+static int cFS_API_TIME_GetLeapSeconds_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetLeapSeconds_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetLeapSeconds_identifier, &cFS_API_TIME_GetLeapSeconds_verify_table);
+}
+
+static inline int cFS_API_TIME_GetLeapSeconds_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetLeapSeconds_type_identifier, &cFS_API_TIME_GetLeapSeconds_verify_table);
+}
+
+static inline int cFS_API_TIME_GetLeapSeconds_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetLeapSeconds_verify_table);
+}
+
+static inline int cFS_API_TIME_GetLeapSeconds_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetLeapSeconds_verify_table);
+}
+
+static int cFS_API_TIME_GetClockState_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetClockState_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetClockState_identifier, &cFS_API_TIME_GetClockState_verify_table);
+}
+
+static inline int cFS_API_TIME_GetClockState_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetClockState_type_identifier, &cFS_API_TIME_GetClockState_verify_table);
+}
+
+static inline int cFS_API_TIME_GetClockState_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetClockState_verify_table);
+}
+
+static inline int cFS_API_TIME_GetClockState_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetClockState_verify_table);
+}
+
+static int cFS_API_TIME_GetClockInfo_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_TIME_GetClockInfo_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetClockInfo_identifier, &cFS_API_TIME_GetClockInfo_verify_table);
+}
+
+static inline int cFS_API_TIME_GetClockInfo_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_TIME_GetClockInfo_type_identifier, &cFS_API_TIME_GetClockInfo_verify_table);
+}
+
+static inline int cFS_API_TIME_GetClockInfo_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_TIME_GetClockInfo_verify_table);
+}
+
+static inline int cFS_API_TIME_GetClockInfo_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_TIME_GetClockInfo_verify_table);
 }
 
 static int cFS_API_RemoteCall_verify_table(flatcc_table_verifier_descriptor_t *td)

@@ -13,3 +13,4 @@ extern char * name;
 extern nng_socket sock;
 
 int32 receive_int32(void);
+uint32 receive_uint32(void);

@@ -28,3 +28,30 @@ int32 receive_int32(void)
 
     return rv;
 }
+
+uint32 receive_uint32(void)
+{
+    int32 rv;
+    uint32 received;
+    size_t size;
+    void *ret_buffer;
+
+    rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC);
+    if (rv == 0)
+    {
+        // printf("Actual return value receive!\n");
+        nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
+        nsr(UnInteger32_table_t) unInteger = nsr(ReturnData_retval(returnData));
+        received = nsr(UnInteger32_unInteger32(unInteger));
+
+        nng_free(ret_buffer, size);
+    }
+    else
+    {
+        printf("Oh no. %d\n", rv);
+        printf("Error: %s\n", nng_strerror(rv));
+        received = 0;
+    }
+
+    return received;
+}
