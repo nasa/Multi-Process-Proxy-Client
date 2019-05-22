@@ -12,4 +12,4 @@ extern flatcc_builder_t builder;
 extern char * name;
 extern nng_socket sock;
 
-int32 recieve_int32(void);
+int32 receive_int32(void);

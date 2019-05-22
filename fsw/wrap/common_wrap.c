@@ -3,7 +3,7 @@
 #include "cfe.h"
 #include "common_wrap.h"
 
-int32 recieve_int32(void)
+int32 receive_int32(void)
 {
     int32 rv;
     size_t size;

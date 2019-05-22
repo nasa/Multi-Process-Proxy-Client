@@ -46,7 +46,7 @@ int32 __wrap_CFE_EVS_SendEvent(uint16 EventID, uint16 EventType, const char *Spe
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
-    rv = recieve_int32();
+    rv = receive_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -99,8 +99,8 @@ int32 __wrap_CFE_EVS_SendEventWithAppID(uint16 EventID, uint16 EventType, uint32
     /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
-    // Recieve the return value
-    rv = recieve_int32();
+    // Receive the return value
+    rv = receive_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -152,8 +152,8 @@ int32 __wrap_CFE_EVS_SendTimedEvent(CFE_TIME_SysTime_t Time, uint16 EventID, uin
     /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
-    // Recieve the return value
-    rv = recieve_int32();
+    // Receive the return value
+    rv = receive_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -207,8 +207,8 @@ int32 __wrap_CFE_EVS_Register(void *Filters, uint16 NumFilteredEvents, uint16 Fi
     /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
-    // Recieve the return value
-    rv = recieve_int32();
+    // Receive the return value
+    rv = receive_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -252,8 +252,8 @@ int32 __wrap_CFE_EVS_Unregister(void)
     /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
-    // Recieve the return value
-    rv = recieve_int32();
+    // Receive the return value
+    rv = receive_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -297,8 +297,8 @@ int32 __wrap_CFE_EVS_ResetFilter(uint16 EventID)
     /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
-    // Recieve the return value
-    rv = recieve_int32();
+    // Receive the return value
+    rv = receive_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -342,8 +342,8 @@ int32 __wrap_CFE_EVS_ResetAllFilters(void)
     /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
-    // Recieve the return value
-    rv = recieve_int32();
+    // Receive the return value
+    rv = receive_int32();
 
     /*
      * Reset, but keep allocated stack etc.,

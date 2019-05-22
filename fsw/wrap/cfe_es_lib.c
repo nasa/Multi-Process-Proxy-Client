@@ -36,7 +36,7 @@ int32 __wrap_CFE_ES_RunLoop(uint32 *ExitStatus)
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
-    rv = recieve_int32();
+    rv = receive_int32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -125,7 +125,7 @@ int32 __wrap_CFE_ES_RegisterApp(void)
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
-    rv = recieve_int32();
+    rv = receive_int32();
 
     // Reset, but keep allocated stack etc.,
     // or optionally reduce memory using `flatcc_builder_custom_reset`.
