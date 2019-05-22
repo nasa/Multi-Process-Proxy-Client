@@ -11,12 +11,16 @@ table Integer32 {
     integer32:int32;
 }
 
+table UnInteger32 {
+    unInteger32:uint32;
+}
+
 table Integer16 {
     integer16:int16;
 }
 
-table UnInteger32 {
-    unInteger32:uint32;
+table UnInteger16 {
+    unInteger16:uint16;
 }
 
 union PointerReturn {
@@ -26,8 +30,9 @@ union PointerReturn {
 
 union FuncReturn {
     Integer32,
-    Integer16,
     UnInteger32,
+    Integer16,
+    UnInteger16,
     cFETime,
 }
 

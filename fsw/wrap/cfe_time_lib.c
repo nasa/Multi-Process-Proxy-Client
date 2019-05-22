@@ -40,6 +40,7 @@ uint32 __wrap_CFE_TIME_GetMETseconds(void)
     flatcc_builder_t *B = &builder;
 
     int rv;
+    uint32 call_return;
     int index = 0;
 
     void *buffer;
@@ -69,7 +70,7 @@ uint32 __wrap_CFE_TIME_GetMETseconds(void)
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
-    rv = receive_uint32();
+    call_return = receive_uint32();
 
     /*
      * Reset, but keep allocated stack etc.,
@@ -77,17 +78,99 @@ uint32 __wrap_CFE_TIME_GetMETseconds(void)
      */
     flatcc_builder_reset(B);
 
-    return rv;
+    return call_return;
 }
 
 uint32 __wrap_CFE_TIME_GetMETsubsecs(void)
 {
+    flatcc_builder_t *B = &builder;
 
+    int rv;
+    uint32 call_return;
+    int index = 0;
+
+    void *buffer;
+    size_t size;
+
+    /* Construct a buffer specific to schema. */
+    ns(TIME_GetMETsubsecs_ref_t) func_table = ns(TIME_GetMETsubsecs_create(B));
+    ns(Function_union_ref_t) function = ns(Function_as_TIME_GetMETsubsecs(func_table));
+    ns(RemoteCall_create_as_root(B, function));
+
+    /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
+    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
+    buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
+
+    // printf("%s: SENDING EVS MSG\n", name);
+    rv = nng_send(sock, buffer, size, 0);
+    if (rv == 0)
+    {
+        // printf("nng_send: %d\n", rv);
+    }
+    else
+    {
+        printf("Oh No! nng_send: %d\n", rv);
+    }
+
+    /* free(buffer); */
+    flatcc_builder_aligned_free(buffer);
+
+    // Receive the return value
+    call_return = receive_uint32();
+
+    /*
+     * Reset, but keep allocated stack etc.,
+     * or optionally reduce memory using `flatcc_builder_custom_reset`.
+     */
+    flatcc_builder_reset(B);
+
+    return call_return;
 }
 
-int16  __wrap_CFE_TIME_GetLeapSeconds(void)
+int16 __wrap_CFE_TIME_GetLeapSeconds(void)
 {
+    flatcc_builder_t *B = &builder;
 
+    int rv;
+    int16 call_return;
+    int index = 0;
+
+    void *buffer;
+    size_t size;
+
+    /* Construct a buffer specific to schema. */
+    ns(TIME_GetLeapSeconds_ref_t) func_table = ns(TIME_GetLeapSeconds_create(B));
+    ns(Function_union_ref_t) function = ns(Function_as_TIME_GetLeapSeconds(func_table));
+    ns(RemoteCall_create_as_root(B, function));
+
+    /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
+    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
+    buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
+
+    // printf("%s: SENDING EVS MSG\n", name);
+    rv = nng_send(sock, buffer, size, 0);
+    if (rv == 0)
+    {
+        // printf("nng_send: %d\n", rv);
+    }
+    else
+    {
+        printf("Oh No! nng_send: %d\n", rv);
+    }
+
+    /* free(buffer); */
+    flatcc_builder_aligned_free(buffer);
+
+    // Receive the return value
+    call_return = receive_int16();
+
+    /*
+     * Reset, but keep allocated stack etc.,
+     * or optionally reduce memory using `flatcc_builder_custom_reset`.
+     */
+    flatcc_builder_reset(B);
+
+    return call_return;
 }
 
 CFE_TIME_ClockState_Enum_t __wrap_CFE_TIME_GetClockState(void)
@@ -97,7 +180,48 @@ CFE_TIME_ClockState_Enum_t __wrap_CFE_TIME_GetClockState(void)
 
 uint16 __wrap_CFE_TIME_GetClockInfo(void)
 {
+    flatcc_builder_t *B = &builder;
 
+    int rv;
+    uint16 call_return;
+    int index = 0;
+
+    void *buffer;
+    size_t size;
+
+    /* Construct a buffer specific to schema. */
+    ns(TIME_GetClockInfo_ref_t) func_table = ns(TIME_GetClockInfo_create(B));
+    ns(Function_union_ref_t) function = ns(Function_as_TIME_GetClockInfo(func_table));
+    ns(RemoteCall_create_as_root(B, function));
+
+    /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
+    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
+    buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
+
+    // printf("%s: SENDING EVS MSG\n", name);
+    rv = nng_send(sock, buffer, size, 0);
+    if (rv == 0)
+    {
+        // printf("nng_send: %d\n", rv);
+    }
+    else
+    {
+        printf("Oh No! nng_send: %d\n", rv);
+    }
+
+    /* free(buffer); */
+    flatcc_builder_aligned_free(buffer);
+
+    // Receive the return value
+    call_return = receive_uint16();
+
+    /*
+     * Reset, but keep allocated stack etc.,
+     * or optionally reduce memory using `flatcc_builder_custom_reset`.
+     */
+    flatcc_builder_reset(B);
+
+    return call_return;
 }
 
 /*

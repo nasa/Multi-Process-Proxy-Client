@@ -14,3 +14,5 @@ extern nng_socket sock;
 
 int32 receive_int32(void);
 uint32 receive_uint32(void);
+int16 receive_int16(void);
+uint16 receive_uint16(void);

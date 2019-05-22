@@ -30,14 +30,18 @@ typedef const struct cFS_Return_Integer32_table *cFS_Return_Integer32_table_t;
 typedef struct cFS_Return_Integer32_table *cFS_Return_Integer32_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_Return_Integer32_vec_t;
 typedef flatbuffers_uoffset_t *cFS_Return_Integer32_mutable_vec_t;
-typedef const struct cFS_Return_Integer16_table *cFS_Return_Integer16_table_t;
-typedef struct cFS_Return_Integer16_table *cFS_Return_Integer16_mutable_table_t;
-typedef const flatbuffers_uoffset_t *cFS_Return_Integer16_vec_t;
-typedef flatbuffers_uoffset_t *cFS_Return_Integer16_mutable_vec_t;
 typedef const struct cFS_Return_UnInteger32_table *cFS_Return_UnInteger32_table_t;
 typedef struct cFS_Return_UnInteger32_table *cFS_Return_UnInteger32_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_Return_UnInteger32_vec_t;
 typedef flatbuffers_uoffset_t *cFS_Return_UnInteger32_mutable_vec_t;
+typedef const struct cFS_Return_Integer16_table *cFS_Return_Integer16_table_t;
+typedef struct cFS_Return_Integer16_table *cFS_Return_Integer16_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_Return_Integer16_vec_t;
+typedef flatbuffers_uoffset_t *cFS_Return_Integer16_mutable_vec_t;
+typedef const struct cFS_Return_UnInteger16_table *cFS_Return_UnInteger16_table_t;
+typedef struct cFS_Return_UnInteger16_table *cFS_Return_UnInteger16_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_Return_UnInteger16_vec_t;
+typedef flatbuffers_uoffset_t *cFS_Return_UnInteger16_mutable_vec_t;
 typedef const struct cFS_Return_ReturnData_table *cFS_Return_ReturnData_table_t;
 typedef struct cFS_Return_ReturnData_table *cFS_Return_ReturnData_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_Return_ReturnData_vec_t;
@@ -52,16 +56,21 @@ typedef flatbuffers_uoffset_t *cFS_Return_ReturnData_mutable_vec_t;
 #endif
 #define cFS_Return_Integer32_type_hash ((flatbuffers_thash_t)0x42267125)
 #define cFS_Return_Integer32_type_identifier "\x25\x71\x26\x42"
-#ifndef cFS_Return_Integer16_identifier
-#define cFS_Return_Integer16_identifier flatbuffers_identifier
-#endif
-#define cFS_Return_Integer16_type_hash ((flatbuffers_thash_t)0xce213d5b)
-#define cFS_Return_Integer16_type_identifier "\x5b\x3d\x21\xce"
 #ifndef cFS_Return_UnInteger32_identifier
 #define cFS_Return_UnInteger32_identifier flatbuffers_identifier
 #endif
 #define cFS_Return_UnInteger32_type_hash ((flatbuffers_thash_t)0x37b26214)
 #define cFS_Return_UnInteger32_type_identifier "\x14\x62\xb2\x37"
+#ifndef cFS_Return_Integer16_identifier
+#define cFS_Return_Integer16_identifier flatbuffers_identifier
+#endif
+#define cFS_Return_Integer16_type_hash ((flatbuffers_thash_t)0xce213d5b)
+#define cFS_Return_Integer16_type_identifier "\x5b\x3d\x21\xce"
+#ifndef cFS_Return_UnInteger16_identifier
+#define cFS_Return_UnInteger16_identifier flatbuffers_identifier
+#endif
+#define cFS_Return_UnInteger16_type_hash ((flatbuffers_thash_t)0x33adde9a)
+#define cFS_Return_UnInteger16_type_identifier "\x9a\xde\xad\x33"
 #ifndef cFS_Return_ReturnData_identifier
 #define cFS_Return_ReturnData_identifier flatbuffers_identifier
 #endif
@@ -89,6 +98,16 @@ __flatbuffers_table_as_root(cFS_Return_Integer32)
 
 __flatbuffers_define_scalar_field(0, cFS_Return_Integer32, integer32, flatbuffers_int32, int32_t, INT32_C(0))
 
+struct cFS_Return_UnInteger32_table { uint8_t unused__; };
+
+static inline size_t cFS_Return_UnInteger32_vec_len(cFS_Return_UnInteger32_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_Return_UnInteger32_table_t cFS_Return_UnInteger32_vec_at(cFS_Return_UnInteger32_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_Return_UnInteger32_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_Return_UnInteger32)
+
+__flatbuffers_define_scalar_field(0, cFS_Return_UnInteger32, unInteger32, flatbuffers_uint32, uint32_t, UINT32_C(0))
+
 struct cFS_Return_Integer16_table { uint8_t unused__; };
 
 static inline size_t cFS_Return_Integer16_vec_len(cFS_Return_Integer16_vec_t vec)
@@ -99,15 +118,15 @@ __flatbuffers_table_as_root(cFS_Return_Integer16)
 
 __flatbuffers_define_scalar_field(0, cFS_Return_Integer16, integer16, flatbuffers_int16, int16_t, INT16_C(0))
 
-struct cFS_Return_UnInteger32_table { uint8_t unused__; };
+struct cFS_Return_UnInteger16_table { uint8_t unused__; };
 
-static inline size_t cFS_Return_UnInteger32_vec_len(cFS_Return_UnInteger32_vec_t vec)
+static inline size_t cFS_Return_UnInteger16_vec_len(cFS_Return_UnInteger16_vec_t vec)
 __flatbuffers_vec_len(vec)
-static inline cFS_Return_UnInteger32_table_t cFS_Return_UnInteger32_vec_at(cFS_Return_UnInteger32_vec_t vec, size_t i)
-__flatbuffers_offset_vec_at(cFS_Return_UnInteger32_table_t, vec, i, 0)
-__flatbuffers_table_as_root(cFS_Return_UnInteger32)
+static inline cFS_Return_UnInteger16_table_t cFS_Return_UnInteger16_vec_at(cFS_Return_UnInteger16_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_Return_UnInteger16_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_Return_UnInteger16)
 
-__flatbuffers_define_scalar_field(0, cFS_Return_UnInteger32, unInteger32, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(0, cFS_Return_UnInteger16, unInteger16, flatbuffers_uint16, uint16_t, UINT16_C(0))
 typedef uint8_t cFS_Return_PointerReturn_union_type_t;
 __flatbuffers_define_integer_type(cFS_Return_PointerReturn, cFS_Return_PointerReturn_union_type_t, 8)
 __flatbuffers_define_union(flatbuffers_, cFS_Return_PointerReturn)
@@ -140,17 +159,19 @@ __flatbuffers_define_integer_type(cFS_Return_FuncReturn, cFS_Return_FuncReturn_u
 __flatbuffers_define_union(flatbuffers_, cFS_Return_FuncReturn)
 #define cFS_Return_FuncReturn_NONE ((cFS_Return_FuncReturn_union_type_t)UINT8_C(0))
 #define cFS_Return_FuncReturn_Integer32 ((cFS_Return_FuncReturn_union_type_t)UINT8_C(1))
-#define cFS_Return_FuncReturn_Integer16 ((cFS_Return_FuncReturn_union_type_t)UINT8_C(2))
-#define cFS_Return_FuncReturn_UnInteger32 ((cFS_Return_FuncReturn_union_type_t)UINT8_C(3))
-#define cFS_Return_FuncReturn_cFETime ((cFS_Return_FuncReturn_union_type_t)UINT8_C(4))
+#define cFS_Return_FuncReturn_UnInteger32 ((cFS_Return_FuncReturn_union_type_t)UINT8_C(2))
+#define cFS_Return_FuncReturn_Integer16 ((cFS_Return_FuncReturn_union_type_t)UINT8_C(3))
+#define cFS_Return_FuncReturn_UnInteger16 ((cFS_Return_FuncReturn_union_type_t)UINT8_C(4))
+#define cFS_Return_FuncReturn_cFETime ((cFS_Return_FuncReturn_union_type_t)UINT8_C(5))
 
 static inline const char *cFS_Return_FuncReturn_type_name(cFS_Return_FuncReturn_union_type_t type)
 {
     switch (type) {
     case cFS_Return_FuncReturn_NONE: return "NONE";
     case cFS_Return_FuncReturn_Integer32: return "Integer32";
-    case cFS_Return_FuncReturn_Integer16: return "Integer16";
     case cFS_Return_FuncReturn_UnInteger32: return "UnInteger32";
+    case cFS_Return_FuncReturn_Integer16: return "Integer16";
+    case cFS_Return_FuncReturn_UnInteger16: return "UnInteger16";
     case cFS_Return_FuncReturn_cFETime: return "cFETime";
     default: return "";
     }
@@ -161,8 +182,9 @@ static inline int cFS_Return_FuncReturn_is_known_type(cFS_Return_FuncReturn_unio
     switch (type) {
     case cFS_Return_FuncReturn_NONE: return 1;
     case cFS_Return_FuncReturn_Integer32: return 1;
-    case cFS_Return_FuncReturn_Integer16: return 1;
     case cFS_Return_FuncReturn_UnInteger32: return 1;
+    case cFS_Return_FuncReturn_Integer16: return 1;
+    case cFS_Return_FuncReturn_UnInteger16: return 1;
     case cFS_Return_FuncReturn_cFETime: return 1;
     default: return 0;
     }
