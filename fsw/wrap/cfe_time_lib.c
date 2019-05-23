@@ -404,7 +404,46 @@ int16 __wrap_CFE_TIME_GetLeapSeconds(void)
 
 CFE_TIME_ClockState_Enum_t __wrap_CFE_TIME_GetClockState(void)
 {
+    flatcc_builder_t *B = &builder;
 
+    int rv;
+    CFE_TIME_ClockState_Enum_t call_return;
+    void *buffer;
+    size_t size;
+
+    /* Construct a buffer specific to schema. */
+    ns(TIME_GetClockState_ref_t) func_table = ns(TIME_GetClockState_create(B));
+    ns(Function_union_ref_t) function = ns(Function_as_TIME_GetClockState(func_table));
+    ns(RemoteCall_create_as_root(B, function));
+
+    /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
+    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
+    buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
+
+    // printf("%s: SENDING EVS MSG\n", name);
+    rv = nng_send(sock, buffer, size, 0);
+    if (rv == 0)
+    {
+        // printf("nng_send: %d\n", rv);
+    }
+    else
+    {
+        printf("Oh No! nng_send: %d\n", rv);
+    }
+
+    /* free(buffer); */
+    flatcc_builder_aligned_free(buffer);
+
+    // Receive the return value
+    call_return = receive_int16();
+
+    /*
+     * Reset, but keep allocated stack etc.,
+     * or optionally reduce memory using `flatcc_builder_custom_reset`.
+     */
+    flatcc_builder_reset(B);
+
+    return call_return;
 }
 
 uint16 __wrap_CFE_TIME_GetClockInfo(void)
