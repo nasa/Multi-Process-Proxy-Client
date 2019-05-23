@@ -491,20 +491,11 @@ uint16 __wrap_CFE_TIME_GetClockInfo(void)
 }
 
 /*
-Looking into:
-CFE_TIME_SysTime_t  CFE_TIME_Add(CFE_TIME_SysTime_t Time1, CFE_TIME_SysTime_t Time2);
-CFE_TIME_SysTime_t  CFE_TIME_Subtract(CFE_TIME_SysTime_t Time1, CFE_TIME_SysTime_t Time2);
-CFE_TIME_Compare_t  CFE_TIME_Compare(CFE_TIME_SysTime_t TimeA, CFE_TIME_SysTime_t TimeB);
-uint32  CFE_TIME_Sub2MicroSecs(uint32 SubSeconds);
-uint32  CFE_TIME_Micro2SubSecs(uint32 MicroSeconds);
-uint32 CFE_TIME_CFE2FSSeconds(uint32 SecondsCFE);
-uint32 CFE_TIME_FS2CFESeconds(uint32 SecondsFS);
-void CFE_TIME_Print(char *PrintBuffer, CFE_TIME_SysTime_t TimeToPrint);
-void  CFE_TIME_ExternalTone(void);
-void CFE_TIME_ExternalMET(CFE_TIME_SysTime_t NewMET);
-void CFE_TIME_ExternalGPS(CFE_TIME_SysTime_t NewTime, int16 NewLeaps);
-void CFE_TIME_ExternalTime(CFE_TIME_SysTime_t NewTime);
-int32  CFE_TIME_RegisterSynchCallback(CFE_TIME_SynchCallbackPtr_t CallbackFuncPtr);
-int32  CFE_TIME_UnregisterSynchCallback(CFE_TIME_SynchCallbackPtr_t CallbackFuncPtr);
-void CFE_TIME_Local1HzISR(void);
+    Possible TODO in Proxy:
+    void  CFE_TIME_ExternalTone(void);
+    int32  CFE_TIME_RegisterSynchCallback(CFE_TIME_SynchCallbackPtr_t CallbackFuncPtr);
+    int32  CFE_TIME_UnregisterSynchCallback(CFE_TIME_SynchCallbackPtr_t CallbackFuncPtr);
+    void CFE_TIME_ExternalMET(CFE_TIME_SysTime_t NewMET);
+    void CFE_TIME_ExternalGPS(CFE_TIME_SysTime_t NewTime, int16 NewLeaps);
+    void CFE_TIME_ExternalTime(CFE_TIME_SysTime_t NewTime);
 */
