@@ -22,10 +22,6 @@
 #endif
 
 
-typedef const struct cFS_API_cFETime_table *cFS_API_cFETime_table_t;
-typedef struct cFS_API_cFETime_table *cFS_API_cFETime_mutable_table_t;
-typedef const flatbuffers_uoffset_t *cFS_API_cFETime_vec_t;
-typedef flatbuffers_uoffset_t *cFS_API_cFETime_mutable_vec_t;
 typedef const struct cFS_API_RunLoop_table *cFS_API_RunLoop_table_t;
 typedef struct cFS_API_RunLoop_table *cFS_API_RunLoop_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_RunLoop_vec_t;
@@ -74,6 +70,30 @@ typedef const struct cFS_API_ResetAllFilters_table *cFS_API_ResetAllFilters_tabl
 typedef struct cFS_API_ResetAllFilters_table *cFS_API_ResetAllFilters_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_ResetAllFilters_vec_t;
 typedef flatbuffers_uoffset_t *cFS_API_ResetAllFilters_mutable_vec_t;
+typedef const struct cFS_API_FS_Header_t_table *cFS_API_FS_Header_t_table_t;
+typedef struct cFS_API_FS_Header_t_table *cFS_API_FS_Header_t_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_FS_Header_t_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_FS_Header_t_mutable_vec_t;
+typedef const struct cFS_API_FS_ReadHeader_table *cFS_API_FS_ReadHeader_table_t;
+typedef struct cFS_API_FS_ReadHeader_table *cFS_API_FS_ReadHeader_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_FS_ReadHeader_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_FS_ReadHeader_mutable_vec_t;
+typedef const struct cFS_API_FS_WriteHeader_table *cFS_API_FS_WriteHeader_table_t;
+typedef struct cFS_API_FS_WriteHeader_table *cFS_API_FS_WriteHeader_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_FS_WriteHeader_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_FS_WriteHeader_mutable_vec_t;
+typedef const struct cFS_API_FS_SetTimestamp_table *cFS_API_FS_SetTimestamp_table_t;
+typedef struct cFS_API_FS_SetTimestamp_table *cFS_API_FS_SetTimestamp_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_FS_SetTimestamp_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_FS_SetTimestamp_mutable_vec_t;
+typedef const struct cFS_API_FS_Decompress_table *cFS_API_FS_Decompress_table_t;
+typedef struct cFS_API_FS_Decompress_table *cFS_API_FS_Decompress_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_FS_Decompress_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_FS_Decompress_mutable_vec_t;
+typedef const struct cFS_API_FS_GetUncompressedFile_table *cFS_API_FS_GetUncompressedFile_table_t;
+typedef struct cFS_API_FS_GetUncompressedFile_table *cFS_API_FS_GetUncompressedFile_mutable_table_t;
+typedef const flatbuffers_uoffset_t *cFS_API_FS_GetUncompressedFile_vec_t;
+typedef flatbuffers_uoffset_t *cFS_API_FS_GetUncompressedFile_mutable_vec_t;
 typedef const struct cFS_API_TIME_GetTime_table *cFS_API_TIME_GetTime_table_t;
 typedef struct cFS_API_TIME_GetTime_table *cFS_API_TIME_GetTime_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_TIME_GetTime_vec_t;
@@ -122,11 +142,6 @@ typedef const struct cFS_API_RemoteCall_table *cFS_API_RemoteCall_table_t;
 typedef struct cFS_API_RemoteCall_table *cFS_API_RemoteCall_mutable_table_t;
 typedef const flatbuffers_uoffset_t *cFS_API_RemoteCall_vec_t;
 typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
-#ifndef cFS_API_cFETime_identifier
-#define cFS_API_cFETime_identifier flatbuffers_identifier
-#endif
-#define cFS_API_cFETime_type_hash ((flatbuffers_thash_t)0x7ccd98e5)
-#define cFS_API_cFETime_type_identifier "\xe5\x98\xcd\x7c"
 #ifndef cFS_API_RunLoop_identifier
 #define cFS_API_RunLoop_identifier flatbuffers_identifier
 #endif
@@ -187,6 +202,36 @@ typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
 #endif
 #define cFS_API_ResetAllFilters_type_hash ((flatbuffers_thash_t)0xbb752829)
 #define cFS_API_ResetAllFilters_type_identifier "\x29\x28\x75\xbb"
+#ifndef cFS_API_FS_Header_t_identifier
+#define cFS_API_FS_Header_t_identifier flatbuffers_identifier
+#endif
+#define cFS_API_FS_Header_t_type_hash ((flatbuffers_thash_t)0x10adf35e)
+#define cFS_API_FS_Header_t_type_identifier "\x5e\xf3\xad\x10"
+#ifndef cFS_API_FS_ReadHeader_identifier
+#define cFS_API_FS_ReadHeader_identifier flatbuffers_identifier
+#endif
+#define cFS_API_FS_ReadHeader_type_hash ((flatbuffers_thash_t)0x12156e51)
+#define cFS_API_FS_ReadHeader_type_identifier "\x51\x6e\x15\x12"
+#ifndef cFS_API_FS_WriteHeader_identifier
+#define cFS_API_FS_WriteHeader_identifier flatbuffers_identifier
+#endif
+#define cFS_API_FS_WriteHeader_type_hash ((flatbuffers_thash_t)0x3bc74226)
+#define cFS_API_FS_WriteHeader_type_identifier "\x26\x42\xc7\x3b"
+#ifndef cFS_API_FS_SetTimestamp_identifier
+#define cFS_API_FS_SetTimestamp_identifier flatbuffers_identifier
+#endif
+#define cFS_API_FS_SetTimestamp_type_hash ((flatbuffers_thash_t)0xe62819a0)
+#define cFS_API_FS_SetTimestamp_type_identifier "\xa0\x19\x28\xe6"
+#ifndef cFS_API_FS_Decompress_identifier
+#define cFS_API_FS_Decompress_identifier flatbuffers_identifier
+#endif
+#define cFS_API_FS_Decompress_type_hash ((flatbuffers_thash_t)0xaba5786f)
+#define cFS_API_FS_Decompress_type_identifier "\x6f\x78\xa5\xab"
+#ifndef cFS_API_FS_GetUncompressedFile_identifier
+#define cFS_API_FS_GetUncompressedFile_identifier flatbuffers_identifier
+#endif
+#define cFS_API_FS_GetUncompressedFile_type_hash ((flatbuffers_thash_t)0xb227c3dc)
+#define cFS_API_FS_GetUncompressedFile_type_identifier "\xdc\xc3\x27\xb2"
 #ifndef cFS_API_TIME_GetTime_identifier
 #define cFS_API_TIME_GetTime_identifier flatbuffers_identifier
 #endif
@@ -249,18 +294,6 @@ typedef flatbuffers_uoffset_t *cFS_API_RemoteCall_mutable_vec_t;
 #define cFS_API_RemoteCall_type_identifier "\xb6\x70\x9b\x24"
 
 
-
-/** ///////////////////////////////////////////////// */
-struct cFS_API_cFETime_table { uint8_t unused__; };
-
-static inline size_t cFS_API_cFETime_vec_len(cFS_API_cFETime_vec_t vec)
-__flatbuffers_vec_len(vec)
-static inline cFS_API_cFETime_table_t cFS_API_cFETime_vec_at(cFS_API_cFETime_vec_t vec, size_t i)
-__flatbuffers_offset_vec_at(cFS_API_cFETime_table_t, vec, i, 0)
-__flatbuffers_table_as_root(cFS_API_cFETime)
-
-__flatbuffers_define_scalar_field(0, cFS_API_cFETime, Seconds, flatbuffers_uint32, uint32_t, UINT32_C(0))
-__flatbuffers_define_scalar_field(1, cFS_API_cFETime, Subseconds, flatbuffers_uint32, uint32_t, UINT32_C(0))
 
 /** ///////////////////////////////////////////////// */
 struct cFS_API_RunLoop_table { uint8_t unused__; };
@@ -337,7 +370,7 @@ static inline cFS_API_SendTimedEvent_table_t cFS_API_SendTimedEvent_vec_at(cFS_A
 __flatbuffers_offset_vec_at(cFS_API_SendTimedEvent_table_t, vec, i, 0)
 __flatbuffers_table_as_root(cFS_API_SendTimedEvent)
 
-__flatbuffers_define_table_field(0, cFS_API_SendTimedEvent, Time, cFS_API_cFETime_table_t, 0)
+__flatbuffers_define_table_field(0, cFS_API_SendTimedEvent, Time, cFETime_table_t, 0)
 __flatbuffers_define_scalar_field(1, cFS_API_SendTimedEvent, EventID, flatbuffers_uint16, uint16_t, UINT16_C(0))
 __flatbuffers_define_scalar_field(2, cFS_API_SendTimedEvent, EventType, flatbuffers_uint16, uint16_t, UINT16_C(0))
 __flatbuffers_define_string_field(3, cFS_API_SendTimedEvent, Spec, 0)
@@ -393,8 +426,83 @@ __flatbuffers_offset_vec_at(cFS_API_ResetAllFilters_table_t, vec, i, 0)
 __flatbuffers_table_as_root(cFS_API_ResetAllFilters)
 
 
+/** ///////////////////////////////////////////////// */
+struct cFS_API_FS_Header_t_table { uint8_t unused__; };
+
+static inline size_t cFS_API_FS_Header_t_vec_len(cFS_API_FS_Header_t_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_FS_Header_t_table_t cFS_API_FS_Header_t_vec_at(cFS_API_FS_Header_t_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_FS_Header_t_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_FS_Header_t)
+
+__flatbuffers_define_scalar_field(0, cFS_API_FS_Header_t, ContentType, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(1, cFS_API_FS_Header_t, SubType, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(2, cFS_API_FS_Header_t, Length, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(3, cFS_API_FS_Header_t, SpacecraftID, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(4, cFS_API_FS_Header_t, ProcessorID, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(5, cFS_API_FS_Header_t, ApplicationID, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(6, cFS_API_FS_Header_t, TimeSeconds, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_scalar_field(7, cFS_API_FS_Header_t, TimeSubSeconds, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_string_field(8, cFS_API_FS_Header_t, Description, 0)
+
+struct cFS_API_FS_ReadHeader_table { uint8_t unused__; };
+
+static inline size_t cFS_API_FS_ReadHeader_vec_len(cFS_API_FS_ReadHeader_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_FS_ReadHeader_table_t cFS_API_FS_ReadHeader_vec_at(cFS_API_FS_ReadHeader_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_FS_ReadHeader_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_FS_ReadHeader)
+
+__flatbuffers_define_table_field(0, cFS_API_FS_ReadHeader, Hdr, cFS_API_FS_Header_t_table_t, 0)
+__flatbuffers_define_scalar_field(1, cFS_API_FS_ReadHeader, FileDes, flatbuffers_int32, int32_t, INT32_C(0))
+
+struct cFS_API_FS_WriteHeader_table { uint8_t unused__; };
+
+static inline size_t cFS_API_FS_WriteHeader_vec_len(cFS_API_FS_WriteHeader_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_FS_WriteHeader_table_t cFS_API_FS_WriteHeader_vec_at(cFS_API_FS_WriteHeader_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_FS_WriteHeader_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_FS_WriteHeader)
+
+__flatbuffers_define_scalar_field(0, cFS_API_FS_WriteHeader, FileDes, flatbuffers_int32, int32_t, INT32_C(0))
+__flatbuffers_define_table_field(1, cFS_API_FS_WriteHeader, Hdr, cFS_API_FS_Header_t_table_t, 0)
+
+struct cFS_API_FS_SetTimestamp_table { uint8_t unused__; };
+
+static inline size_t cFS_API_FS_SetTimestamp_vec_len(cFS_API_FS_SetTimestamp_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_FS_SetTimestamp_table_t cFS_API_FS_SetTimestamp_vec_at(cFS_API_FS_SetTimestamp_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_FS_SetTimestamp_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_FS_SetTimestamp)
+
+__flatbuffers_define_scalar_field(0, cFS_API_FS_SetTimestamp, FileDes, flatbuffers_int32, int32_t, INT32_C(0))
+__flatbuffers_define_table_field(1, cFS_API_FS_SetTimestamp, NewTimestamp, cFETime_table_t, 0)
+
+struct cFS_API_FS_Decompress_table { uint8_t unused__; };
+
+static inline size_t cFS_API_FS_Decompress_vec_len(cFS_API_FS_Decompress_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_FS_Decompress_table_t cFS_API_FS_Decompress_vec_at(cFS_API_FS_Decompress_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_FS_Decompress_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_FS_Decompress)
+
+__flatbuffers_define_string_field(0, cFS_API_FS_Decompress, SourceFile, 0)
+__flatbuffers_define_string_field(1, cFS_API_FS_Decompress, DestinationFile, 0)
+
+struct cFS_API_FS_GetUncompressedFile_table { uint8_t unused__; };
+
+static inline size_t cFS_API_FS_GetUncompressedFile_vec_len(cFS_API_FS_GetUncompressedFile_vec_t vec)
+__flatbuffers_vec_len(vec)
+static inline cFS_API_FS_GetUncompressedFile_table_t cFS_API_FS_GetUncompressedFile_vec_at(cFS_API_FS_GetUncompressedFile_vec_t vec, size_t i)
+__flatbuffers_offset_vec_at(cFS_API_FS_GetUncompressedFile_table_t, vec, i, 0)
+__flatbuffers_table_as_root(cFS_API_FS_GetUncompressedFile)
+
+__flatbuffers_define_string_field(0, cFS_API_FS_GetUncompressedFile, OutputNameBuffer, 0)
+__flatbuffers_define_scalar_field(1, cFS_API_FS_GetUncompressedFile, OutputNameBufferSize, flatbuffers_uint32, uint32_t, UINT32_C(0))
+__flatbuffers_define_string_field(2, cFS_API_FS_GetUncompressedFile, GzipFileName, 0)
+__flatbuffers_define_string_field(3, cFS_API_FS_GetUncompressedFile, TempDir, 0)
+
 /** /////////////////////////////////////////////////
- * /////////////////////////////////////////////////
  * ///////////////////////////////////////////////// */
 struct cFS_API_TIME_GetTime_table { uint8_t unused__; };
 
@@ -431,7 +539,7 @@ static inline cFS_API_TIME_MET2SCTime_table_t cFS_API_TIME_MET2SCTime_vec_at(cFS
 __flatbuffers_offset_vec_at(cFS_API_TIME_MET2SCTime_table_t, vec, i, 0)
 __flatbuffers_table_as_root(cFS_API_TIME_MET2SCTime)
 
-__flatbuffers_define_table_field(0, cFS_API_TIME_MET2SCTime, METTime, cFS_API_cFETime_table_t, 0)
+__flatbuffers_define_table_field(0, cFS_API_TIME_MET2SCTime, METTime, cFETime_table_t, 0)
 
 struct cFS_API_TIME_GetSTCF_table { uint8_t unused__; };
 
@@ -512,17 +620,22 @@ __flatbuffers_define_union(flatbuffers_, cFS_API_Function)
 #define cFS_API_Function_SendTimedEvent ((cFS_API_Function_union_type_t)UINT8_C(9))
 #define cFS_API_Function_ResetFilter ((cFS_API_Function_union_type_t)UINT8_C(10))
 #define cFS_API_Function_ResetAllFilters ((cFS_API_Function_union_type_t)UINT8_C(11))
-#define cFS_API_Function_TIME_GetTime ((cFS_API_Function_union_type_t)UINT8_C(12))
-#define cFS_API_Function_TIME_GetTAI ((cFS_API_Function_union_type_t)UINT8_C(13))
-#define cFS_API_Function_TIME_GetUTC ((cFS_API_Function_union_type_t)UINT8_C(14))
-#define cFS_API_Function_TIME_MET2SCTime ((cFS_API_Function_union_type_t)UINT8_C(15))
-#define cFS_API_Function_TIME_GetSTCF ((cFS_API_Function_union_type_t)UINT8_C(16))
-#define cFS_API_Function_TIME_GetMET ((cFS_API_Function_union_type_t)UINT8_C(17))
-#define cFS_API_Function_TIME_GetMETseconds ((cFS_API_Function_union_type_t)UINT8_C(18))
-#define cFS_API_Function_TIME_GetMETsubsecs ((cFS_API_Function_union_type_t)UINT8_C(19))
-#define cFS_API_Function_TIME_GetLeapSeconds ((cFS_API_Function_union_type_t)UINT8_C(20))
-#define cFS_API_Function_TIME_GetClockState ((cFS_API_Function_union_type_t)UINT8_C(21))
-#define cFS_API_Function_TIME_GetClockInfo ((cFS_API_Function_union_type_t)UINT8_C(22))
+#define cFS_API_Function_FS_ReadHeader ((cFS_API_Function_union_type_t)UINT8_C(12))
+#define cFS_API_Function_FS_WriteHeader ((cFS_API_Function_union_type_t)UINT8_C(13))
+#define cFS_API_Function_FS_SetTimestamp ((cFS_API_Function_union_type_t)UINT8_C(14))
+#define cFS_API_Function_FS_Decompress ((cFS_API_Function_union_type_t)UINT8_C(15))
+#define cFS_API_Function_FS_GetUncompressedFile ((cFS_API_Function_union_type_t)UINT8_C(16))
+#define cFS_API_Function_TIME_GetTime ((cFS_API_Function_union_type_t)UINT8_C(17))
+#define cFS_API_Function_TIME_GetTAI ((cFS_API_Function_union_type_t)UINT8_C(18))
+#define cFS_API_Function_TIME_GetUTC ((cFS_API_Function_union_type_t)UINT8_C(19))
+#define cFS_API_Function_TIME_MET2SCTime ((cFS_API_Function_union_type_t)UINT8_C(20))
+#define cFS_API_Function_TIME_GetSTCF ((cFS_API_Function_union_type_t)UINT8_C(21))
+#define cFS_API_Function_TIME_GetMET ((cFS_API_Function_union_type_t)UINT8_C(22))
+#define cFS_API_Function_TIME_GetMETseconds ((cFS_API_Function_union_type_t)UINT8_C(23))
+#define cFS_API_Function_TIME_GetMETsubsecs ((cFS_API_Function_union_type_t)UINT8_C(24))
+#define cFS_API_Function_TIME_GetLeapSeconds ((cFS_API_Function_union_type_t)UINT8_C(25))
+#define cFS_API_Function_TIME_GetClockState ((cFS_API_Function_union_type_t)UINT8_C(26))
+#define cFS_API_Function_TIME_GetClockInfo ((cFS_API_Function_union_type_t)UINT8_C(27))
 
 static inline const char *cFS_API_Function_type_name(cFS_API_Function_union_type_t type)
 {
@@ -539,6 +652,11 @@ static inline const char *cFS_API_Function_type_name(cFS_API_Function_union_type
     case cFS_API_Function_SendTimedEvent: return "SendTimedEvent";
     case cFS_API_Function_ResetFilter: return "ResetFilter";
     case cFS_API_Function_ResetAllFilters: return "ResetAllFilters";
+    case cFS_API_Function_FS_ReadHeader: return "FS_ReadHeader";
+    case cFS_API_Function_FS_WriteHeader: return "FS_WriteHeader";
+    case cFS_API_Function_FS_SetTimestamp: return "FS_SetTimestamp";
+    case cFS_API_Function_FS_Decompress: return "FS_Decompress";
+    case cFS_API_Function_FS_GetUncompressedFile: return "FS_GetUncompressedFile";
     case cFS_API_Function_TIME_GetTime: return "TIME_GetTime";
     case cFS_API_Function_TIME_GetTAI: return "TIME_GetTAI";
     case cFS_API_Function_TIME_GetUTC: return "TIME_GetUTC";
@@ -569,6 +687,11 @@ static inline int cFS_API_Function_is_known_type(cFS_API_Function_union_type_t t
     case cFS_API_Function_SendTimedEvent: return 1;
     case cFS_API_Function_ResetFilter: return 1;
     case cFS_API_Function_ResetAllFilters: return 1;
+    case cFS_API_Function_FS_ReadHeader: return 1;
+    case cFS_API_Function_FS_WriteHeader: return 1;
+    case cFS_API_Function_FS_SetTimestamp: return 1;
+    case cFS_API_Function_FS_Decompress: return 1;
+    case cFS_API_Function_FS_GetUncompressedFile: return 1;
     case cFS_API_Function_TIME_GetTime: return 1;
     case cFS_API_Function_TIME_GetTAI: return 1;
     case cFS_API_Function_TIME_GetUTC: return 1;

@@ -122,16 +122,16 @@ CFE_TIME_SysTime_t receive_SysTime(void)
     {
 
                 //ns(SendTimedEvent_table_t) sendTimedEvent = (ns(SendTimedEvent_table_t)) ns(RemoteCall_input(remoteCall));
-                //ns(cFETime_table_t) time = ns(SendTimedEvent_Time(sendTimedEvent));
+                //cFETime_table_t time = ns(SendTimedEvent_Time(sendTimedEvent));
                 //CFE_TIME_SysTime_t cfe_time;
                 //cfe_time.Seconds = ns(cFETime_Seconds(time));
                 //cfe_time.Subseconds = ns(cFETime_Subseconds(time));
 
         // printf("Actual return value receive!\n");
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
-        ns(cFETime_table_t) time = nsr(ReturnData_retval(returnData));
-        received.Seconds = ns(cFETime_Seconds(time));
-        received.Subseconds = ns(cFETime_Subseconds(time));
+        cFETime_table_t time = nsr(ReturnData_retval(returnData));
+        received.Seconds = cFETime_Seconds(time);
+        received.Subseconds = cFETime_Subseconds(time);
 
         nng_free(ret_buffer, size);
     }

@@ -147,7 +147,7 @@ CFE_TIME_SysTime_t __wrap_CFE_TIME_MET2SCTime (CFE_TIME_SysTime_t METTime)
     size_t size;
 
     /* Construct a buffer specific to schema. */
-    ns(cFETime_ref_t) cFETime = ns(cFETime_create(B, METTime.Seconds, METTime.Subseconds));
+    cFETime_ref_t cFETime = cFETime_create(B, METTime.Seconds, METTime.Subseconds);
     ns(TIME_MET2SCTime_ref_t) func_table = ns(TIME_MET2SCTime_create(B, cFETime));
     ns(Function_union_ref_t) function = ns(Function_as_TIME_MET2SCTime(func_table));
     ns(RemoteCall_create_as_root(B, function));

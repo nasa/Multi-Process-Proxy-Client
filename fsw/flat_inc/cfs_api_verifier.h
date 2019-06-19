@@ -12,7 +12,6 @@
 #endif
 #include "flatcc/flatcc_prologue.h"
 
-static int cFS_API_cFETime_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_RunLoop_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_PerfLogAdd_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_RegisterApp_verify_table(flatcc_table_verifier_descriptor_t *td);
@@ -25,6 +24,12 @@ static int cFS_API_Register_verify_table(flatcc_table_verifier_descriptor_t *td)
 static int cFS_API_Unregister_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_ResetFilter_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_ResetAllFilters_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_FS_Header_t_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_FS_ReadHeader_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_FS_WriteHeader_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_FS_SetTimestamp_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_FS_Decompress_verify_table(flatcc_table_verifier_descriptor_t *td);
+static int cFS_API_FS_GetUncompressedFile_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_TIME_GetTime_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_TIME_GetTAI_verify_table(flatcc_table_verifier_descriptor_t *td);
 static int cFS_API_TIME_GetUTC_verify_table(flatcc_table_verifier_descriptor_t *td);
@@ -52,47 +57,24 @@ static int cFS_API_Function_union_verifier(flatcc_union_verifier_descriptor_t *u
     case 9: return flatcc_verify_union_table(ud, cFS_API_SendTimedEvent_verify_table); /* SendTimedEvent */
     case 10: return flatcc_verify_union_table(ud, cFS_API_ResetFilter_verify_table); /* ResetFilter */
     case 11: return flatcc_verify_union_table(ud, cFS_API_ResetAllFilters_verify_table); /* ResetAllFilters */
-    case 12: return flatcc_verify_union_table(ud, cFS_API_TIME_GetTime_verify_table); /* TIME_GetTime */
-    case 13: return flatcc_verify_union_table(ud, cFS_API_TIME_GetTAI_verify_table); /* TIME_GetTAI */
-    case 14: return flatcc_verify_union_table(ud, cFS_API_TIME_GetUTC_verify_table); /* TIME_GetUTC */
-    case 15: return flatcc_verify_union_table(ud, cFS_API_TIME_MET2SCTime_verify_table); /* TIME_MET2SCTime */
-    case 16: return flatcc_verify_union_table(ud, cFS_API_TIME_GetSTCF_verify_table); /* TIME_GetSTCF */
-    case 17: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMET_verify_table); /* TIME_GetMET */
-    case 18: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMETseconds_verify_table); /* TIME_GetMETseconds */
-    case 19: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMETsubsecs_verify_table); /* TIME_GetMETsubsecs */
-    case 20: return flatcc_verify_union_table(ud, cFS_API_TIME_GetLeapSeconds_verify_table); /* TIME_GetLeapSeconds */
-    case 21: return flatcc_verify_union_table(ud, cFS_API_TIME_GetClockState_verify_table); /* TIME_GetClockState */
-    case 22: return flatcc_verify_union_table(ud, cFS_API_TIME_GetClockInfo_verify_table); /* TIME_GetClockInfo */
+    case 12: return flatcc_verify_union_table(ud, cFS_API_FS_ReadHeader_verify_table); /* FS_ReadHeader */
+    case 13: return flatcc_verify_union_table(ud, cFS_API_FS_WriteHeader_verify_table); /* FS_WriteHeader */
+    case 14: return flatcc_verify_union_table(ud, cFS_API_FS_SetTimestamp_verify_table); /* FS_SetTimestamp */
+    case 15: return flatcc_verify_union_table(ud, cFS_API_FS_Decompress_verify_table); /* FS_Decompress */
+    case 16: return flatcc_verify_union_table(ud, cFS_API_FS_GetUncompressedFile_verify_table); /* FS_GetUncompressedFile */
+    case 17: return flatcc_verify_union_table(ud, cFS_API_TIME_GetTime_verify_table); /* TIME_GetTime */
+    case 18: return flatcc_verify_union_table(ud, cFS_API_TIME_GetTAI_verify_table); /* TIME_GetTAI */
+    case 19: return flatcc_verify_union_table(ud, cFS_API_TIME_GetUTC_verify_table); /* TIME_GetUTC */
+    case 20: return flatcc_verify_union_table(ud, cFS_API_TIME_MET2SCTime_verify_table); /* TIME_MET2SCTime */
+    case 21: return flatcc_verify_union_table(ud, cFS_API_TIME_GetSTCF_verify_table); /* TIME_GetSTCF */
+    case 22: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMET_verify_table); /* TIME_GetMET */
+    case 23: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMETseconds_verify_table); /* TIME_GetMETseconds */
+    case 24: return flatcc_verify_union_table(ud, cFS_API_TIME_GetMETsubsecs_verify_table); /* TIME_GetMETsubsecs */
+    case 25: return flatcc_verify_union_table(ud, cFS_API_TIME_GetLeapSeconds_verify_table); /* TIME_GetLeapSeconds */
+    case 26: return flatcc_verify_union_table(ud, cFS_API_TIME_GetClockState_verify_table); /* TIME_GetClockState */
+    case 27: return flatcc_verify_union_table(ud, cFS_API_TIME_GetClockInfo_verify_table); /* TIME_GetClockInfo */
     default: return flatcc_verify_ok;
     }
-}
-
-static int cFS_API_cFETime_verify_table(flatcc_table_verifier_descriptor_t *td)
-{
-    int ret;
-    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* Seconds */)) return ret;
-    if ((ret = flatcc_verify_field(td, 1, 4, 4) /* Subseconds */)) return ret;
-    return flatcc_verify_ok;
-}
-
-static inline int cFS_API_cFETime_verify_as_root(const void *buf, size_t bufsiz)
-{
-    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_cFETime_identifier, &cFS_API_cFETime_verify_table);
-}
-
-static inline int cFS_API_cFETime_verify_as_typed_root(const void *buf, size_t bufsiz)
-{
-    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_cFETime_type_identifier, &cFS_API_cFETime_verify_table);
-}
-
-static inline int cFS_API_cFETime_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
-{
-    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_cFETime_verify_table);
-}
-
-static inline int cFS_API_cFETime_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
-{
-    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_cFETime_verify_table);
 }
 
 static int cFS_API_RunLoop_verify_table(flatcc_table_verifier_descriptor_t *td)
@@ -264,7 +246,7 @@ static inline int cFS_API_SendEventWithAppID_verify_as_root_with_type_hash(const
 static int cFS_API_SendTimedEvent_verify_table(flatcc_table_verifier_descriptor_t *td)
 {
     int ret;
-    if ((ret = flatcc_verify_table_field(td, 0, 0, &cFS_API_cFETime_verify_table) /* Time */)) return ret;
+    if ((ret = flatcc_verify_table_field(td, 0, 0, &cFETime_verify_table) /* Time */)) return ret;
     if ((ret = flatcc_verify_field(td, 1, 2, 2) /* EventID */)) return ret;
     if ((ret = flatcc_verify_field(td, 2, 2, 2) /* EventType */)) return ret;
     if ((ret = flatcc_verify_string_field(td, 3, 0) /* Spec */)) return ret;
@@ -425,6 +407,183 @@ static inline int cFS_API_ResetAllFilters_verify_as_root_with_type_hash(const vo
     return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_ResetAllFilters_verify_table);
 }
 
+static int cFS_API_FS_Header_t_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* ContentType */)) return ret;
+    if ((ret = flatcc_verify_field(td, 1, 4, 4) /* SubType */)) return ret;
+    if ((ret = flatcc_verify_field(td, 2, 4, 4) /* Length */)) return ret;
+    if ((ret = flatcc_verify_field(td, 3, 4, 4) /* SpacecraftID */)) return ret;
+    if ((ret = flatcc_verify_field(td, 4, 4, 4) /* ProcessorID */)) return ret;
+    if ((ret = flatcc_verify_field(td, 5, 4, 4) /* ApplicationID */)) return ret;
+    if ((ret = flatcc_verify_field(td, 6, 4, 4) /* TimeSeconds */)) return ret;
+    if ((ret = flatcc_verify_field(td, 7, 4, 4) /* TimeSubSeconds */)) return ret;
+    if ((ret = flatcc_verify_string_field(td, 8, 0) /* Description */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_FS_Header_t_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_Header_t_identifier, &cFS_API_FS_Header_t_verify_table);
+}
+
+static inline int cFS_API_FS_Header_t_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_Header_t_type_identifier, &cFS_API_FS_Header_t_verify_table);
+}
+
+static inline int cFS_API_FS_Header_t_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_FS_Header_t_verify_table);
+}
+
+static inline int cFS_API_FS_Header_t_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_FS_Header_t_verify_table);
+}
+
+static int cFS_API_FS_ReadHeader_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_table_field(td, 0, 0, &cFS_API_FS_Header_t_verify_table) /* Hdr */)) return ret;
+    if ((ret = flatcc_verify_field(td, 1, 4, 4) /* FileDes */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_FS_ReadHeader_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_ReadHeader_identifier, &cFS_API_FS_ReadHeader_verify_table);
+}
+
+static inline int cFS_API_FS_ReadHeader_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_ReadHeader_type_identifier, &cFS_API_FS_ReadHeader_verify_table);
+}
+
+static inline int cFS_API_FS_ReadHeader_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_FS_ReadHeader_verify_table);
+}
+
+static inline int cFS_API_FS_ReadHeader_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_FS_ReadHeader_verify_table);
+}
+
+static int cFS_API_FS_WriteHeader_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* FileDes */)) return ret;
+    if ((ret = flatcc_verify_table_field(td, 1, 0, &cFS_API_FS_Header_t_verify_table) /* Hdr */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_FS_WriteHeader_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_WriteHeader_identifier, &cFS_API_FS_WriteHeader_verify_table);
+}
+
+static inline int cFS_API_FS_WriteHeader_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_WriteHeader_type_identifier, &cFS_API_FS_WriteHeader_verify_table);
+}
+
+static inline int cFS_API_FS_WriteHeader_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_FS_WriteHeader_verify_table);
+}
+
+static inline int cFS_API_FS_WriteHeader_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_FS_WriteHeader_verify_table);
+}
+
+static int cFS_API_FS_SetTimestamp_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_field(td, 0, 4, 4) /* FileDes */)) return ret;
+    if ((ret = flatcc_verify_table_field(td, 1, 0, &cFETime_verify_table) /* NewTimestamp */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_FS_SetTimestamp_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_SetTimestamp_identifier, &cFS_API_FS_SetTimestamp_verify_table);
+}
+
+static inline int cFS_API_FS_SetTimestamp_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_SetTimestamp_type_identifier, &cFS_API_FS_SetTimestamp_verify_table);
+}
+
+static inline int cFS_API_FS_SetTimestamp_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_FS_SetTimestamp_verify_table);
+}
+
+static inline int cFS_API_FS_SetTimestamp_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_FS_SetTimestamp_verify_table);
+}
+
+static int cFS_API_FS_Decompress_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_string_field(td, 0, 0) /* SourceFile */)) return ret;
+    if ((ret = flatcc_verify_string_field(td, 1, 0) /* DestinationFile */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_FS_Decompress_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_Decompress_identifier, &cFS_API_FS_Decompress_verify_table);
+}
+
+static inline int cFS_API_FS_Decompress_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_Decompress_type_identifier, &cFS_API_FS_Decompress_verify_table);
+}
+
+static inline int cFS_API_FS_Decompress_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_FS_Decompress_verify_table);
+}
+
+static inline int cFS_API_FS_Decompress_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_FS_Decompress_verify_table);
+}
+
+static int cFS_API_FS_GetUncompressedFile_verify_table(flatcc_table_verifier_descriptor_t *td)
+{
+    int ret;
+    if ((ret = flatcc_verify_string_field(td, 0, 0) /* OutputNameBuffer */)) return ret;
+    if ((ret = flatcc_verify_field(td, 1, 4, 4) /* OutputNameBufferSize */)) return ret;
+    if ((ret = flatcc_verify_string_field(td, 2, 0) /* GzipFileName */)) return ret;
+    if ((ret = flatcc_verify_string_field(td, 3, 0) /* TempDir */)) return ret;
+    return flatcc_verify_ok;
+}
+
+static inline int cFS_API_FS_GetUncompressedFile_verify_as_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_GetUncompressedFile_identifier, &cFS_API_FS_GetUncompressedFile_verify_table);
+}
+
+static inline int cFS_API_FS_GetUncompressedFile_verify_as_typed_root(const void *buf, size_t bufsiz)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, cFS_API_FS_GetUncompressedFile_type_identifier, &cFS_API_FS_GetUncompressedFile_verify_table);
+}
+
+static inline int cFS_API_FS_GetUncompressedFile_verify_as_root_with_identifier(const void *buf, size_t bufsiz, const char *fid)
+{
+    return flatcc_verify_table_as_root(buf, bufsiz, fid, &cFS_API_FS_GetUncompressedFile_verify_table);
+}
+
+static inline int cFS_API_FS_GetUncompressedFile_verify_as_root_with_type_hash(const void *buf, size_t bufsiz, flatbuffers_thash_t thash)
+{
+    return flatcc_verify_table_as_typed_root(buf, bufsiz, thash, &cFS_API_FS_GetUncompressedFile_verify_table);
+}
+
 static int cFS_API_TIME_GetTime_verify_table(flatcc_table_verifier_descriptor_t *td)
 {
     return flatcc_verify_ok;
@@ -503,7 +662,7 @@ static inline int cFS_API_TIME_GetUTC_verify_as_root_with_type_hash(const void *
 static int cFS_API_TIME_MET2SCTime_verify_table(flatcc_table_verifier_descriptor_t *td)
 {
     int ret;
-    if ((ret = flatcc_verify_table_field(td, 0, 0, &cFS_API_cFETime_verify_table) /* METTime */)) return ret;
+    if ((ret = flatcc_verify_table_field(td, 0, 0, &cFETime_verify_table) /* METTime */)) return ret;
     return flatcc_verify_ok;
 }
 

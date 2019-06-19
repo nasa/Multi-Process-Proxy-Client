@@ -3,13 +3,6 @@ include "common.fbs";
 namespace cFS_API;
 
 ////////////////////////////////////////////////////
-// Common
-table cFETime {
-    Seconds:uint32;
-    Subseconds:uint32;
-}
-
-////////////////////////////////////////////////////
 // ES Functions
 table RunLoop {
     ExitStatus:uint32; // A pointer
@@ -76,7 +69,46 @@ table ResetAllFilters { // return int32
 }
 
 ////////////////////////////////////////////////////
+// FS Data Types
+table FS_Header_t {
+    ContentType:uint32;
+    SubType:uint32;
+    Length:uint32;
+    SpacecraftID:uint32;
+    ProcessorID:uint32;
+    ApplicationID:uint32;
+    TimeSeconds:uint32;
+    TimeSubSeconds:uint32;
+    Description:string;
+}
+
 // FS Functions
+table FS_ReadHeader { // return int32
+    Hdr:FS_Header_t; // pointer
+    FileDes:int32;
+}
+
+table FS_WriteHeader { // return int32
+    FileDes:int32;
+    Hdr:FS_Header_t; // pointer
+}
+
+table FS_SetTimestamp { // return int32
+    FileDes:int32;
+    NewTimestamp:cFETime;
+}
+
+table FS_Decompress { // return int32
+     SourceFile:string;
+     DestinationFile:string;
+}
+
+table FS_GetUncompressedFile { // return int32
+    OutputNameBuffer:string;
+    OutputNameBufferSize:uint32;
+    GzipFileName:string;
+    TempDir:string;
+}
 
 ////////////////////////////////////////////////////
 // SB Functions are likely all handled by SBN-Client
@@ -148,6 +180,11 @@ union Function {
     ResetAllFilters,
 
     // FS Functions
+    FS_ReadHeader,
+    FS_WriteHeader,
+    FS_SetTimestamp,
+    FS_Decompress,
+    FS_GetUncompressedFile,
 
     // SB Functions are likely all handled by SBN-Client
 

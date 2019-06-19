@@ -130,7 +130,7 @@ int32 __wrap_CFE_EVS_SendTimedEvent(CFE_TIME_SysTime_t Time, uint16 EventID, uin
     size_t size;
 
     /* Construct a buffer specific to schema. */
-    ns(cFETime_ref_t) cFETime = ns(cFETime_create(B, Time.Seconds, Time.Subseconds));
+    cFETime_ref_t cFETime = cFETime_create(B, Time.Seconds, Time.Subseconds);
     ns(SendTimedEvent_ref_t) sendTimedEvent = ns(SendTimedEvent_create(B, cFETime, EventID, EventType, s));
     ns(Function_union_ref_t) function = ns(Function_as_SendTimedEvent(sendTimedEvent));
     ns(RemoteCall_create_as_root(B, function));

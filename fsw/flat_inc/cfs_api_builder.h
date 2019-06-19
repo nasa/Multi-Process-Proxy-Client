@@ -24,11 +24,6 @@ typedef flatbuffers_union_ref_t cFS_API_Function_union_ref_t;
 typedef flatbuffers_union_vec_ref_t cFS_API_Function_union_vec_ref_t;
 static cFS_API_Function_union_ref_t cFS_API_Function_clone(flatbuffers_builder_t *B, cFS_API_Function_union_t t);
 
-static const flatbuffers_voffset_t __cFS_API_cFETime_required[] = { 0 };
-typedef flatbuffers_ref_t cFS_API_cFETime_ref_t;
-static cFS_API_cFETime_ref_t cFS_API_cFETime_clone(flatbuffers_builder_t *B, cFS_API_cFETime_table_t t);
-__flatbuffers_build_table(flatbuffers_, cFS_API_cFETime, 2)
-
 static const flatbuffers_voffset_t __cFS_API_RunLoop_required[] = { 0 };
 typedef flatbuffers_ref_t cFS_API_RunLoop_ref_t;
 static cFS_API_RunLoop_ref_t cFS_API_RunLoop_clone(flatbuffers_builder_t *B, cFS_API_RunLoop_table_t t);
@@ -88,6 +83,36 @@ static const flatbuffers_voffset_t __cFS_API_ResetAllFilters_required[] = { 0 };
 typedef flatbuffers_ref_t cFS_API_ResetAllFilters_ref_t;
 static cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_clone(flatbuffers_builder_t *B, cFS_API_ResetAllFilters_table_t t);
 __flatbuffers_build_table(flatbuffers_, cFS_API_ResetAllFilters, 0)
+
+static const flatbuffers_voffset_t __cFS_API_FS_Header_t_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_FS_Header_t_ref_t;
+static cFS_API_FS_Header_t_ref_t cFS_API_FS_Header_t_clone(flatbuffers_builder_t *B, cFS_API_FS_Header_t_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_FS_Header_t, 9)
+
+static const flatbuffers_voffset_t __cFS_API_FS_ReadHeader_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_FS_ReadHeader_ref_t;
+static cFS_API_FS_ReadHeader_ref_t cFS_API_FS_ReadHeader_clone(flatbuffers_builder_t *B, cFS_API_FS_ReadHeader_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_FS_ReadHeader, 2)
+
+static const flatbuffers_voffset_t __cFS_API_FS_WriteHeader_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_FS_WriteHeader_ref_t;
+static cFS_API_FS_WriteHeader_ref_t cFS_API_FS_WriteHeader_clone(flatbuffers_builder_t *B, cFS_API_FS_WriteHeader_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_FS_WriteHeader, 2)
+
+static const flatbuffers_voffset_t __cFS_API_FS_SetTimestamp_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_FS_SetTimestamp_ref_t;
+static cFS_API_FS_SetTimestamp_ref_t cFS_API_FS_SetTimestamp_clone(flatbuffers_builder_t *B, cFS_API_FS_SetTimestamp_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_FS_SetTimestamp, 2)
+
+static const flatbuffers_voffset_t __cFS_API_FS_Decompress_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_FS_Decompress_ref_t;
+static cFS_API_FS_Decompress_ref_t cFS_API_FS_Decompress_clone(flatbuffers_builder_t *B, cFS_API_FS_Decompress_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_FS_Decompress, 2)
+
+static const flatbuffers_voffset_t __cFS_API_FS_GetUncompressedFile_required[] = { 0 };
+typedef flatbuffers_ref_t cFS_API_FS_GetUncompressedFile_ref_t;
+static cFS_API_FS_GetUncompressedFile_ref_t cFS_API_FS_GetUncompressedFile_clone(flatbuffers_builder_t *B, cFS_API_FS_GetUncompressedFile_table_t t);
+__flatbuffers_build_table(flatbuffers_, cFS_API_FS_GetUncompressedFile, 4)
 
 static const flatbuffers_voffset_t __cFS_API_TIME_GetTime_required[] = { 0 };
 typedef flatbuffers_ref_t cFS_API_TIME_GetTime_ref_t;
@@ -149,11 +174,6 @@ typedef flatbuffers_ref_t cFS_API_RemoteCall_ref_t;
 static cFS_API_RemoteCall_ref_t cFS_API_RemoteCall_clone(flatbuffers_builder_t *B, cFS_API_RemoteCall_table_t t);
 __flatbuffers_build_table(flatbuffers_, cFS_API_RemoteCall, 2)
 
-#define __cFS_API_cFETime_formal_args , uint32_t v0, uint32_t v1
-#define __cFS_API_cFETime_call_args , v0, v1
-static inline cFS_API_cFETime_ref_t cFS_API_cFETime_create(flatbuffers_builder_t *B __cFS_API_cFETime_formal_args);
-__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_cFETime, cFS_API_cFETime_identifier, cFS_API_cFETime_type_identifier)
-
 #define __cFS_API_RunLoop_formal_args , uint32_t v0
 #define __cFS_API_RunLoop_call_args , v0
 static inline cFS_API_RunLoop_ref_t cFS_API_RunLoop_create(flatbuffers_builder_t *B __cFS_API_RunLoop_formal_args);
@@ -184,7 +204,7 @@ __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_SendEvent, cFS_API_SendEv
 static inline cFS_API_SendEventWithAppID_ref_t cFS_API_SendEventWithAppID_create(flatbuffers_builder_t *B __cFS_API_SendEventWithAppID_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_SendEventWithAppID, cFS_API_SendEventWithAppID_identifier, cFS_API_SendEventWithAppID_type_identifier)
 
-#define __cFS_API_SendTimedEvent_formal_args , cFS_API_cFETime_ref_t v0, uint16_t v1, uint16_t v2, flatbuffers_string_ref_t v3
+#define __cFS_API_SendTimedEvent_formal_args , cFETime_ref_t v0, uint16_t v1, uint16_t v2, flatbuffers_string_ref_t v3
 #define __cFS_API_SendTimedEvent_call_args , v0, v1, v2, v3
 static inline cFS_API_SendTimedEvent_ref_t cFS_API_SendTimedEvent_create(flatbuffers_builder_t *B __cFS_API_SendTimedEvent_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_SendTimedEvent, cFS_API_SendTimedEvent_identifier, cFS_API_SendTimedEvent_type_identifier)
@@ -214,6 +234,40 @@ __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_ResetFilter, cFS_API_Rese
 static inline cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_create(flatbuffers_builder_t *B __cFS_API_ResetAllFilters_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_ResetAllFilters, cFS_API_ResetAllFilters_identifier, cFS_API_ResetAllFilters_type_identifier)
 
+#define __cFS_API_FS_Header_t_formal_args ,\
+  uint32_t v0, uint32_t v1, uint32_t v2, uint32_t v3,\
+  uint32_t v4, uint32_t v5, uint32_t v6, uint32_t v7, flatbuffers_string_ref_t v8
+#define __cFS_API_FS_Header_t_call_args ,\
+  v0, v1, v2, v3,\
+  v4, v5, v6, v7, v8
+static inline cFS_API_FS_Header_t_ref_t cFS_API_FS_Header_t_create(flatbuffers_builder_t *B __cFS_API_FS_Header_t_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_FS_Header_t, cFS_API_FS_Header_t_identifier, cFS_API_FS_Header_t_type_identifier)
+
+#define __cFS_API_FS_ReadHeader_formal_args , cFS_API_FS_Header_t_ref_t v0, int32_t v1
+#define __cFS_API_FS_ReadHeader_call_args , v0, v1
+static inline cFS_API_FS_ReadHeader_ref_t cFS_API_FS_ReadHeader_create(flatbuffers_builder_t *B __cFS_API_FS_ReadHeader_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_FS_ReadHeader, cFS_API_FS_ReadHeader_identifier, cFS_API_FS_ReadHeader_type_identifier)
+
+#define __cFS_API_FS_WriteHeader_formal_args , int32_t v0, cFS_API_FS_Header_t_ref_t v1
+#define __cFS_API_FS_WriteHeader_call_args , v0, v1
+static inline cFS_API_FS_WriteHeader_ref_t cFS_API_FS_WriteHeader_create(flatbuffers_builder_t *B __cFS_API_FS_WriteHeader_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_FS_WriteHeader, cFS_API_FS_WriteHeader_identifier, cFS_API_FS_WriteHeader_type_identifier)
+
+#define __cFS_API_FS_SetTimestamp_formal_args , int32_t v0, cFETime_ref_t v1
+#define __cFS_API_FS_SetTimestamp_call_args , v0, v1
+static inline cFS_API_FS_SetTimestamp_ref_t cFS_API_FS_SetTimestamp_create(flatbuffers_builder_t *B __cFS_API_FS_SetTimestamp_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_FS_SetTimestamp, cFS_API_FS_SetTimestamp_identifier, cFS_API_FS_SetTimestamp_type_identifier)
+
+#define __cFS_API_FS_Decompress_formal_args , flatbuffers_string_ref_t v0, flatbuffers_string_ref_t v1
+#define __cFS_API_FS_Decompress_call_args , v0, v1
+static inline cFS_API_FS_Decompress_ref_t cFS_API_FS_Decompress_create(flatbuffers_builder_t *B __cFS_API_FS_Decompress_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_FS_Decompress, cFS_API_FS_Decompress_identifier, cFS_API_FS_Decompress_type_identifier)
+
+#define __cFS_API_FS_GetUncompressedFile_formal_args , flatbuffers_string_ref_t v0, uint32_t v1, flatbuffers_string_ref_t v2, flatbuffers_string_ref_t v3
+#define __cFS_API_FS_GetUncompressedFile_call_args , v0, v1, v2, v3
+static inline cFS_API_FS_GetUncompressedFile_ref_t cFS_API_FS_GetUncompressedFile_create(flatbuffers_builder_t *B __cFS_API_FS_GetUncompressedFile_formal_args);
+__flatbuffers_build_table_prolog(flatbuffers_, cFS_API_FS_GetUncompressedFile, cFS_API_FS_GetUncompressedFile_identifier, cFS_API_FS_GetUncompressedFile_type_identifier)
+
 #define __cFS_API_TIME_GetTime_formal_args 
 #define __cFS_API_TIME_GetTime_call_args 
 static inline cFS_API_TIME_GetTime_ref_t cFS_API_TIME_GetTime_create(flatbuffers_builder_t *B __cFS_API_TIME_GetTime_formal_args);
@@ -229,7 +283,7 @@ __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetTAI, cFS_API_TIME
 static inline cFS_API_TIME_GetUTC_ref_t cFS_API_TIME_GetUTC_create(flatbuffers_builder_t *B __cFS_API_TIME_GetUTC_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_GetUTC, cFS_API_TIME_GetUTC_identifier, cFS_API_TIME_GetUTC_type_identifier)
 
-#define __cFS_API_TIME_MET2SCTime_formal_args , cFS_API_cFETime_ref_t v0
+#define __cFS_API_TIME_MET2SCTime_formal_args , cFETime_ref_t v0
 #define __cFS_API_TIME_MET2SCTime_call_args , v0
 static inline cFS_API_TIME_MET2SCTime_ref_t cFS_API_TIME_MET2SCTime_create(flatbuffers_builder_t *B __cFS_API_TIME_MET2SCTime_formal_args);
 __flatbuffers_build_table_prolog(flatbuffers_, cFS_API_TIME_MET2SCTime, cFS_API_TIME_MET2SCTime_identifier, cFS_API_TIME_MET2SCTime_type_identifier)
@@ -298,6 +352,16 @@ static inline cFS_API_Function_union_ref_t cFS_API_Function_as_ResetFilter(cFS_A
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_ResetFilter; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_ResetAllFilters(cFS_API_ResetAllFilters_ref_t ref)
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_ResetAllFilters; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_FS_ReadHeader(cFS_API_FS_ReadHeader_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_FS_ReadHeader; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_FS_WriteHeader(cFS_API_FS_WriteHeader_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_FS_WriteHeader; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_FS_SetTimestamp(cFS_API_FS_SetTimestamp_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_FS_SetTimestamp; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_FS_Decompress(cFS_API_FS_Decompress_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_FS_Decompress; uref.value = ref; return uref; }
+static inline cFS_API_Function_union_ref_t cFS_API_Function_as_FS_GetUncompressedFile(cFS_API_FS_GetUncompressedFile_ref_t ref)
+{ cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_FS_GetUncompressedFile; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetTime(cFS_API_TIME_GetTime_ref_t ref)
 { cFS_API_Function_union_ref_t uref; uref.type = cFS_API_Function_TIME_GetTime; uref.value = ref; return uref; }
 static inline cFS_API_Function_union_ref_t cFS_API_Function_as_TIME_GetTAI(cFS_API_TIME_GetTAI_ref_t ref)
@@ -336,43 +400,24 @@ static cFS_API_Function_union_ref_t cFS_API_Function_clone(flatbuffers_builder_t
     case 9: return cFS_API_Function_as_SendTimedEvent(cFS_API_SendTimedEvent_clone(B, (cFS_API_SendTimedEvent_table_t)u.value));
     case 10: return cFS_API_Function_as_ResetFilter(cFS_API_ResetFilter_clone(B, (cFS_API_ResetFilter_table_t)u.value));
     case 11: return cFS_API_Function_as_ResetAllFilters(cFS_API_ResetAllFilters_clone(B, (cFS_API_ResetAllFilters_table_t)u.value));
-    case 12: return cFS_API_Function_as_TIME_GetTime(cFS_API_TIME_GetTime_clone(B, (cFS_API_TIME_GetTime_table_t)u.value));
-    case 13: return cFS_API_Function_as_TIME_GetTAI(cFS_API_TIME_GetTAI_clone(B, (cFS_API_TIME_GetTAI_table_t)u.value));
-    case 14: return cFS_API_Function_as_TIME_GetUTC(cFS_API_TIME_GetUTC_clone(B, (cFS_API_TIME_GetUTC_table_t)u.value));
-    case 15: return cFS_API_Function_as_TIME_MET2SCTime(cFS_API_TIME_MET2SCTime_clone(B, (cFS_API_TIME_MET2SCTime_table_t)u.value));
-    case 16: return cFS_API_Function_as_TIME_GetSTCF(cFS_API_TIME_GetSTCF_clone(B, (cFS_API_TIME_GetSTCF_table_t)u.value));
-    case 17: return cFS_API_Function_as_TIME_GetMET(cFS_API_TIME_GetMET_clone(B, (cFS_API_TIME_GetMET_table_t)u.value));
-    case 18: return cFS_API_Function_as_TIME_GetMETseconds(cFS_API_TIME_GetMETseconds_clone(B, (cFS_API_TIME_GetMETseconds_table_t)u.value));
-    case 19: return cFS_API_Function_as_TIME_GetMETsubsecs(cFS_API_TIME_GetMETsubsecs_clone(B, (cFS_API_TIME_GetMETsubsecs_table_t)u.value));
-    case 20: return cFS_API_Function_as_TIME_GetLeapSeconds(cFS_API_TIME_GetLeapSeconds_clone(B, (cFS_API_TIME_GetLeapSeconds_table_t)u.value));
-    case 21: return cFS_API_Function_as_TIME_GetClockState(cFS_API_TIME_GetClockState_clone(B, (cFS_API_TIME_GetClockState_table_t)u.value));
-    case 22: return cFS_API_Function_as_TIME_GetClockInfo(cFS_API_TIME_GetClockInfo_clone(B, (cFS_API_TIME_GetClockInfo_table_t)u.value));
+    case 12: return cFS_API_Function_as_FS_ReadHeader(cFS_API_FS_ReadHeader_clone(B, (cFS_API_FS_ReadHeader_table_t)u.value));
+    case 13: return cFS_API_Function_as_FS_WriteHeader(cFS_API_FS_WriteHeader_clone(B, (cFS_API_FS_WriteHeader_table_t)u.value));
+    case 14: return cFS_API_Function_as_FS_SetTimestamp(cFS_API_FS_SetTimestamp_clone(B, (cFS_API_FS_SetTimestamp_table_t)u.value));
+    case 15: return cFS_API_Function_as_FS_Decompress(cFS_API_FS_Decompress_clone(B, (cFS_API_FS_Decompress_table_t)u.value));
+    case 16: return cFS_API_Function_as_FS_GetUncompressedFile(cFS_API_FS_GetUncompressedFile_clone(B, (cFS_API_FS_GetUncompressedFile_table_t)u.value));
+    case 17: return cFS_API_Function_as_TIME_GetTime(cFS_API_TIME_GetTime_clone(B, (cFS_API_TIME_GetTime_table_t)u.value));
+    case 18: return cFS_API_Function_as_TIME_GetTAI(cFS_API_TIME_GetTAI_clone(B, (cFS_API_TIME_GetTAI_table_t)u.value));
+    case 19: return cFS_API_Function_as_TIME_GetUTC(cFS_API_TIME_GetUTC_clone(B, (cFS_API_TIME_GetUTC_table_t)u.value));
+    case 20: return cFS_API_Function_as_TIME_MET2SCTime(cFS_API_TIME_MET2SCTime_clone(B, (cFS_API_TIME_MET2SCTime_table_t)u.value));
+    case 21: return cFS_API_Function_as_TIME_GetSTCF(cFS_API_TIME_GetSTCF_clone(B, (cFS_API_TIME_GetSTCF_table_t)u.value));
+    case 22: return cFS_API_Function_as_TIME_GetMET(cFS_API_TIME_GetMET_clone(B, (cFS_API_TIME_GetMET_table_t)u.value));
+    case 23: return cFS_API_Function_as_TIME_GetMETseconds(cFS_API_TIME_GetMETseconds_clone(B, (cFS_API_TIME_GetMETseconds_table_t)u.value));
+    case 24: return cFS_API_Function_as_TIME_GetMETsubsecs(cFS_API_TIME_GetMETsubsecs_clone(B, (cFS_API_TIME_GetMETsubsecs_table_t)u.value));
+    case 25: return cFS_API_Function_as_TIME_GetLeapSeconds(cFS_API_TIME_GetLeapSeconds_clone(B, (cFS_API_TIME_GetLeapSeconds_table_t)u.value));
+    case 26: return cFS_API_Function_as_TIME_GetClockState(cFS_API_TIME_GetClockState_clone(B, (cFS_API_TIME_GetClockState_table_t)u.value));
+    case 27: return cFS_API_Function_as_TIME_GetClockInfo(cFS_API_TIME_GetClockInfo_clone(B, (cFS_API_TIME_GetClockInfo_table_t)u.value));
     default: return cFS_API_Function_as_NONE();
     }
-}
-
-__flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_cFETime_Seconds, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_cFETime)
-__flatbuffers_build_scalar_field(1, flatbuffers_, cFS_API_cFETime_Subseconds, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_cFETime)
-
-static inline cFS_API_cFETime_ref_t cFS_API_cFETime_create(flatbuffers_builder_t *B __cFS_API_cFETime_formal_args)
-{
-    if (cFS_API_cFETime_start(B)
-        || cFS_API_cFETime_Seconds_add(B, v0)
-        || cFS_API_cFETime_Subseconds_add(B, v1)) {
-        return 0;
-    }
-    return cFS_API_cFETime_end(B);
-}
-
-static cFS_API_cFETime_ref_t cFS_API_cFETime_clone(flatbuffers_builder_t *B, cFS_API_cFETime_table_t t)
-{
-    __flatbuffers_memoize_begin(B, t);
-    if (cFS_API_cFETime_start(B)
-        || cFS_API_cFETime_Seconds_pick(B, t)
-        || cFS_API_cFETime_Subseconds_pick(B, t)) {
-        return 0;
-    }
-    __flatbuffers_memoize_end(B, t, cFS_API_cFETime_end(B));
 }
 
 __flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_RunLoop_ExitStatus, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_RunLoop)
@@ -516,7 +561,7 @@ static cFS_API_SendEventWithAppID_ref_t cFS_API_SendEventWithAppID_clone(flatbuf
     __flatbuffers_memoize_end(B, t, cFS_API_SendEventWithAppID_end(B));
 }
 
-__flatbuffers_build_table_field(0, flatbuffers_, cFS_API_SendTimedEvent_Time, cFS_API_cFETime, cFS_API_SendTimedEvent)
+__flatbuffers_build_table_field(0, flatbuffers_, cFS_API_SendTimedEvent_Time, cFETime, cFS_API_SendTimedEvent)
 __flatbuffers_build_scalar_field(1, flatbuffers_, cFS_API_SendTimedEvent_EventID, flatbuffers_uint16, uint16_t, 2, 2, UINT16_C(0), cFS_API_SendTimedEvent)
 __flatbuffers_build_scalar_field(2, flatbuffers_, cFS_API_SendTimedEvent_EventType, flatbuffers_uint16, uint16_t, 2, 2, UINT16_C(0), cFS_API_SendTimedEvent)
 __flatbuffers_build_string_field(3, flatbuffers_, cFS_API_SendTimedEvent_Spec, cFS_API_SendTimedEvent)
@@ -654,6 +699,177 @@ static cFS_API_ResetAllFilters_ref_t cFS_API_ResetAllFilters_clone(flatbuffers_b
     __flatbuffers_memoize_end(B, t, cFS_API_ResetAllFilters_end(B));
 }
 
+__flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_FS_Header_t_ContentType, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_Header_t)
+__flatbuffers_build_scalar_field(1, flatbuffers_, cFS_API_FS_Header_t_SubType, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_Header_t)
+__flatbuffers_build_scalar_field(2, flatbuffers_, cFS_API_FS_Header_t_Length, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_Header_t)
+__flatbuffers_build_scalar_field(3, flatbuffers_, cFS_API_FS_Header_t_SpacecraftID, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_Header_t)
+__flatbuffers_build_scalar_field(4, flatbuffers_, cFS_API_FS_Header_t_ProcessorID, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_Header_t)
+__flatbuffers_build_scalar_field(5, flatbuffers_, cFS_API_FS_Header_t_ApplicationID, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_Header_t)
+__flatbuffers_build_scalar_field(6, flatbuffers_, cFS_API_FS_Header_t_TimeSeconds, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_Header_t)
+__flatbuffers_build_scalar_field(7, flatbuffers_, cFS_API_FS_Header_t_TimeSubSeconds, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_Header_t)
+__flatbuffers_build_string_field(8, flatbuffers_, cFS_API_FS_Header_t_Description, cFS_API_FS_Header_t)
+
+static inline cFS_API_FS_Header_t_ref_t cFS_API_FS_Header_t_create(flatbuffers_builder_t *B __cFS_API_FS_Header_t_formal_args)
+{
+    if (cFS_API_FS_Header_t_start(B)
+        || cFS_API_FS_Header_t_ContentType_add(B, v0)
+        || cFS_API_FS_Header_t_SubType_add(B, v1)
+        || cFS_API_FS_Header_t_Length_add(B, v2)
+        || cFS_API_FS_Header_t_SpacecraftID_add(B, v3)
+        || cFS_API_FS_Header_t_ProcessorID_add(B, v4)
+        || cFS_API_FS_Header_t_ApplicationID_add(B, v5)
+        || cFS_API_FS_Header_t_TimeSeconds_add(B, v6)
+        || cFS_API_FS_Header_t_TimeSubSeconds_add(B, v7)
+        || cFS_API_FS_Header_t_Description_add(B, v8)) {
+        return 0;
+    }
+    return cFS_API_FS_Header_t_end(B);
+}
+
+static cFS_API_FS_Header_t_ref_t cFS_API_FS_Header_t_clone(flatbuffers_builder_t *B, cFS_API_FS_Header_t_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_FS_Header_t_start(B)
+        || cFS_API_FS_Header_t_ContentType_pick(B, t)
+        || cFS_API_FS_Header_t_SubType_pick(B, t)
+        || cFS_API_FS_Header_t_Length_pick(B, t)
+        || cFS_API_FS_Header_t_SpacecraftID_pick(B, t)
+        || cFS_API_FS_Header_t_ProcessorID_pick(B, t)
+        || cFS_API_FS_Header_t_ApplicationID_pick(B, t)
+        || cFS_API_FS_Header_t_TimeSeconds_pick(B, t)
+        || cFS_API_FS_Header_t_TimeSubSeconds_pick(B, t)
+        || cFS_API_FS_Header_t_Description_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_FS_Header_t_end(B));
+}
+
+__flatbuffers_build_table_field(0, flatbuffers_, cFS_API_FS_ReadHeader_Hdr, cFS_API_FS_Header_t, cFS_API_FS_ReadHeader)
+__flatbuffers_build_scalar_field(1, flatbuffers_, cFS_API_FS_ReadHeader_FileDes, flatbuffers_int32, int32_t, 4, 4, INT32_C(0), cFS_API_FS_ReadHeader)
+
+static inline cFS_API_FS_ReadHeader_ref_t cFS_API_FS_ReadHeader_create(flatbuffers_builder_t *B __cFS_API_FS_ReadHeader_formal_args)
+{
+    if (cFS_API_FS_ReadHeader_start(B)
+        || cFS_API_FS_ReadHeader_Hdr_add(B, v0)
+        || cFS_API_FS_ReadHeader_FileDes_add(B, v1)) {
+        return 0;
+    }
+    return cFS_API_FS_ReadHeader_end(B);
+}
+
+static cFS_API_FS_ReadHeader_ref_t cFS_API_FS_ReadHeader_clone(flatbuffers_builder_t *B, cFS_API_FS_ReadHeader_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_FS_ReadHeader_start(B)
+        || cFS_API_FS_ReadHeader_Hdr_pick(B, t)
+        || cFS_API_FS_ReadHeader_FileDes_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_FS_ReadHeader_end(B));
+}
+
+__flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_FS_WriteHeader_FileDes, flatbuffers_int32, int32_t, 4, 4, INT32_C(0), cFS_API_FS_WriteHeader)
+__flatbuffers_build_table_field(1, flatbuffers_, cFS_API_FS_WriteHeader_Hdr, cFS_API_FS_Header_t, cFS_API_FS_WriteHeader)
+
+static inline cFS_API_FS_WriteHeader_ref_t cFS_API_FS_WriteHeader_create(flatbuffers_builder_t *B __cFS_API_FS_WriteHeader_formal_args)
+{
+    if (cFS_API_FS_WriteHeader_start(B)
+        || cFS_API_FS_WriteHeader_FileDes_add(B, v0)
+        || cFS_API_FS_WriteHeader_Hdr_add(B, v1)) {
+        return 0;
+    }
+    return cFS_API_FS_WriteHeader_end(B);
+}
+
+static cFS_API_FS_WriteHeader_ref_t cFS_API_FS_WriteHeader_clone(flatbuffers_builder_t *B, cFS_API_FS_WriteHeader_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_FS_WriteHeader_start(B)
+        || cFS_API_FS_WriteHeader_FileDes_pick(B, t)
+        || cFS_API_FS_WriteHeader_Hdr_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_FS_WriteHeader_end(B));
+}
+
+__flatbuffers_build_scalar_field(0, flatbuffers_, cFS_API_FS_SetTimestamp_FileDes, flatbuffers_int32, int32_t, 4, 4, INT32_C(0), cFS_API_FS_SetTimestamp)
+__flatbuffers_build_table_field(1, flatbuffers_, cFS_API_FS_SetTimestamp_NewTimestamp, cFETime, cFS_API_FS_SetTimestamp)
+
+static inline cFS_API_FS_SetTimestamp_ref_t cFS_API_FS_SetTimestamp_create(flatbuffers_builder_t *B __cFS_API_FS_SetTimestamp_formal_args)
+{
+    if (cFS_API_FS_SetTimestamp_start(B)
+        || cFS_API_FS_SetTimestamp_FileDes_add(B, v0)
+        || cFS_API_FS_SetTimestamp_NewTimestamp_add(B, v1)) {
+        return 0;
+    }
+    return cFS_API_FS_SetTimestamp_end(B);
+}
+
+static cFS_API_FS_SetTimestamp_ref_t cFS_API_FS_SetTimestamp_clone(flatbuffers_builder_t *B, cFS_API_FS_SetTimestamp_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_FS_SetTimestamp_start(B)
+        || cFS_API_FS_SetTimestamp_FileDes_pick(B, t)
+        || cFS_API_FS_SetTimestamp_NewTimestamp_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_FS_SetTimestamp_end(B));
+}
+
+__flatbuffers_build_string_field(0, flatbuffers_, cFS_API_FS_Decompress_SourceFile, cFS_API_FS_Decompress)
+__flatbuffers_build_string_field(1, flatbuffers_, cFS_API_FS_Decompress_DestinationFile, cFS_API_FS_Decompress)
+
+static inline cFS_API_FS_Decompress_ref_t cFS_API_FS_Decompress_create(flatbuffers_builder_t *B __cFS_API_FS_Decompress_formal_args)
+{
+    if (cFS_API_FS_Decompress_start(B)
+        || cFS_API_FS_Decompress_SourceFile_add(B, v0)
+        || cFS_API_FS_Decompress_DestinationFile_add(B, v1)) {
+        return 0;
+    }
+    return cFS_API_FS_Decompress_end(B);
+}
+
+static cFS_API_FS_Decompress_ref_t cFS_API_FS_Decompress_clone(flatbuffers_builder_t *B, cFS_API_FS_Decompress_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_FS_Decompress_start(B)
+        || cFS_API_FS_Decompress_SourceFile_pick(B, t)
+        || cFS_API_FS_Decompress_DestinationFile_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_FS_Decompress_end(B));
+}
+
+__flatbuffers_build_string_field(0, flatbuffers_, cFS_API_FS_GetUncompressedFile_OutputNameBuffer, cFS_API_FS_GetUncompressedFile)
+__flatbuffers_build_scalar_field(1, flatbuffers_, cFS_API_FS_GetUncompressedFile_OutputNameBufferSize, flatbuffers_uint32, uint32_t, 4, 4, UINT32_C(0), cFS_API_FS_GetUncompressedFile)
+__flatbuffers_build_string_field(2, flatbuffers_, cFS_API_FS_GetUncompressedFile_GzipFileName, cFS_API_FS_GetUncompressedFile)
+__flatbuffers_build_string_field(3, flatbuffers_, cFS_API_FS_GetUncompressedFile_TempDir, cFS_API_FS_GetUncompressedFile)
+
+static inline cFS_API_FS_GetUncompressedFile_ref_t cFS_API_FS_GetUncompressedFile_create(flatbuffers_builder_t *B __cFS_API_FS_GetUncompressedFile_formal_args)
+{
+    if (cFS_API_FS_GetUncompressedFile_start(B)
+        || cFS_API_FS_GetUncompressedFile_OutputNameBuffer_add(B, v0)
+        || cFS_API_FS_GetUncompressedFile_OutputNameBufferSize_add(B, v1)
+        || cFS_API_FS_GetUncompressedFile_GzipFileName_add(B, v2)
+        || cFS_API_FS_GetUncompressedFile_TempDir_add(B, v3)) {
+        return 0;
+    }
+    return cFS_API_FS_GetUncompressedFile_end(B);
+}
+
+static cFS_API_FS_GetUncompressedFile_ref_t cFS_API_FS_GetUncompressedFile_clone(flatbuffers_builder_t *B, cFS_API_FS_GetUncompressedFile_table_t t)
+{
+    __flatbuffers_memoize_begin(B, t);
+    if (cFS_API_FS_GetUncompressedFile_start(B)
+        || cFS_API_FS_GetUncompressedFile_OutputNameBuffer_pick(B, t)
+        || cFS_API_FS_GetUncompressedFile_OutputNameBufferSize_pick(B, t)
+        || cFS_API_FS_GetUncompressedFile_GzipFileName_pick(B, t)
+        || cFS_API_FS_GetUncompressedFile_TempDir_pick(B, t)) {
+        return 0;
+    }
+    __flatbuffers_memoize_end(B, t, cFS_API_FS_GetUncompressedFile_end(B));
+}
+
 
 static inline cFS_API_TIME_GetTime_ref_t cFS_API_TIME_GetTime_create(flatbuffers_builder_t *B __cFS_API_TIME_GetTime_formal_args)
 {
@@ -708,7 +924,7 @@ static cFS_API_TIME_GetUTC_ref_t cFS_API_TIME_GetUTC_clone(flatbuffers_builder_t
     __flatbuffers_memoize_end(B, t, cFS_API_TIME_GetUTC_end(B));
 }
 
-__flatbuffers_build_table_field(0, flatbuffers_, cFS_API_TIME_MET2SCTime_METTime, cFS_API_cFETime, cFS_API_TIME_MET2SCTime)
+__flatbuffers_build_table_field(0, flatbuffers_, cFS_API_TIME_MET2SCTime_METTime, cFETime, cFS_API_TIME_MET2SCTime)
 
 static inline cFS_API_TIME_MET2SCTime_ref_t cFS_API_TIME_MET2SCTime_create(flatbuffers_builder_t *B __cFS_API_TIME_MET2SCTime_formal_args)
 {
@@ -867,6 +1083,11 @@ __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_inp
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, SendTimedEvent, cFS_API_SendTimedEvent)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, ResetFilter, cFS_API_ResetFilter)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, ResetAllFilters, cFS_API_ResetAllFilters)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, FS_ReadHeader, cFS_API_FS_ReadHeader)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, FS_WriteHeader, cFS_API_FS_WriteHeader)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, FS_SetTimestamp, cFS_API_FS_SetTimestamp)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, FS_Decompress, cFS_API_FS_Decompress)
+__flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, FS_GetUncompressedFile, cFS_API_FS_GetUncompressedFile)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetTime, cFS_API_TIME_GetTime)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetTAI, cFS_API_TIME_GetTAI)
 __flatbuffers_build_union_table_value_field(flatbuffers_, cFS_API_RemoteCall_input, cFS_API_Function, TIME_GetUTC, cFS_API_TIME_GetUTC)
