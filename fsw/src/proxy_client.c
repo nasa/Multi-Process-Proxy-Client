@@ -30,7 +30,7 @@ flatcc_builder_t builder;
 
 // NNG Stuff
 char * name = "actual_app";
-char * url = "ipc:///tmp/pair.ipc";
+char * url = "ipc://./pair.ipc";
 nng_socket sock;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -55,7 +55,7 @@ int32 PROXY_ClientInit(void)
     }
     if ((rv = nng_dial(sock, url, NULL, 0)) != 0)
     {
-        printf("nng_dial: %d\n", rv);
+        printf("nng_dial: %d - %s\n", rv, nng_strerror(rv));
     }
 
     if ((rv = nng_setopt_ms(sock, NNG_OPT_RECVTIMEO, 10000)) != 0)
