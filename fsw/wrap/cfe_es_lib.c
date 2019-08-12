@@ -172,5 +172,11 @@ void __wrap_CFE_ES_ExitApp(uint32 ExitStatus)
      */
     flatcc_builder_reset(B);
 
+    // Clean up flatcc
+    flatcc_builder_clear(&builder);
+
+    // Clean up nng
+    nng_close(sock);
+
     exit(0);
 }
