@@ -51,16 +51,17 @@ int32 PROXY_ClientInit(void)
     sleep(1);
     if ((rv = nng_pair0_open(&sock)) != 0)
     {
-        printf("nng_pair0_open: %d\n", rv);
+        printf("(PROXY_CLIENT) nng_pair0_open: %d\n", rv);
     }
     if ((rv = nng_dial(sock, url, NULL, 0)) != 0)
     {
-        printf("nng_dial: %d - %s\n", rv, nng_strerror(rv));
+        printf("(PROXY_CLIENT) nng_dial: %d - %s\n", rv, nng_strerror(rv));
+        printf("\tFailed to dial %s\n", url);
     }
 
     if ((rv = nng_setopt_ms(sock, NNG_OPT_RECVTIMEO, 10000)) != 0)
     {
-        printf("nng_setopt_ms: %d\n", rv);
+        printf("(PROXY_CLIENT) nng_setopt_ms: %d\n", rv);
     }
 
     //CFE_ES_WriteToSysLog("PROXY Client Initialized.  Version %d.%d.%d.%d\n",
