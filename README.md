@@ -5,6 +5,7 @@ _this is not a cFS library; it is used by the process application_
 _this is also the home of the interface definitions (see `flat_inc`, `wrap` and `interface`)_
 
 This library is the "Proxy Client" and provides the process application access to the core cFS services (with exception of SB).
+It communicates with the cFS application [https://aetd-git.gsfc.nasa.gov/cFS_lab/proxy](Proxy).
 
 The process application should link the core of cFS as a library.
 This allows function calls that are safe to call from the context of another process (such as SB_InitMsg) to be directly called.
@@ -12,6 +13,11 @@ This allows function calls that are safe to call from the context of another pro
 Other functions, such as those that manipulate or depend on shared state, will have stubs available in this library.
 These function calls are wrapped using the LD option `--wrap=symbol`.
 This library handles serializing the function arguments and sending the data to the corresponding proxy application, which will make the function call on behalf of the process application.
+
+## Configuration
+
+Configuration is done via `proxy_client_defs.h`, which currently only has the address for the ipc pipe.
+The address is relative to the applications launch directory, such as `cf/apps/`, and needs to match that used by the Proxy.
 
 ## Dependencies
 

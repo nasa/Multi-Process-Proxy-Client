@@ -3,6 +3,7 @@
 ** Includes
 *************************************************************************/
 #include "proxy_client.h"
+#include "proxy_client_defs.h"
 #include "proxy_client_version.h"
 #include <unistd.h>
 
@@ -29,8 +30,6 @@
 flatcc_builder_t builder;
 
 // NNG Stuff
-char * name = "actual_app";
-char * url = "ipc://./pair.ipc";
 nng_socket sock;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -53,10 +52,10 @@ int32 PROXY_ClientInit(void)
     {
         printf("(PROXY_CLIENT) nng_pair0_open: %d\n", rv);
     }
-    if ((rv = nng_dial(sock, url, NULL, 0)) != 0)
+    if ((rv = nng_dial(sock, IPC_PIPE_ADDRESS, NULL, 0)) != 0)
     {
         printf("(PROXY_CLIENT) nng_dial: %d - %s\n", rv, nng_strerror(rv));
-        printf("\tFailed to dial %s\n", url);
+        printf("\tFailed to dial %s\n", IPC_PIPE_ADDRESS);
     }
 
     if ((rv = nng_setopt_ms(sock, NNG_OPT_RECVTIMEO, 10000)) != 0)
