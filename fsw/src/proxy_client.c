@@ -37,8 +37,7 @@ nng_socket sock;
 /* Proxy Client Initialization Routine                             */
 /*                                                                 */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-// TODO: Remove? Not needed?
-int32 PROXY_ClientInit(void)
+int32 PROXY_Client_Init(void)
 {
     int rv;
 
