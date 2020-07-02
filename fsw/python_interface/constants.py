@@ -1,0 +1,25 @@
+# CFE specific defines
+
+# EVS
+CFE_EVS_DEBUG                       = 1
+CFE_EVS_INFORMATION                 = 2
+CFE_EVS_ERROR                       = 3
+CFE_EVS_CRITICAL                    = 4
+
+CFE_EVS_BINARY_FILTER               = 0
+
+
+# Application specific defines
+
+PYTHON_TEST_RESERVED_EID            = 0
+PYTHON_TEST_STARTUP_INF_EID         = 1
+PYTHON_TEST_COMMAND_ERR_EID         = 2
+PYTHON_TEST_COMMANDNOP_INF_EID      = 3
+PYTHON_TEST_COMMANDRST_INF_EID      = 4
+PYTHON_TEST_INVALID_MSGID_ERR_EID   = 5
+PYTHON_TEST_LEN_ERR_EID             = 6
+
+PYTHON_TEST_PRO_MAJOR_VERSION  = 1
+PYTHON_TEST_PRO_MINOR_VERSION  = 0
+PYTHON_TEST_PRO_REVISION       = 0
+PYTHON_TEST_PRO_MISSION_REV    = 0

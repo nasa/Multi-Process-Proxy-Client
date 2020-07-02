@@ -19,6 +19,11 @@ This library handles serializing the function arguments and sending the data to 
 Configuration is done via `proxy_client_defs.h`, which currently only has the address for the ipc pipe.
 The address is relative to the applications launch directory, such as `cf/apps/`, and needs to match that used by the Proxy.
 
+## Python Interface
+
+The library produced (proxy_client.so) may be called by python applications through python's c interface.
+See the files in `fsw/python_interface` for an example and `python_client.py`.
+
 ## Dependencies
 
 Requires the NNG library (nng_lib).
