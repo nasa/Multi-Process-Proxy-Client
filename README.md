@@ -1,5 +1,18 @@
 # proxy_client
 
+The Multi-Process Proxy software allows cFS to run applications as separate OS processes on Linux platforms.
+Using separate processes provides memory isolation, which prevents errors in cFS applications from propagating to other cFS applications or the core cFS services.
+
+Multiple process support is implemented using a lightweight cFS application (the Proxy) and a Proxy Client library to provide access to cFS function calls to outside processes without requiring direct modifications to cFS.
+The Proxy executes within the cFS memory space as a thread and provides a remote interface for calling cFS functions.
+The Proxy Client library allows applications to access the Proxy interface from a different memory space/process as cFS.
+
+In addition to the Proxy and Proxy Client, the following additional components are used:
+
+* The Software Bus Network and Software Bus Network Client provide access to the cFS Software Bus
+* Proxy EVS is a simple cFS application that allows the Proxy to send EVS messages before the application has registered with EVS
+* cFS should be linked by the new application as a library to provide access to side-effect free functions
+
 _this is not a cFS library; it is used by the process application_
 
 _this is also the home of the interface definitions (see `flat_inc`, `wrap` and `interface`)_
