@@ -1,3 +1,18 @@
+/*
+** GSC-18364-1, "Proxy Core Flight System Application and Client for External Process"
+**
+** Copyright © 2019 United States Government as represented by
+** the Administrator of the National Aeronautics and Space Administration.
+** No copyright is claimed in the United States under Title 17, U.S. Code.
+** All Other Rights Reserved.
+**
+** Licensed under the NASA Open Source Agreement version 1.3
+** See "NOSA GSC-18364-1.pdf"
+*/
+
+#ifndef _common_wrap_h_
+#define _common_wrap_h_
+
 #include <nng/nng.h>
 #include <nng/protocol/pair0/pair.h>
 
@@ -18,3 +33,5 @@ int16 receive_int16(void);
 uint16 receive_uint16(void);
 
 CFE_TIME_SysTime_t receive_SysTime(void);
+
+#endif /* _common_wrap_h_ */
