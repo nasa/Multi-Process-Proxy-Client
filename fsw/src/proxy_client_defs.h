@@ -10,9 +10,9 @@
 ** See "NOSA GSC-18364-1.pdf"
 */
 
-#ifndef _proxy_client_defs_h_
-#define _proxy_client_defs_h_
+#ifndef proxy_client_defs_h
+#define proxy_client_defs_h
 
 #define IPC_PIPE_ADDRESS "ipc://./pair.ipc"
 
-#endif /* _proxy_client_defs_h_ */
+#endif /* proxy_client_defs_h */

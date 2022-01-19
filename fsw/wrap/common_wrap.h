@@ -10,8 +10,8 @@
 ** See "NOSA GSC-18364-1.pdf"
 */
 
-#ifndef _common_wrap_h_
-#define _common_wrap_h_
+#ifndef common_wrap_h
+#define common_wrap_h
 
 #include <nng/nng.h>
 #include <nng/protocol/pair0/pair.h>
@@ -34,4 +34,4 @@ uint16 receive_uint16(void);
 
 CFE_TIME_SysTime_t receive_SysTime(void);
 
-#endif /* _common_wrap_h_ */
+#endif /* common_wrap_h */
