@@ -25,7 +25,6 @@ int32 __wrap_CFE_EVS_SendEvent(uint16 EventID, uint16 EventType, const char *Spe
 
     va_start(Ptr, Spec);
     vsnprintf(spec_buffer, sizeof(spec_buffer), Spec, Ptr);
-    // printf("What's the new string? %s\n", spec_buffer);
     va_end(Ptr);
 
     flatbuffers_string_ref_t s;
@@ -40,21 +39,14 @@ int32 __wrap_CFE_EVS_SendEvent(uint16 EventID, uint16 EventType, const char *Spe
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -79,7 +71,6 @@ int32 __wrap_CFE_EVS_SendEventWithAppID(uint16 EventID, uint16 EventType, uint32
 
     va_start(Ptr, Spec);
     vsnprintf(spec_buffer, sizeof(spec_buffer), Spec, Ptr);
-    // printf("(w/ID) What's the new string? %s\n", spec_buffer);
     va_end(Ptr);
 
     flatbuffers_string_ref_t s;
@@ -94,21 +85,14 @@ int32 __wrap_CFE_EVS_SendEventWithAppID(uint16 EventID, uint16 EventType, uint32
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -148,20 +132,14 @@ int32 __wrap_CFE_EVS_SendTimedEvent(CFE_TIME_SysTime_t Time, uint16 EventID, uin
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -202,21 +180,14 @@ int32 __wrap_CFE_EVS_Register(void *Filters, uint16 NumFilteredEvents, uint16 Fi
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -247,21 +218,14 @@ int32 __wrap_CFE_EVS_Unregister(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -292,21 +256,14 @@ int32 __wrap_CFE_EVS_ResetFilter(uint16 EventID)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -337,21 +294,14 @@ int32 __wrap_CFE_EVS_ResetAllFilters(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value

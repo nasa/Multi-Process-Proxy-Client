@@ -57,6 +57,8 @@ int32 PROXY_Client_Init(void)
 
     // NNG Stuff
     // TODO: Error handling? Events won't work if nng doesn't
+
+    // Give cFS/proxy a chance to start up
     sleep(1);
     if ((rv = nng_pair0_open(&sock)) != 0)
     {
@@ -73,11 +75,6 @@ int32 PROXY_Client_Init(void)
         printf("(PROXY_CLIENT) nng_setopt_ms: %d\n", rv);
     }
 
-    //CFE_ES_WriteToSysLog("PROXY Client Initialized.  Version %d.%d.%d.%d\n",
-    //              PROXY_CLIENT_MAJOR_VERSION,
-    //              PROXY_CLIENT_MINOR_VERSION,
-    //              PROXY_CLIENT_REVISION,
-    //              PROXY_CLIENT_MISSION_REV);
     return OS_SUCCESS;
 }
 

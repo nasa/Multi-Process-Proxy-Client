@@ -33,8 +33,7 @@ int32 receive_int32(void)
     }
     else
     {
-        printf("Oh no. %d\n", rv);
-        printf("Error: %s\n", nng_strerror(rv));
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
         rv = -1;
     }
 
@@ -51,7 +50,6 @@ uint32 receive_uint32(void)
     rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC);
     if (rv == 0)
     {
-        // printf("Actual return value receive!\n");
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
         nsr(UnInteger32_table_t) unInteger = nsr(ReturnData_retval(returnData));
         received = nsr(UnInteger32_unInteger32(unInteger));
@@ -60,8 +58,7 @@ uint32 receive_uint32(void)
     }
     else
     {
-        printf("Oh no. %d\n", rv);
-        printf("Error: %s\n", nng_strerror(rv));
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
         received = 0;
     }
 
@@ -87,8 +84,7 @@ int16 receive_int16(void)
     }
     else
     {
-        printf("Oh no. %d\n", rv);
-        printf("Error: %s\n", nng_strerror(rv));
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
         received = -1;
     }
 
@@ -105,7 +101,6 @@ uint16 receive_uint16(void)
     rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC);
     if (rv == 0)
     {
-        // printf("Actual return value receive!\n");
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
         nsr(UnInteger16_table_t) unInteger = nsr(ReturnData_retval(returnData));
         received = nsr(UnInteger16_unInteger16(unInteger));
@@ -114,8 +109,7 @@ uint16 receive_uint16(void)
     }
     else
     {
-        printf("Oh no. %d\n", rv);
-        printf("Error: %s\n", nng_strerror(rv));
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
         received = 0;
     }
 
@@ -132,14 +126,6 @@ CFE_TIME_SysTime_t receive_SysTime(void)
     rv = nng_recv(sock, &ret_buffer, &size, NNG_FLAG_ALLOC);
     if (rv == 0)
     {
-
-                //ns(SendTimedEvent_table_t) sendTimedEvent = (ns(SendTimedEvent_table_t)) ns(RemoteCall_input(remoteCall));
-                //cFETime_table_t time = ns(SendTimedEvent_Time(sendTimedEvent));
-                //CFE_TIME_SysTime_t cfe_time;
-                //cfe_time.Seconds = ns(cFETime_Seconds(time));
-                //cfe_time.Subseconds = ns(cFETime_Subseconds(time));
-
-        // printf("Actual return value receive!\n");
         nsr(ReturnData_table_t) returnData = nsr(ReturnData_as_root(ret_buffer));
         cFETime_table_t time = nsr(ReturnData_retval(returnData));
         received.Seconds = cFETime_Seconds(time);
@@ -149,8 +135,7 @@ CFE_TIME_SysTime_t receive_SysTime(void)
     }
     else
     {
-        printf("Oh no. %d\n", rv);
-        printf("Error: %s\n", nng_strerror(rv));
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
         received.Seconds = 0;
         received.Subseconds = 0;
     }

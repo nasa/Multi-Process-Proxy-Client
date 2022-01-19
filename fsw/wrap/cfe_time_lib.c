@@ -32,21 +32,14 @@ CFE_TIME_SysTime_t __wrap_CFE_TIME_GetTime(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -76,21 +69,14 @@ CFE_TIME_SysTime_t __wrap_CFE_TIME_GetTAI(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -120,21 +106,14 @@ CFE_TIME_SysTime_t __wrap_CFE_TIME_GetUTC(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -165,21 +144,14 @@ CFE_TIME_SysTime_t __wrap_CFE_TIME_MET2SCTime (CFE_TIME_SysTime_t METTime)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -209,21 +181,14 @@ CFE_TIME_SysTime_t __wrap_CFE_TIME_GetSTCF(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -253,21 +218,14 @@ CFE_TIME_SysTime_t __wrap_CFE_TIME_GetMET(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -297,21 +255,14 @@ uint32 __wrap_CFE_TIME_GetMETseconds(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -341,21 +292,14 @@ uint32 __wrap_CFE_TIME_GetMETsubsecs(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -385,21 +329,14 @@ int16 __wrap_CFE_TIME_GetLeapSeconds(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -429,21 +366,14 @@ CFE_TIME_ClockState_Enum_t __wrap_CFE_TIME_GetClockState(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
@@ -473,21 +403,14 @@ uint16 __wrap_CFE_TIME_GetClockInfo(void)
     ns(RemoteCall_create_as_root(B, function));
 
     /* Retrieve buffer - see also `flatcc_builder_get_direct_buffer`. */
-    /* buffer = flatcc_builder_finalize_buffer(B, &size); */
     buffer = flatcc_builder_finalize_aligned_buffer(B, &size);
 
-    // printf("%s: SENDING EVS MSG\n", name);
     rv = nng_send(sock, buffer, size, 0);
-    if (rv == 0)
+    if (rv != 0)
     {
-        // printf("nng_send: %d\n", rv);
-    }
-    else
-    {
-        printf("Oh No! nng_send: %d\n", rv);
+        printf("%s - Error: %s\n", __func__, nng_strerror(rv));
     }
 
-    /* free(buffer); */
     flatcc_builder_aligned_free(buffer);
 
     // Receive the return value
